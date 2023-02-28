@@ -25,4 +25,5 @@ $RECYCLE.BIN/
 ## Linux
 .directory
 
-
+# local sshkey
+.ssh
