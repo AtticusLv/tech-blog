@@ -58,12 +58,29 @@ git submodule update --remote --merge
 
 编辑bash脚本```./deploy.sh```一键提交git
 
+```
+./deploy.sh [commit content]
+```
+
 脚本内容如下：
 
 ```
+#!/bin/bash
+# date time
+currentDateTime=`date '+%Y-%m-%d %H:%M:%S'`
+commitMsg=$currentDateTime" "$1
+
+echo "提交commit: "${commitMsg}
+
+git add .
+git commit -m "${commitMsg}"
+git pull
+git status
+
+echo "git add/commit/pull done..."
+# push to remote main branch
+git push -u origin main
 ```
-
-
 
 给脚本添加权限
 
