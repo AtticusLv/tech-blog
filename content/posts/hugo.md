@@ -46,9 +46,28 @@ hugo new tech/[catalog]/xxx/index.md
 
 ## 更新FixIt样式
 
-站点样式采用 [**FixIt**](https://github.com/hugo-fixit/FixIt)
+站点样式采用 [**FixIt**](https://github.com/hugo-fixit/FixIt)，因为有部分样式要调整，已fork到 ``````
 
 ```git
 git submodule update --remote --merge
+```
+
+
+
+## 使用bash一键提交
+
+编辑bash脚本```./deploy.sh```一键提交git
+
+脚本内容如下：
+
+```
+```
+
+
+
+给脚本添加权限
+
+```
+chmod 755 deploy.sh
 ```
 
