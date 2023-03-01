@@ -1,7 +1,7 @@
 #!/bin/bash
 # date time
 currentDateTime=$(date +%Y-%m-%d %H:%m:%s)
-commitMsg=$1
+commitMsg=$currentDateTime" "$1
 
 echo "提交commit: "${commitMsg}
 
