@@ -1,15 +1,15 @@
 ---
-title: "架构目录"
-layout: architecture
+title: "云原生目录"
+layout: cloudnative
 hidden: true
-type: architecture
+type: cloudnative
 summary: 历史文章按照年月归档.
-url: /tech/architecture
+url: /tech/cloudnative
 menu:
   main:
     title: 架构文档
     parent: tech
     params:
       icon: fa-brands fa-readme
-catalog: 架构
+catalog: 云原生
 ---
