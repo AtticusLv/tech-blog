@@ -81,6 +81,14 @@ hugo new tech/[catalog]/xxx.md
 hugo new tech/[catalog]/xxx/index.md
 ```
 
+例如，要创建一个技术文档，并且包换图片，catalog为「云原生」，那运行的命令为
+
+```
+hugo new tech/cloudnative/istio_proxy/index.md
+```
+
+在index.md文件中修改title、catalog，然后直接deploy到github上就完成发布了
+
 ## 增加catalog分类
 
 在```layouts/tech/tech.html```模板中，增加了下面的代码，可以根据文章中 **catalog** 字段来分类，这样让技术文章就具备层级结构了
@@ -120,13 +128,14 @@ menu:
   main:
     title: 架构文档
     parent: tech
+    weight: 0
     params:
       icon: fa-brands fa-readme
 catalog: 云原生
 ---
 ```
 
-需要注意catalog、layout和type字段，其中menu是用来在1级标题栏下增加2级标题栏的主要代码
+需要注意catalog、layout和type字段，其中menu是用来在1级标题栏下增加2级标题栏的主要代码，weight控制2级目录显示顺序，越大越靠上，越小越靠下
 
 3. 在layouts下创建目录/tech/cloudnative，创建文件```cloudnative.html```，内容可以从posts模板或者其他地方模板下复制过来，内容略
 
@@ -177,11 +186,14 @@ chmod 755 deploy.sh
 
 
 
+# 特别注意
+
+## 无图片文章转换为有图片文章
+
+**因为hugo结构的原因，如果要将没有图片的文章转换为有图片的文章，需要单独创建一个目录，将原理的.md文件移入，并且重命名为index.md**
+
 
 
 # 剩余未完成工作
 
-- [ ] 搜索功能
 - [ ] 代码块行数和复制功能
-- [ ] tech下catalog跳转
-- [ ] tech下catalog分页，列表过多展示问题

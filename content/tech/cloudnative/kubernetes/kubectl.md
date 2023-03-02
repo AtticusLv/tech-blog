@@ -6,9 +6,9 @@ tags:
 - kubernetes
 - k8s
 categories:
-- 云原生
+- 技术
 # 技术文档分类
-catalog: 云原生
+catalog: CloudNative
 ---
 
 ## kubectl指令

@@ -1,5 +1,6 @@
 {{- define "title" }}
-{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }}({{- len (where (where .Site.Pages "Type" "tech") "Params.hidden" "!=" true) -}})
+{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }}({{- len (where (where
+.Site.Pages "Type" "tech") "Params.hidden" "!=" true) -}})
 {{- end -}}
 
 {{- define "content" -}}
@@ -29,31 +30,47 @@
     {{- end -}}
   </div>
 
-  {{- /* Paginate */ -}}
-  {{- if .Pages -}}
+  <!-- {{- /* Paginate */ -}} -->
+  <!-- {{- if .Pages -}} -->
   <!-- 显示所有tech下的文档 -->
-    {{- $curpages := where .Site.Pages "Type" "tech" -}}
+  {{- $curpages := where .Site.Pages "Type" "tech" -}}
   <!-- 根据catalog字段内容分类 -->
-    {{- $pages := $curpages.GroupByParam "catalog" -}}
-    {{- with .Site.Params.section.paginate | default .Site.Params.paginate -}}
-    {{- $pages = $.Paginate $pages . -}}
-  {{- else -}}
-    {{- $pages = .Paginate $pages -}}
-  {{- end -}}
+  {{- $pages := $curpages.GroupByParam "catalog" -}}
+  <!-- {{- with .Site.Params.section.paginate | default .Site.Params.paginate -}} -->
+  <!-- {{- $pages = $.Paginate $pages . -}} -->
+  <!-- {{- else -}} -->
+  <!-- {{- $pages = .Paginate $pages -}} -->
+  <!-- {{- end -}} -->
 
-  {{- partial "recently-updated.html" . -}}
-  {{- range $pages.PageGroups -}}
-  <h2 class="group-title"><u>{{ .Key }} </u></h2>
-  {{- range .Pages -}}
-  <article class="archive-item">
-    <a href="{{ .RelPermalink }}" class="archive-item-link">{{- .Title -}}</a>
-    <span class="archive-item-date" title='{{ "2006-01-02 15:04:05" | .Date.Format }}'>
-      {{- $.Site.Params.section.dateFormat | default "01-02" | .Date.Format -}}
-    </span>
-  </article>
-  {{- end -}}
-  {{- end -}}
-  {{- partial "paginator.html" . -}}
-  {{- end -}}
+  <!-- {{- partial "recently-updated.html" . -}} -->
+
+  {{- /* Catalog */ -}}
+  <div class="categories-card">
+    {{- range $pages.PageGroups -}}
+    <div class="card-item">
+      <div class="card-item-wrapper">
+        <h3 class="card-item-title">
+          {{ dict "Class" "fa-regular fa-folder fa-fw" | partial "plugin/icon.html" }}
+          <a href='{{ partial "function/escapeurl.html" .Key }}'>{{ .Key }}</a>
+          &nbsp;<sup>{{- len .Pages -}}</sup>
+        </h3>
+        {{- range first 5 .Pages -}}
+        <article class="archive-item">
+          <a href="{{ .RelPermalink }}" class="archive-item-link">{{- .Title -}}</a>
+        </article>
+        {{- end -}}
+        {{- if gt (len .Pages) 5 -}}
+        <span class="more-post">
+          <a href='{{ partial "function/escapeurl.html" .Key }}' class="more-single-link">{{ T "pagination.more" }}
+            >></a>
+        </span>
+        {{- end -}}
+      </div>
+    </div>
+    {{- end -}}
+  </div>
+
+  <!-- {{- partial "paginator.html" . -}} -->
+  <!-- {{- end -}} -->
 </div>
 {{- end -}}

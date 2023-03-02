@@ -4,6 +4,7 @@ date: 2023-01-02T10:57:00+08:00
 tags:
 - docker
 categories:
+- 技术
 # 技术文档分类：架构/云原生/Linux/其他
 catalog: 其他 
 ---
