@@ -1,4 +1,4 @@
-# title = "Atticus Site"
+title = "Atticus Site"
 baseURL = "https://nuoyang.tech"
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
