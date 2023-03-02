@@ -8,7 +8,7 @@ tags:
 categories:
 - 技术
 # 技术文档分类
-catalog: CloudNative
+catalog: 云原生
 ---
 
 ## kubectl指令
