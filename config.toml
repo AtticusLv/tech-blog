@@ -770,7 +770,7 @@ hasCJKLanguage = true
 
   # FixIt 0.2.14 | NEW GitHub banner in the top-right or top-left corner
   [params.githubCorner]
-    enable = true
+    enable = false
     permalink = "https://github.com/AtticusLv"
     title = "AtticusLv GitHub"
     position = "right" # ["left", "right"]
