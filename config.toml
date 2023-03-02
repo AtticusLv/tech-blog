@@ -197,7 +197,7 @@ hasCJKLanguage = true
     # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
     gov = ""
     # ICP info only in China (HTML format is supported)
-    icp = "<div class='beian'><a href='https://beian.miit.gov.cn/' rel='noopener' target='_blank'>蜀ICP备2021011057号-2 </a> | <img src='../beian.png' alt=''><a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002976' rel='noopener' target='_blank'>川公网安备51019002002976号 </a>"
+    icp = "<div class='beian'><a href='https://beian.miit.gov.cn/' rel='noopener' target='_blank'>蜀ICP备2021011057号-2 </a> | <img src='https://nuoyang.tech/beian.png' alt=''><a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002976' rel='noopener' target='_blank'>川公网安备51019002002976号 </a>"
     # license info (HTML format is supported)
     license = ""
     # FixIt 0.2.17 | CHANGED Site creation time
