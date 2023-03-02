@@ -11,11 +11,11 @@ categories:
 >
 > 本站点针对技术文档做过调整，写作方式只针对本博客
 
-## Hugo初始化搭建
+# Hugo初始化搭建
 
 官网：https://gohugo.io/
 
-### 安装Hugo
+## 安装Hugo
 
 安装方式有如下两种：
 
@@ -31,23 +31,35 @@ brew install hugo
 
 
 
-### 安装Theme
+## 安装Theme
 
 ```
 git submodule add https://github.com/AtticusLv/FixIt themes/FixIt
 ```
 
+## 本地调试
+
+```
+hugo server
+```
+
+编译静态文件，生成目录为/public
+
+```
+hugo
+```
 
 
-## 创建日常博客
 
-### 只文字版
+# 创建日常博客
+
+- 只文字版
 
 ```
 hugo new posts/xxx.md
 ```
 
-### 图文版
+- 图文版
 
 ```
 hugo new posts/xxx/index.md
@@ -55,61 +67,71 @@ hugo new posts/xxx/index.md
 
 使用typora编辑时，会自动在posts/xxx/目录下增加相关图片目录
 
-## 创建技术文档
+# 创建技术文档
 
-### 只文字版
+- 只文字版
 
 ```
 hugo new tech/[catalog]/xxx.md
 ```
 
-### 图文版
+- 图文版
 
 ```
 hugo new tech/[catalog]/xxx/index.md
 ```
 
-### 增加catalog分类
+## 增加catalog分类
 
+在```layouts/tech/tech.html```模板中，增加了下面的代码，可以根据文章中 **catalog** 字段来分类，这样让技术文章就具备层级结构了
 
+```
+  tech.html中内容
+  .....
+  <!-- 显示所有tech下的文档 -->
+  {{- $curpages := where .Site.Pages "Type" "tech" -}}
+  <!-- 根据catalog字段内容分类 -->
+  {{- $pages := $curpages.GroupByParam "catalog" -}}
+  .....
+```
 
-### 如何在1级标题栏【技术文档】增加2级目录
+在tech目录下new出来的文章，会根据tech的模板，自动加上catalog字段
+
+![image-20230301181507278](index.assets/image-20230301181507278.png)
+
+## 如何在1级标题栏【技术文档】增加2级目录
 
 ![image-20230301130258500](index.assets/image-20230301130258500.png)
 
 以【cloudnative】举例
 
 1. 在tech下创建目录/tech/cloudnative
-2. 在layouts下创建目录/tech/cloudnative，创建文件```cloudnative.html```
-3. 
-4. 创建 ```_index.md``` 
-
-
-
-<br/>
+2. /tech/cloudnative下创建 ```_index.md``` 文件，可以手动创建，也可以用命令行创建，内容如下：
 
 ```
 ---
-title: "架构文档"
-layout: architecture
+title: "云原生目录"
+layout: cloudnative
 hidden: true
-type: tech
+type: cloudnative
 summary: 历史文章按照年月归档.
-url: /tech/architecture
+url: /tech/cloudnative
 menu:
   main:
     title: 架构文档
     parent: tech
     params:
       icon: fa-brands fa-readme
-catalog: 架构
+catalog: 云原生
 ---
 ```
 
+需要注意catalog、layout和type字段，其中menu是用来在1级标题栏下增加2级标题栏的主要代码
+
+3. 在layouts下创建目录/tech/cloudnative，创建文件```cloudnative.html```，内容可以从posts模板或者其他地方模板下复制过来，内容略
 
 
-
-## 更新Theme样式
+# 更新Theme样式
 
 站点样式采用 [**FixIt**](https://github.com/hugo-fixit/FixIt)，因为有部分样式要调整，已fork到 ```https://github.com/AtticusLv/FixIt```
 
@@ -119,7 +141,7 @@ git submodule update --remote --merge
 
 
 
-## 使用bash一键提交
+# 使用bash一键提交
 
 编辑bash脚本```./deploy.sh```一键提交git
 
@@ -157,8 +179,8 @@ chmod 755 deploy.sh
 
 
 
-## 剩余未完成工作
+# 剩余未完成工作
 
 - [ ] 搜索功能
 - [ ] 代码块行数和复制功能
-- [ ] 技术文档目录下展示所有文章不全
+- [ ] tech下catalog跳转

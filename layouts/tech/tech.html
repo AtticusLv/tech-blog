@@ -1,5 +1,5 @@
 {{- define "title" }}
-{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }}({{- len (where (where .Site.Pages "Type" "tech") "Params.hidden" "!=" true) -}})
 {{- end -}}
 
 {{- define "content" -}}
@@ -9,12 +9,12 @@
     {{- /* Title */ -}}
     <h1 class="single-title animate__animated animate__pulse animate__faster">
       {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }}
-      <sup>{{- len .Pages -}}</sup>
+      <sup>{{- len (where (where .Site.Pages "Type" "tech") "Params.hidden" "!=" true) -}}</sup>
     </h1>
     {{- /* Total word count */ -}}
     {{- /* See https://github.com/hugo-fixit/FixIt/issues/124 */ -}}
     {{- $localData := newScratch -}}
-    {{- range .Pages -}}
+    {{- range (where .Site.Pages "Type" "tech") -}}
     {{- $localData.Add "totalWordCount" .WordCount -}}
     {{- end -}}
     {{- with ($localData.Get "totalWordCount") -}}
@@ -31,17 +31,19 @@
 
   {{- /* Paginate */ -}}
   {{- if .Pages -}}
-  {{- $curpages := where .Site.Pages "Type" "tech" -}}
-  {{- $pages := $curpages.GroupByParam "catalog" -}}
-  {{- with .Site.Params.section.paginate | default .Site.Params.paginate -}}
-  {{- $pages = $.Paginate $pages . -}}
+  <!-- 显示所有tech下的文档 -->
+    {{- $curpages := where .Site.Pages "Type" "tech" -}}
+  <!-- 根据catalog字段内容分类 -->
+    {{- $pages := $curpages.GroupByParam "catalog" -}}
+    {{- with .Site.Params.section.paginate | default .Site.Params.paginate -}}
+    {{- $pages = $.Paginate $pages . -}}
   {{- else -}}
-  {{- $pages = .Paginate $pages -}}
+    {{- $pages = .Paginate $pages -}}
   {{- end -}}
 
   {{- partial "recently-updated.html" . -}}
   {{- range $pages.PageGroups -}}
-  <h2 class="group-title">{{ .Key }}</h2>
+  <h2 class="group-title"><u>{{ .Key }} </u></h2>
   {{- range .Pages -}}
   <article class="archive-item">
     <a href="{{ .RelPermalink }}" class="archive-item-link">{{- .Title -}}</a>

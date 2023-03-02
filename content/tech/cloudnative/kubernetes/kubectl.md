@@ -1,6 +1,7 @@
 ---
 title: "kubectl command"
 date: 2023-03-01T17:03:10+08:00
+layout: cloudnative
 tags:
 - kubernetes
 - k8s
@@ -10,7 +11,7 @@ categories:
 catalog: 云原生
 ---
 
-### kubectl指令
+## kubectl指令
 
 帮助
 
@@ -94,8 +95,6 @@ kubectl config view
 ```
 kubectl get pods [pod名称] -o jsonpath={.spec.initContainers[*].name} -n [namespace]
 ```
-
-
 
 
 

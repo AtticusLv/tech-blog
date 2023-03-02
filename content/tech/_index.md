@@ -1,8 +1,8 @@
 ---
-title: "文章归档"
+title: "技术文章归档"
 layout: tech
 hidden: true
-type: tech
+# type: tech
 summary: 技术文档按照catalog归类
 url: /tech/
 ---
