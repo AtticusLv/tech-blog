@@ -184,3 +184,4 @@ chmod 755 deploy.sh
 - [ ] 搜索功能
 - [ ] 代码块行数和复制功能
 - [ ] tech下catalog跳转
+- [ ] tech下catalog分页，列表过多展示问题

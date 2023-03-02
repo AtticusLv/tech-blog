@@ -1,5 +1,5 @@
 # title = "Atticus Site"
-baseURL = "http://nuoyang.tech"
+baseURL = "https://nuoyang.tech"
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
 # language code ["en", "zh-cn", "fr", "pl", ...]
@@ -856,3 +856,6 @@ hasCJKLanguage = true
     endLevel = 4
     ordered = false
     startLevel = 1
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
