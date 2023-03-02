@@ -191,7 +191,7 @@ hasCJKLanguage = true
     # FixIt 0.2.0 | NEW whether to show the author
     author = true
     # Site creation year
-    since = "2023"
+    since = "2018"
     # FixIt 0.2.14 | NEW whether to show total word count of site content
     wordCount = true
     # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
