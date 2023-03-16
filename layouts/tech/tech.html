@@ -52,7 +52,7 @@
         <h3 class="card-item-title">
           {{ dict "Class" "fa-regular fa-folder fa-fw" | partial "plugin/icon.html" }}
           <a href='{{ partial "function/escapeurl.html" .Key }}'>{{ .Key }}</a>
-          &nbsp;<sup>{{- len .Pages -}}</sup>
+          &nbsp;<sup>{{- len (where (where .Pages "Type" "tech") "Params.hidden" "!=" true) -}}</sup>
         </h3>
         {{- range first 5 .Pages -}}
         <article class="archive-item">
