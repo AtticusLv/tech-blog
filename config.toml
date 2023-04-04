@@ -442,6 +442,8 @@ hasCJKLanguage = true
       # KaTeX extension mhchem
       mhchem = true
     # FixIt 0.2.0 | NEW Code config
+    [params.copycode]
+      enable = true
     [params.page.code]
       # whether to show the copy button of the code block
       copy = true
