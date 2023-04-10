@@ -61,6 +61,12 @@ kubectl get services
 kubectl get deployments
 ```
 
+查看namespace
+
+```
+kubectl get namespacs
+```
+
 查看详细信息 (后面加-o wide)
 
 ```
@@ -95,6 +101,28 @@ kubectl config view
 ```
 kubectl get pods [pod名称] -o jsonpath={.spec.initContainers[*].name} -n [namespace]
 ```
+
+创建namespace
+
+```
+kubectl create namespace [namespace]
+```
+
+切换namespace
+
+```
+kubectl config set-context --current --namespace=[namespace-name]
+```
+
+查看当前配置or当前namespace
+
+```
+kubectl config view --minify
+```
+
+
+
+
 
 
 
