@@ -296,7 +296,7 @@ docker pull grafana/grafana
 可以先提前运行下grafana，然后将grafana配置copy出来
 
 ```
-docker cp <container_id>:/usr/share/grafana $PWD
+docker cp <container_id>:/usr/share/grafana $PWD/grafana
 ```
 
 这样可以对grafana基础配置做修改，因为后面会将grafana页面嵌入到自己的项目中，所以需要对default.ini配置进行修改
