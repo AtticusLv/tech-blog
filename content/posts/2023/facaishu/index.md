@@ -11,7 +11,7 @@ description:
 keywords:
 license:
 comment: false
-weight: 0
+weight: 100
 tags:
   - 发财树
 categories:
@@ -29,9 +29,6 @@ math: false
 lightgallery: false
 password:
 message:
-repost:
-  enable: true
-  url:
 
 ---
 
