@@ -1,4 +1,4 @@
-title = "Atticus Site"
+title = "大倬个人技术博客"
 baseURL = "https://nuoyang.tech"
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "zh-cn"
@@ -106,7 +106,7 @@ hasCJKLanguage = true
   # FixIt 0.2.0 | NEW App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "Atticus Site"
+    title = "大倬"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
@@ -164,7 +164,7 @@ hasCJKLanguage = true
       # URL of the LOGO
       logo = ""
       # title name
-      name = "Atticus Site"
+      name = "大倬"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -261,7 +261,7 @@ hasCJKLanguage = true
       # FixIt 0.2.17 | NEW identifier of avatar menu link
       avatarMenu = "posts"
       # FixIt 0.2.7 | CHANGED title shown in home page (HTML format is supported)
-      title = "Atticus Lv"
+      title = "个人博客"
       # subtitle shown in home page
       subtitle = "此心安处是吾乡"
       # whether to use typeit animation for subtitle
@@ -836,7 +836,7 @@ hasCJKLanguage = true
       type = "vConsole"
 # 作者配置
 [author]
-  name = "Atticus Lv"
+  name = "大倬"
   email = ""
   link = ""
   avatar = "" # FixIt 0.2.18 | 新增
