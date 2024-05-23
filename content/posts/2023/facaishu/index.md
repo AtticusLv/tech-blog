@@ -11,7 +11,6 @@ description:
 keywords:
 license:
 comment: false
-weight: 100
 tags:
   - 发财树
 categories:

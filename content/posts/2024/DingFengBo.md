@@ -12,9 +12,9 @@ description:
 keywords:
 license:
 comment: false
-weight: 0
 tags:
   - 苏轼
+  - 定风波
 categories:
   - 生活
 hiddenFromHomePage: false
@@ -23,9 +23,6 @@ summary:
 toc: true
 math: false
 lightgallery: false
-repost:
-  enable: true
-  url:
 
 # See details front matter: https://fixit.lruihao.cn/documentation/content/#front-matter
 ---
