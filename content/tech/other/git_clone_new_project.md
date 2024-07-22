@@ -1,7 +1,8 @@
 ---
 title: "git迁移项目到新的地址"
 date: 2024-07-22T15:27:01+08:00
-tags: git
+tags: 
+- git
 categories:
 - 技术
 # 技术文档分类：架构/云原生/Linux/其他
