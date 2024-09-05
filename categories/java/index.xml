@@ -1,1 +1,34 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Java - 分类 - 大卓大卓卓个人技术博客</title><link>https://nuoyang.tech/categories/java/</link><description>Java - 分类 - 大卓大卓卓个人技术博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 19 Jun 2022 15:27:03 +0800</lastBuildDate><atom:link href="https://nuoyang.tech/categories/java/" rel="self" type="application/rss+xml"/><item><title>Java Reactive Programming</title><link>https://nuoyang.tech/tech/other/java_reactive_programming/</link><pubDate>Sun, 19 Jun 2022 15:27:03 +0800</pubDate><author>大卓大卓卓</author><guid>https://nuoyang.tech/tech/other/java_reactive_programming/</guid><description>Framework Project Reactor reactor-netty ORM(databse related) r2dbc r2dbc-mysql r2dbc-postgresql Web Spring Webflux Message reactor-kafka Tutorials Spring Data Reactive Repositories with MongoDB</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java - 分类 - 大卓大卓卓个人技术博客</title><link>https://nuoyang.tech/categories/java/</link><description>大卓大卓卓个人技术博客</description><generator>Hugo 0.134.0 &amp; FixIt v0.3.11</generator><language>zh-cn</language><managingEditor>lvatticus@gmail.com (大卓)</managingEditor><webMaster>lvatticus@gmail.com (大卓)</webMaster><lastBuildDate>Thu, 16 Mar 2023 15:28:48 +0800</lastBuildDate><atom:link href="https://nuoyang.tech/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Java Reactive Programming</title><link>https://nuoyang.tech/tech/other/java_reactive_programming/</link><pubDate>Sun, 19 Jun 2022 15:27:03 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/java_reactive_programming/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><category domain="https://nuoyang.tech/categories/java/">Java</category><description>&lt;ul>
+&lt;li>Framework
+&lt;ul>
+&lt;li>&lt;a href="https://projectreactor.io/"target="_blank" rel="external nofollow noopener noreferrer">Project Reactor&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/reactor/reactor-netty"target="_blank" rel="external nofollow noopener noreferrer">reactor-netty&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ORM(databse related)
+&lt;ul>
+&lt;li>&lt;a href="https://r2dbc.io/"target="_blank" rel="external nofollow noopener noreferrer">r2dbc&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/mirromutth/r2dbc-mysql"target="_blank" rel="external nofollow noopener noreferrer">r2dbc-mysql&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/pgjdbc/r2dbc-postgresql"target="_blank" rel="external nofollow noopener noreferrer">r2dbc-postgresql&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Web
+&lt;ul>
+&lt;li>&lt;a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html"target="_blank" rel="external nofollow noopener noreferrer">Spring Webflux&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Message
+&lt;ul>
+&lt;li>&lt;a href="https://projectreactor.io/docs/kafka/release/reference/"target="_blank" rel="external nofollow noopener noreferrer">reactor-kafka&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tutorials
+&lt;ul>
+&lt;li>&lt;a href="https://www.baeldung.com/spring-data-mongodb-reactive"target="_blank" rel="external nofollow noopener noreferrer">Spring Data Reactive Repositories with MongoDB&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

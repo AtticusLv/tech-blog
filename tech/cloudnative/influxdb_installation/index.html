@@ -1,207 +1,408 @@
-<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>使用InfluxDB、Telegraf和Grafana采集和展示时序数据</title><meta name=author content="大卓大卓卓">
-<meta name=author-link content><meta name=description content="参考 https://zhuanlan.zhihu.com/p/444649783 安装InfluxDB和Telegraf 1. 获取InfluxDB和telegraf image docker pull influxdb docker pull telegraf 2. 运行InfluxDB 在运行InfluxD"><meta name=keywords content='InfluxDB,Telegraf,Docker,Grafana'><meta itemprop=name content="使用InfluxDB、Telegraf和Grafana采集和展示时序数据"><meta itemprop=description content="参考 https://zhuanlan.zhihu.com/p/444649783 安装InfluxDB和Telegraf 1. 获取InfluxDB和telegraf image docker pull influxdb docker pull telegraf 2. 运行InfluxDB 在运行InfluxD"><meta itemprop=datePublished content="2023-05-17T14:10:25+08:00"><meta itemprop=dateModified content="2023-05-17T14:10:25+08:00"><meta itemprop=wordCount content="1984"><meta itemprop=keywords content="InfluxDB,Telegraf,Docker,Grafana"><meta property="og:url" content="https://nuoyang.tech/tech/cloudnative/influxdb_installation/"><meta property="og:site_name" content="大卓大卓卓个人技术博客"><meta property="og:title" content="使用InfluxDB、Telegraf和Grafana采集和展示时序数据"><meta property="og:description" content="参考 https://zhuanlan.zhihu.com/p/444649783 安装InfluxDB和Telegraf 1. 获取InfluxDB和telegraf image docker pull influxdb docker pull telegraf 2. 运行InfluxDB 在运行InfluxD"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="tech"><meta property="article:published_time" content="2023-05-17T14:10:25+08:00"><meta property="article:modified_time" content="2023-05-17T14:10:25+08:00"><meta property="article:tag" content="InfluxDB"><meta property="article:tag" content="Telegraf"><meta property="article:tag" content="Docker"><meta property="article:tag" content="Grafana"><meta name=twitter:card content="summary"><meta name=twitter:title content="使用InfluxDB、Telegraf和Grafana采集和展示时序数据"><meta name=twitter:description content="参考 https://zhuanlan.zhihu.com/p/444649783 安装InfluxDB和Telegraf 1. 获取InfluxDB和telegraf image docker pull influxdb docker pull telegraf 2. 运行InfluxDB 在运行InfluxD"><meta name=application-name content="大卓大卓卓"><meta name=apple-mobile-web-app-title content="大卓大卓卓"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://nuoyang.tech/tech/cloudnative/influxdb_installation/><link rel=prev href=https://nuoyang.tech/tech/cloudnative/envoy/><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"使用InfluxDB、Telegraf和Grafana采集和展示时序数据","inLanguage":"zh-cn","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/nuoyang.tech\/tech\/cloudnative\/influxdb_installation\/"},"genre":"tech","keywords":"InfluxDB, Telegraf, Docker, Grafana","wordcount":1984,"url":"https:\/\/nuoyang.tech\/tech\/cloudnative\/influxdb_installation\/","datePublished":"2023-05-17T14:10:25+08:00","dateModified":"2023-05-17T14:10:25+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"大卓大卓卓"},"description":""}</script></head><body data-header-desktop=sticky data-header-mobile=auto><script>(window.localStorage?.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("data-theme","dark")</script><div class=wrapper><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=大卓大卓卓个人技术博客><span id=typeit-header-desktop class=typeit></span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class=menu-item><a class=menu-link href=/posts/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 博客</a></li><li class="menu-item active has-children"><a class=menu-link href=/tech/><i class="fa-solid fa-book fa-fw fa-sm" aria-hidden=true></i> 技术文档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden=true></i><ul class=sub-menu><li class="menu-item active"><a class=menu-link href=/tech/%E4%BA%91%E5%8E%9F%E7%94%9F/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 云原生</a></li><li class=menu-item><a class=menu-link href=/tech/%E6%9E%B6%E6%9E%84/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 架构目录</a></li><li class=menu-item><a class=menu-link href=/tech/%E5%85%B6%E4%BB%96/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 其他</a></li></ul></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容…… id=search-input-desktop>
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>使用InfluxDB、Telegraf和Grafana采集和展示时序数据 - 大卓大卓卓个人技术博客</title><meta name=author content="大卓">
+<meta name=description content="参考
+https://zhuanlan.zhihu.com/p/444649783
+安装InfluxDB和Telegraf
+  
+    "><meta name=keywords content='InfluxDB,Telegraf,Docker,Grafana'><meta itemprop=name content="使用InfluxDB、Telegraf和Grafana采集和展示时序数据"><meta itemprop=description content="参考
+https://zhuanlan.zhihu.com/p/444649783
+安装InfluxDB和Telegraf "><meta itemprop=datePublished content="2023-05-17T14:10:25+08:00"><meta itemprop=dateModified content="2023-05-19T17:04:22+08:00"><meta itemprop=wordCount content="2177"><meta itemprop=keywords content="InfluxDB,Telegraf,Docker,Grafana"><meta property="og:url" content="https://nuoyang.tech/tech/cloudnative/influxdb_installation/"><meta property="og:site_name" content="大卓大卓卓个人技术博客"><meta property="og:title" content="使用InfluxDB、Telegraf和Grafana采集和展示时序数据"><meta property="og:description" content="参考
+https://zhuanlan.zhihu.com/p/444649783
+安装InfluxDB和Telegraf "><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="tech"><meta property="article:published_time" content="2023-05-17T14:10:25+08:00"><meta property="article:modified_time" content="2023-05-19T17:04:22+08:00"><meta property="article:tag" content="InfluxDB"><meta property="article:tag" content="Telegraf"><meta property="article:tag" content="Docker"><meta property="article:tag" content="Grafana"><meta name=twitter:card content="summary"><meta name=twitter:title content="使用InfluxDB、Telegraf和Grafana采集和展示时序数据"><meta name=twitter:description content="参考
+https://zhuanlan.zhihu.com/p/444649783
+安装InfluxDB和Telegraf "><meta name=application-name content="大卓大卓卓"><meta name=apple-mobile-web-app-title content="大卓大卓卓"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical type=text/html href=https://nuoyang.tech/tech/cloudnative/influxdb_installation/ title="使用InfluxDB、Telegraf和Grafana采集和展示时序数据 - 大卓大卓卓个人技术博客"><link rel=prev type=text/html href=https://nuoyang.tech/tech/other/git_migrate_existed_repository/ title=git迁移已有仓库到新仓库><link rel=next type=text/html href=https://nuoyang.tech/tech/other/eureka_not_register_local_test/ title=本地测试不注册Eureka><link rel=alternate type=text/markdown href=https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.md title="使用InfluxDB、Telegraf和Grafana采集和展示时序数据 - 大卓大卓卓个人技术博客"><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"使用InfluxDB、Telegraf和Grafana采集和展示时序数据","inLanguage":"zh-cn","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/nuoyang.tech\/tech\/cloudnative\/influxdb_installation\/"},"genre":"tech","keywords":"InfluxDB, Telegraf, Docker, Grafana","wordcount":2177,"url":"https:\/\/nuoyang.tech\/tech\/cloudnative\/influxdb_installation\/","datePublished":"2023-05-17T14:10:25+08:00","dateModified":"2023-05-19T17:04:22+08:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"大卓"},"description":""}</script></head><body data-header-desktop=sticky data-header-mobile=auto><script>(window.localStorage?.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("data-theme","dark")</script><div class=wrapper data-page-style=normal><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=大卓大卓卓个人技术博客><span class=typeit><template>大卓大卓卓</template></span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class=menu-item><a class=menu-link href=/posts/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 博客</a></li><li class="menu-item active has-children"><a class=menu-link href=/tech/><i class="fa-solid fa-book fa-fw fa-sm" aria-hidden=true></i> 技术文档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden=true></i><ul class=sub-menu><li class=menu-item><a class=menu-link href=/tech/%E6%9E%B6%E6%9E%84/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 架构</a></li><li class="menu-item active"><a class=menu-link href=/tech/%E4%BA%91%E5%8E%9F%E7%94%9F/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 云原生</a></li><li class=menu-item><a class=menu-link href=/tech/%E5%85%B6%E4%BB%96/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 其他</a></li></ul></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容…… id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
 </a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
-</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=大卓大卓卓个人技术博客><span id=typeit-header-title-mobile class=typeit></span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容…… id=search-input-mobile>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=大卓大卓卓个人技术博客><span class=typeit><template>大卓大卓卓</template></span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容…… id=search-input-mobile>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
 </a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
 </a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></li><li class=menu-item><a class=menu-link href=/posts/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 博客</a></li><li class="menu-item active"><span class=nested-item><a class=menu-link href=/tech/><i class="fa-solid fa-book fa-fw fa-sm" aria-hidden=true></i> 技术文档</a>
-<i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden=true></i></span><ul class=sub-menu><li class="menu-item active"><a class=menu-link href=/tech/%E4%BA%91%E5%8E%9F%E7%94%9F/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 云原生</a></li><li class=menu-item><a class=menu-link href=/tech/%E6%9E%B6%E6%9E%84/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 架构目录</a></li><li class=menu-item><a class=menu-link href=/tech/%E5%85%B6%E4%BB%96/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 其他</a></li></ul></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=container data-page-style=normal><aside class=toc id=toc-auto><h2 class=toc-title>目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside><aside class=aside-custom></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>使用InfluxDB、Telegraf和Grafana采集和展示时序数据</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><span class=author><i class="fa-solid fa-user-circle" aria-hidden=true></i>
-大卓大卓卓</span></span>
-<span class=post-category>收录于 <a href=/categories/%E6%8A%80%E6%9C%AF/><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> 技术</a></span></div><div class=post-meta-line><span title="2023-05-17 14:10:25"><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-05-17>2023-05-17</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden=true></i> 约 1984 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden=true></i> 预计阅读 4 分钟</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#安装influxdb和telegraf>安装InfluxDB和Telegraf</a><ul><li><a href=#1-获取influxdb和telegraf-image>1. 获取InfluxDB和telegraf image</a></li><li><a href=#2-运行influxdb>2. 运行InfluxDB</a></li><li><a href=#3-运行telegraf>3. 运行telegraf</a></li><li><a href=#4-打开influxdb>4. 打开InfluxDB</a></li><li><a href=#5-配置telegraf>5. 配置telegraf</a></li></ul></li><li><a href=#安装grafana打通influxdb>安装Grafana打通InfluxDB</a><ul><li><a href=#1-拉取grafana镜像>1. 拉取grafana镜像</a></li><li><a href=#2-运行grafana容器绑定host-volume>2. 运行grafana容器，绑定host volume</a></li><li><a href=#3-创建influxdb数据源>3. 创建InfluxDB数据源</a></li><li><a href=#4-配置grafana仪表盘>4. 配置grafana仪表盘</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><blockquote><p>参考</p><p><a href=https://zhuanlan.zhihu.com/p/444649783 target=_blank rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/444649783</a></p></blockquote><h2 id=安装influxdb和telegraf>安装InfluxDB和Telegraf</h2><h3 id=1-获取influxdb和telegraf-image>1. 获取InfluxDB和telegraf image</h3><pre tabindex=0><code>docker pull influxdb
-</code></pre><pre tabindex=0><code>docker pull telegraf
-</code></pre><h3 id=2-运行influxdb>2. 运行InfluxDB</h3><p>在运行InfluxDB之前，先在本地创建一个目录，方便去备份InfluxDB的存储</p><pre tabindex=0><code>docker run -d --name influxdb -p 8086:8086 --volume $PWD:/root/.influxdbv2 influxdb
-</code></pre><p>通过$PWD命令绑定host宿主机目录</p><h3 id=3-运行telegraf>3. 运行telegraf</h3><p>直接运行telegraf会提示缺少config，可以先运行起来，后面创建了telegraf配置再配置telegraf.config文件</p><pre tabindex=0><code>docker run -d --name=telegraf -P telegraf
-</code></pre><p>报错信息如下</p><pre tabindex=0><code>2023-05-17T05:59:52Z I! Loading config: /etc/telegraf/telegraf.conf
-2023-05-17T05:59:52Z E! [telegraf] Error running agent: no outputs found, did you provide a valid config file?
-</code></pre><h3 id=4-打开influxdb>4. 打开InfluxDB</h3><p>访问 <a href=http://localhost:8086 target=_blank rel="external nofollow noopener noreferrer">http://localhost:8086</a></p><p><img loading=lazy src=index.assets/image-20230518135938194.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png, index.assets/image-20230518135938194.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png 2x" sizes=auto data-title=image-20230518135938194 data-alt=image-20230518135938194 width=3252 height=1682 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>第一次登录的时候会提示配置用户名、密码、组织等信息，并且会生成一个api token</p><h3 id=5-配置telegraf>5. 配置telegraf</h3><p>可以在宿主机上创建telegraf目录，将telegraf.conf配置文件绑定到容器指定volume上，容器上目录地址</p><pre tabindex=0><code>/etc/telegraf
-</code></pre><p>telegraf.conf配置可以从influxdb的telegraf页面中获取到，也可以自己增加，下面是个配置参考，需要将url和token换成实际influxdb的值</p><pre tabindex=0><code># Configuration for telegraf agent
-[agent]
-  ## Default data collection interval for all inputs
-  interval = &#34;1s&#34;
-  ## Rounds collection interval to &#39;interval&#39;
-  ## ie, if interval=&#34;10s&#34; then always collect on :00, :10, :20, etc.
-  round_interval = true
-
-  ## Telegraf will send metrics to outputs in batches of at most
-  ## metric_batch_size metrics.
-  ## This controls the size of writes that Telegraf sends to output plugins.
-  metric_batch_size = 1000
-
-  ## Maximum number of unwritten metrics per output.  Increasing this value
-  ## allows for longer periods of output downtime without dropping metrics at the
-  ## cost of higher maximum memory usage.
-  metric_buffer_limit = 10000
-
-  ## Collection jitter is used to jitter the collection by a random amount.
-  ## Each plugin will sleep for a random time within jitter before collecting.
-  ## This can be used to avoid many plugins querying things like sysfs at the
-  ## same time, which can have a measurable effect on the system.
-  collection_jitter = &#34;0s&#34;
-
-  ## Default flushing interval for all outputs. Maximum flush_interval will be
-  ## flush_interval + flush_jitter
-  flush_interval = &#34;10s&#34;
-  ## Jitter the flush interval by a random amount. This is primarily to avoid
-  ## large write spikes for users running a large number of telegraf instances.
-  ## ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s
-  flush_jitter = &#34;0s&#34;
-
-  ## By default or when set to &#34;0s&#34;, precision will be set to the same
-  ## timestamp order as the collection interval, with the maximum being 1s.
-  ##   ie, when interval = &#34;10s&#34;, precision will be &#34;1s&#34;
-  ##       when interval = &#34;250ms&#34;, precision will be &#34;1ms&#34;
-  ## Precision will NOT be used for service inputs. It is up to each individual
-  ## service input to set the timestamp at the appropriate precision.
-  ## Valid time units are &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;, &#34;s&#34;.
-  precision = &#34;&#34;
-
-  ## Log at debug level.
-  # debug = false
-  ## Log only error level messages.
-  # quiet = false
-
-  ## Log target controls the destination for logs and can be one of &#34;file&#34;,
-  ## &#34;stderr&#34; or, on Windows, &#34;eventlog&#34;.  When set to &#34;file&#34;, the output file
-  ## is determined by the &#34;logfile&#34; setting.
-  # logtarget = &#34;file&#34;
-
-  ## Name of the file to be logged to when using the &#34;file&#34; logtarget.  If set to
-  ## the empty string then logs are written to stderr.
-  # logfile = &#34;&#34;
-
-  ## The logfile will be rotated after the time interval specified.  When set
-  ## to 0 no time based rotation is performed.  Logs are rotated only when
-  ## written to, if there is no log activity rotation may be delayed.
-  # logfile_rotation_interval = &#34;0d&#34;
-
-  ## The logfile will be rotated when it becomes larger than the specified
-  ## size.  When set to 0 no size based rotation is performed.
-  # logfile_rotation_max_size = &#34;0MB&#34;
-
-  ## Maximum number of rotated archives to keep, any older logs are deleted.
-  ## If set to -1, no archives are removed.
-  # logfile_rotation_max_archives = 5
-
-  ## Pick a timezone to use when logging or type &#39;local&#39; for local time.
-  ## Example: America/Chicago
-  # log_with_timezone = &#34;&#34;
-
-  ## Override default hostname, if empty use os.Hostname()
-  hostname = &#34;&#34;
-  ## If set to true, do no set the &#34;host&#34; tag in the telegraf agent.
-  omit_hostname = false
-[[outputs.influxdb_v2]]
-  ## The URLs of the InfluxDB cluster nodes.
-  ##
-  ## Multiple URLs can be specified for a single cluster, only ONE of the
-  ## urls will be written to each interval.
-  ##   ex: urls = [&#34;https://us-west-2-1.aws.cloud2.influxdata.com&#34;]
-  urls = [&#34;http://localhost:8086&#34;]
-
-  ## Token for authentication.
-  token = &#34;$INFLUX_TOKEN&#34;
-
-  ## Organization is the name of the organization you wish to write to; must exist.
-  organization = &#34;org&#34;
-
-  ## Destination bucket to write into.
-  bucket = &#34;test&#34;
-
-  ## The value of this tag will be used to determine the bucket.  If this
-  ## tag is not set the &#39;bucket&#39; option is used as the default.
-  # bucket_tag = &#34;&#34;
-
-  ## If true, the bucket tag will not be added to the metric.
-  # exclude_bucket_tag = false
-
-  ## Timeout for HTTP messages.
-  # timeout = &#34;5s&#34;
-
-  ## Additional HTTP headers
-  # http_headers = {&#34;X-Special-Header&#34; = &#34;Special-Value&#34;}
-
-  ## HTTP Proxy override, if unset values the standard proxy environment
-  ## variables are consulted to determine which proxy, if any, should be used.
-  # http_proxy = &#34;http://corporate.proxy:3128&#34;
-
-  ## HTTP User-Agent
-  # user_agent = &#34;telegraf&#34;
-
-  ## Content-Encoding for write request body, can be set to &#34;gzip&#34; to
-  ## compress body or &#34;identity&#34; to apply no encoding.
-  # content_encoding = &#34;gzip&#34;
-
-  ## Enable or disable uint support for writing uints influxdb 2.0.
-  # influx_uint_support = false
-
-  ## Optional TLS Config for use on HTTP connections.
-  # tls_ca = &#34;/etc/telegraf/ca.pem&#34;
-  # tls_cert = &#34;/etc/telegraf/cert.pem&#34;
-  # tls_key = &#34;/etc/telegraf/key.pem&#34;
-  ## Use TLS but skip chain &amp; host verification
-  # insecure_skip_verify = false
-# Read metrics about cpu usage
-[[inputs.cpu]]
-  ## Whether to report per-cpu stats or not
-  percpu = true
-  ## Whether to report total system cpu stats or not
-  totalcpu = true
-  ## If true, collect raw CPU time metrics
-  collect_cpu_time = false
-  ## If true, compute and report the sum of all non-idle CPU states
-  report_active = false
-  ## If true and the info is available then add core_id and physical_id tags
-  core_tags = false
-# Generate metrics for test and demonstration purposes
-[[inputs.mock]]
-  ## Set the metric name to use for reporting
-  metric_name = &#34;mock&#34;
-
-  ## Optional string key-value pairs of tags to add to all metrics
-  [inputs.mock.tags]
-  &#34;key&#34; = &#34;mock_tag&#34;
-
-  ## One or more mock data fields *must* be defined.
-  ##
-  [[inputs.mock.constant]]
-    name = &#34;constant&#34;
-    value = 10
-  [[inputs.mock.random]]
-    name = &#34;rand&#34;
-    min = 1.0
-    max = 6.0
-  ## [[inputs.mock.sine_wave]]
-  ##   name = &#34;wave&#34;
-  ##   amplitude = 1.0
-  ##   period = 0.5
-  ## [[inputs.mock.step]]
-  ##   name = &#34;plus_one&#34;
-  ##   start = 0.0
-  ##   step = 1.0
-  ## [[inputs.mock.stock]]
-  ##   name = &#34;abc&#34;
-  ##   price = 50.00
-  ##   volatility = 0.2
-# Read metrics about system load &amp; uptime
-[[inputs.system]]
-  # no configuration
-# Monitor wifi signal strength and quality
-[[inputs.wireless]]
-  ## Sets &#39;proc&#39; directory path
-  ## If not specified, then default is /proc
-  # host_proc = &#34;/proc&#34;
-</code></pre><p>这里我们安装了一个Mock插件来产生一些</p><p>InfluxDB中telegraf页面也会提供一些配置引导</p><p><img loading=lazy src=index.assets/image-20230519103141173.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png, index.assets/image-20230519103141173.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png 2x" sizes=auto data-title=image-20230519103141173 data-alt=image-20230519103141173 width=3276 height=1780 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>运行telegraf</p><pre tabindex=0><code>docker run -d --name telegraf -P --volume $PWD:/etc/telegraf telegraf
-</code></pre><h2 id=安装grafana打通influxdb>安装Grafana打通InfluxDB</h2><p>InfluxDB提供了Dashboard，我们也可以通过Grafana面板连通InfluxDB数据源</p><h3 id=1-拉取grafana镜像>1. 拉取grafana镜像</h3><pre tabindex=0><code>docker pull grafana/grafana
-</code></pre><h3 id=2-运行grafana容器绑定host-volume>2. 运行grafana容器，绑定host volume</h3><p>可以先提前运行下grafana，然后将grafana配置copy出来</p><pre tabindex=0><code>docker cp &lt;container_id&gt;:/usr/share/grafana $PWD/grafana
-</code></pre><p>这样可以对grafana基础配置做修改，因为后面会将grafana页面嵌入到自己的项目中，所以需要对default.ini配置进行修改</p><pre tabindex=0><code># set to true if you want to allow browsers to render Grafana in a &lt;frame&gt;, &lt;iframe&gt;, &lt;embed&gt; or &lt;object&gt;. default is false.
-allow_embedding = true
-</code></pre><p>允许匿名访问</p><pre tabindex=0><code>#################################### Anonymous Auth ######################
-[auth.anonymous]
-# enable anonymous access
-enabled = true
-</code></pre><p>运行grafana容器</p><pre tabindex=0><code>docker run -d --name grafana -p 3000:3000 --volume $PWD/grafana:/usr/share/grafana grafana/grafana
-</code></pre><p>这样就看到了grafana登录页面了 http://localhost:3000</p><p><img loading=lazy src=index.assets/image-20230519135734686.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png, index.assets/image-20230519135734686.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png 2x" sizes=auto data-title=image-20230519135734686 data-alt=image-20230519135734686 width=3296 height=1906 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>初始用户名和密码都是admin</p><h3 id=3-创建influxdb数据源>3. 创建InfluxDB数据源</h3><p>打开数据源地址 http://localhost:3000/connections/connect-data</p><p>选择influxdb数据源</p><p><img loading=lazy src=index.assets/image-20230519135927128.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png, index.assets/image-20230519135927128.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png 2x" sizes=auto data-title=image-20230519135927128 data-alt=image-20230519135927128 width=1590 height=748 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>选择Flux查询语言，地址选择InfluxDB的container地址，也可以通过内网dns固定一个地址</p><p><img loading=lazy src=index.assets/image-20230519141434073.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png, index.assets/image-20230519141434073.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png 2x" sizes=auto data-title=image-20230519141434073 data-alt=image-20230519141434073 width=1722 height=1224 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>因为用的influxdb2.0，所以认证方式采用token方式</p><p><img loading=lazy src=index.assets/image-20230519141401432.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png, index.assets/image-20230519141401432.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png 2x" sizes=auto data-title=image-20230519141401432 data-alt=image-20230519141401432 width=1960 height=1640 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><h3 id=4-配置grafana仪表盘>4. 配置grafana仪表盘</h3><p><img loading=lazy src=index.assets/image-20230519142754953.png srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png, index.assets/image-20230519142754953.png 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png 2x" sizes=auto data-title=image-20230519142754953 data-alt=image-20230519142754953 width=3302 height=1370 style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="更新于 2023-05-17 14:10:25">更新于 2023-05-17&nbsp;</span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/influxdb/ class=post-tag>InfluxDB</a><a href=/tags/telegraf/ class=post-tag>Telegraf</a><a href=/tags/docker/ class=post-tag>Docker</a><a href=/tags/grafana/ class=post-tag>Grafana</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/tech/cloudnative/envoy/ class=post-nav-item rel=prev title=Envoy资料><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i>Envoy资料</a></div></div></article></main><footer class=footer><div class=footer-container><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden=true></i></span><ul class=sub-menu><li class=menu-item><a class=menu-link href=/tech/%E6%9E%B6%E6%9E%84/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 架构</a></li><li class="menu-item active"><a class=menu-link href=/tech/%E4%BA%91%E5%8E%9F%E7%94%9F/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 云原生</a></li><li class=menu-item><a class=menu-link href=/tech/%E5%85%B6%E4%BB%96/ title=架构文档><i class="fa-brands fa-readme fa-fw fa-sm" aria-hidden=true></i> 其他</a></li></ul></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><nav aria-label=breadcrumb class=breadcrumb-container><ol class=breadcrumb><li class=breadcrumb-item><a href=/ title=大卓大卓卓个人技术博客>主页</a></li><li class=breadcrumb-item><a href=/tech/ title=技术文章>技术文章</a></li><li class=breadcrumb-item><a href=/tech/%E4%BA%91%E5%8E%9F%E7%94%9F/ title=云原生>云原生</a></li><li class="breadcrumb-item active" aria-current=page>使用InfluxDB、Telegraf和Grafana采集和展示时序数据</li></ol></nav><main class="container container-reverse"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=合集></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>使用InfluxDB、Telegraf和Grafana采集和展示时序数据</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><span class=author><i class="fa-solid fa-user-circle" aria-hidden=true></i>
+大卓</span></span><span class=post-included-in>&nbsp;收录于 <a href=/categories/%E6%8A%80%E6%9C%AF/ class=post-category title="分类 - 技术"><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> 技术</a></span></div><div class=post-meta-line><span title="发布于 2023-05-17 14:10:25"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden=true></i><time datetime=2023-05-17>2023-05-17</time></span>&nbsp;<span title="更新于 2023-05-19 17:04:22"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden=true></i><time datetime=2023-05-19>2023-05-19</time></span>&nbsp;<span title="2177 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>约 2200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>预计阅读 5 分钟</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><ul><li><a href=#安装influxdb和telegraf>安装InfluxDB和Telegraf</a><ul><li><a href=#1-获取influxdb和telegraf-image>1. 获取InfluxDB和telegraf image</a></li><li><a href=#2-运行influxdb>2. 运行InfluxDB</a></li><li><a href=#3-运行telegraf>3. 运行telegraf</a></li><li><a href=#4-打开influxdb>4. 打开InfluxDB</a></li><li><a href=#5-配置telegraf>5. 配置telegraf</a></li></ul></li><li><a href=#安装grafana打通influxdb>安装Grafana打通InfluxDB</a><ul><li><a href=#1-拉取grafana镜像>1. 拉取grafana镜像</a></li><li><a href=#2-运行grafana容器绑定host-volume>2. 运行grafana容器，绑定host volume</a></li><li><a href=#3-创建influxdb数据源>3. 创建InfluxDB数据源</a></li><li><a href=#4-配置grafana仪表盘>4. 配置grafana仪表盘</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><blockquote><p>参考</p><p><a href=https://zhuanlan.zhihu.com/p/444649783 target=_blank rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/444649783</a></p></blockquote><h2 id=安装influxdb和telegraf class=heading-element><span>安装InfluxDB和Telegraf</span>
+<a href=#%e5%ae%89%e8%a3%85influxdb%e5%92%8ctelegraf class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><h3 id=1-获取influxdb和telegraf-image class=heading-element><span>1. 获取InfluxDB和telegraf image</span>
+<a href=#1-%e8%8e%b7%e5%8f%96influxdb%e5%92%8ctelegraf-image class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker pull influxdb</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker pull telegraf</span></span></code></pre></td></tr></table></div></div><h3 id=2-运行influxdb class=heading-element><span>2. 运行InfluxDB</span>
+<a href=#2-%e8%bf%90%e8%a1%8cinfluxdb class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p>在运行InfluxDB之前，先在本地创建一个目录，方便去备份InfluxDB的存储</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker run -d --name influxdb -p 8086:8086 --volume $PWD:/root/.influxdbv2 influxdb</span></span></code></pre></td></tr></table></div></div><p>通过$PWD命令绑定host宿主机目录</p><h3 id=3-运行telegraf class=heading-element><span>3. 运行telegraf</span>
+<a href=#3-%e8%bf%90%e8%a1%8ctelegraf class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p>直接运行telegraf会提示缺少config，可以先运行起来，后面创建了telegraf配置再配置telegraf.config文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker run -d --name=telegraf -P telegraf</span></span></code></pre></td></tr></table></div></div><p>报错信息如下</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>2023-05-17T05:59:52Z I! Loading config: /etc/telegraf/telegraf.conf
+</span></span><span class=line><span class=cl>2023-05-17T05:59:52Z E! [telegraf] Error running agent: no outputs found, did you provide a valid config file?</span></span></code></pre></td></tr></table></div></div><h3 id=4-打开influxdb class=heading-element><span>4. 打开InfluxDB</span>
+<a href=#4-%e6%89%93%e5%bc%80influxdb class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p>访问 <a href=http://localhost:8086 target=_blank rel="external nofollow noopener noreferrer">http://localhost:8086</a></p><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png alt=image-20230518135938194 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png?size=large 2x" data-title=image-20230518135938194 style="--width:3252px;--aspect-ratio:3252 / 1682;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p><p>第一次登录的时候会提示配置用户名、密码、组织等信息，并且会生成一个api token</p><h3 id=5-配置telegraf class=heading-element><span>5. 配置telegraf</span>
+<a href=#5-%e9%85%8d%e7%bd%aetelegraf class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p>可以在宿主机上创建telegraf目录，将telegraf.conf配置文件绑定到容器指定volume上，容器上目录地址</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>/etc/telegraf</span></span></code></pre></td></tr></table></div></div><p>telegraf.conf配置可以从influxdb的telegraf页面中获取到，也可以自己增加，下面是个配置参考，需要将url和token换成实际influxdb的值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=c1># Configuration for telegraf agent</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=n>agent</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Default data collection interval for all inputs</span>
+</span></span><span class=line><span class=cl>  <span class=n>interval</span> <span class=o>=</span> <span class=s2>&#34;1s&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Rounds collection interval to &#39;interval&#39;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## ie, if interval=&#34;10s&#34; then always collect on :00, :10, :20, etc.</span>
+</span></span><span class=line><span class=cl>  <span class=n>round_interval</span> <span class=o>=</span> <span class=bp>true</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Telegraf will send metrics to outputs in batches of at most</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## metric_batch_size metrics.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## This controls the size of writes that Telegraf sends to output plugins.</span>
+</span></span><span class=line><span class=cl>  <span class=n>metric_batch_size</span> <span class=o>=</span> <span class=mi>1000</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Maximum number of unwritten metrics per output.  Increasing this value</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## allows for longer periods of output downtime without dropping metrics at the</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## cost of higher maximum memory usage.</span>
+</span></span><span class=line><span class=cl>  <span class=n>metric_buffer_limit</span> <span class=o>=</span> <span class=mi>10000</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Collection jitter is used to jitter the collection by a random amount.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Each plugin will sleep for a random time within jitter before collecting.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## This can be used to avoid many plugins querying things like sysfs at the</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## same time, which can have a measurable effect on the system.</span>
+</span></span><span class=line><span class=cl>  <span class=n>collection_jitter</span> <span class=o>=</span> <span class=s2>&#34;0s&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Default flushing interval for all outputs. Maximum flush_interval will be</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## flush_interval + flush_jitter</span>
+</span></span><span class=line><span class=cl>  <span class=n>flush_interval</span> <span class=o>=</span> <span class=s2>&#34;10s&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Jitter the flush interval by a random amount. This is primarily to avoid</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## large write spikes for users running a large number of telegraf instances.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s</span>
+</span></span><span class=line><span class=cl>  <span class=n>flush_jitter</span> <span class=o>=</span> <span class=s2>&#34;0s&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## By default or when set to &#34;0s&#34;, precision will be set to the same</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## timestamp order as the collection interval, with the maximum being 1s.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   ie, when interval = &#34;10s&#34;, precision will be &#34;1s&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##       when interval = &#34;250ms&#34;, precision will be &#34;1ms&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Precision will NOT be used for service inputs. It is up to each individual</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## service input to set the timestamp at the appropriate precision.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Valid time units are &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;, &#34;s&#34;.</span>
+</span></span><span class=line><span class=cl>  <span class=n>precision</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Log at debug level.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># debug = false</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Log only error level messages.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># quiet = false</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Log target controls the destination for logs and can be one of &#34;file&#34;,</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## &#34;stderr&#34; or, on Windows, &#34;eventlog&#34;.  When set to &#34;file&#34;, the output file</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## is determined by the &#34;logfile&#34; setting.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># logtarget = &#34;file&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Name of the file to be logged to when using the &#34;file&#34; logtarget.  If set to</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## the empty string then logs are written to stderr.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># logfile = &#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## The logfile will be rotated after the time interval specified.  When set</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## to 0 no time based rotation is performed.  Logs are rotated only when</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## written to, if there is no log activity rotation may be delayed.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># logfile_rotation_interval = &#34;0d&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## The logfile will be rotated when it becomes larger than the specified</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## size.  When set to 0 no size based rotation is performed.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># logfile_rotation_max_size = &#34;0MB&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Maximum number of rotated archives to keep, any older logs are deleted.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## If set to -1, no archives are removed.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># logfile_rotation_max_archives = 5</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Pick a timezone to use when logging or type &#39;local&#39; for local time.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Example: America/Chicago</span>
+</span></span><span class=line><span class=cl>  <span class=c1># log_with_timezone = &#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Override default hostname, if empty use os.Hostname()</span>
+</span></span><span class=line><span class=cl>  <span class=n>hostname</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## If set to true, do no set the &#34;host&#34; tag in the telegraf agent.</span>
+</span></span><span class=line><span class=cl>  <span class=n>omit_hostname</span> <span class=o>=</span> <span class=bp>false</span>
+</span></span><span class=line><span class=cl><span class=p>[[</span><span class=n>outputs</span><span class=o>.</span><span class=n>influxdb_v2</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## The URLs of the InfluxDB cluster nodes.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Multiple URLs can be specified for a single cluster, only ONE of the</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## urls will be written to each interval.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   ex: urls = [&#34;https://us-west-2-1.aws.cloud2.influxdata.com&#34;]</span>
+</span></span><span class=line><span class=cl>  <span class=n>urls</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;http://localhost:8086&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Token for authentication.</span>
+</span></span><span class=line><span class=cl>  <span class=n>token</span> <span class=o>=</span> <span class=s2>&#34;$INFLUX_TOKEN&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Organization is the name of the organization you wish to write to; must exist.</span>
+</span></span><span class=line><span class=cl>  <span class=n>organization</span> <span class=o>=</span> <span class=s2>&#34;org&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Destination bucket to write into.</span>
+</span></span><span class=line><span class=cl>  <span class=n>bucket</span> <span class=o>=</span> <span class=s2>&#34;test&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## The value of this tag will be used to determine the bucket.  If this</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## tag is not set the &#39;bucket&#39; option is used as the default.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># bucket_tag = &#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## If true, the bucket tag will not be added to the metric.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># exclude_bucket_tag = false</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Timeout for HTTP messages.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># timeout = &#34;5s&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Additional HTTP headers</span>
+</span></span><span class=line><span class=cl>  <span class=c1># http_headers = {&#34;X-Special-Header&#34; = &#34;Special-Value&#34;}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## HTTP Proxy override, if unset values the standard proxy environment</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## variables are consulted to determine which proxy, if any, should be used.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># http_proxy = &#34;http://corporate.proxy:3128&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## HTTP User-Agent</span>
+</span></span><span class=line><span class=cl>  <span class=c1># user_agent = &#34;telegraf&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Content-Encoding for write request body, can be set to &#34;gzip&#34; to</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## compress body or &#34;identity&#34; to apply no encoding.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># content_encoding = &#34;gzip&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Enable or disable uint support for writing uints influxdb 2.0.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># influx_uint_support = false</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Optional TLS Config for use on HTTP connections.</span>
+</span></span><span class=line><span class=cl>  <span class=c1># tls_ca = &#34;/etc/telegraf/ca.pem&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1># tls_cert = &#34;/etc/telegraf/cert.pem&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1># tls_key = &#34;/etc/telegraf/key.pem&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Use TLS but skip chain &amp; host verification</span>
+</span></span><span class=line><span class=cl>  <span class=c1># insecure_skip_verify = false</span>
+</span></span><span class=line><span class=cl><span class=c1># Read metrics about cpu usage</span>
+</span></span><span class=line><span class=cl><span class=p>[[</span><span class=n>inputs</span><span class=o>.</span><span class=n>cpu</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Whether to report per-cpu stats or not</span>
+</span></span><span class=line><span class=cl>  <span class=n>percpu</span> <span class=o>=</span> <span class=bp>true</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Whether to report total system cpu stats or not</span>
+</span></span><span class=line><span class=cl>  <span class=n>totalcpu</span> <span class=o>=</span> <span class=bp>true</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## If true, collect raw CPU time metrics</span>
+</span></span><span class=line><span class=cl>  <span class=n>collect_cpu_time</span> <span class=o>=</span> <span class=bp>false</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## If true, compute and report the sum of all non-idle CPU states</span>
+</span></span><span class=line><span class=cl>  <span class=n>report_active</span> <span class=o>=</span> <span class=bp>false</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## If true and the info is available then add core_id and physical_id tags</span>
+</span></span><span class=line><span class=cl>  <span class=n>core_tags</span> <span class=o>=</span> <span class=bp>false</span>
+</span></span><span class=line><span class=cl><span class=c1># Generate metrics for test and demonstration purposes</span>
+</span></span><span class=line><span class=cl><span class=p>[[</span><span class=n>inputs</span><span class=o>.</span><span class=n>mock</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Set the metric name to use for reporting</span>
+</span></span><span class=line><span class=cl>  <span class=n>metric_name</span> <span class=o>=</span> <span class=s2>&#34;mock&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## Optional string key-value pairs of tags to add to all metrics</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=n>inputs</span><span class=o>.</span><span class=n>mock</span><span class=o>.</span><span class=n>tags</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=s2>&#34;key&#34;</span> <span class=o>=</span> <span class=s2>&#34;mock_tag&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>## One or more mock data fields *must* be defined.</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=n>inputs</span><span class=o>.</span><span class=n>mock</span><span class=o>.</span><span class=n>constant</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=o>=</span> <span class=s2>&#34;constant&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>value</span> <span class=o>=</span> <span class=mi>10</span>
+</span></span><span class=line><span class=cl>  <span class=p>[[</span><span class=n>inputs</span><span class=o>.</span><span class=n>mock</span><span class=o>.</span><span class=n>random</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>    <span class=n>name</span> <span class=o>=</span> <span class=s2>&#34;rand&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nb>min</span> <span class=o>=</span> <span class=mf>1.0</span>
+</span></span><span class=line><span class=cl>    <span class=nb>max</span> <span class=o>=</span> <span class=mf>6.0</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## [[inputs.mock.sine_wave]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   name = &#34;wave&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   amplitude = 1.0</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   period = 0.5</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## [[inputs.mock.step]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   name = &#34;plus_one&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   start = 0.0</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   step = 1.0</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## [[inputs.mock.stock]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   name = &#34;abc&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   price = 50.00</span>
+</span></span><span class=line><span class=cl>  <span class=c1>##   volatility = 0.2</span>
+</span></span><span class=line><span class=cl><span class=c1># Read metrics about system load &amp; uptime</span>
+</span></span><span class=line><span class=cl><span class=p>[[</span><span class=n>inputs</span><span class=o>.</span><span class=n>system</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1># no configuration</span>
+</span></span><span class=line><span class=cl><span class=c1># Monitor wifi signal strength and quality</span>
+</span></span><span class=line><span class=cl><span class=p>[[</span><span class=n>inputs</span><span class=o>.</span><span class=n>wireless</span><span class=p>]]</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## Sets &#39;proc&#39; directory path</span>
+</span></span><span class=line><span class=cl>  <span class=c1>## If not specified, then default is /proc</span>
+</span></span><span class=line><span class=cl>  <span class=c1># host_proc = &#34;/proc&#34;</span></span></span></code></pre></td></tr></table></div></div><p>这里我们安装了一个Mock插件来产生一些</p><p>InfluxDB中telegraf页面也会提供一些配置引导</p><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png alt=image-20230519103141173 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png?size=large 2x" data-title=image-20230519103141173 style="--width:3276px;--aspect-ratio:3276 / 1780;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p><p>运行telegraf</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker run -d --name telegraf -P --volume $PWD:/etc/telegraf telegraf</span></span></code></pre></td></tr></table></div></div><h2 id=安装grafana打通influxdb class=heading-element><span>安装Grafana打通InfluxDB</span>
+<a href=#%e5%ae%89%e8%a3%85grafana%e6%89%93%e9%80%9ainfluxdb class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h2><p>InfluxDB提供了Dashboard，我们也可以通过Grafana面板连通InfluxDB数据源</p><h3 id=1-拉取grafana镜像 class=heading-element><span>1. 拉取grafana镜像</span>
+<a href=#1-%e6%8b%89%e5%8f%96grafana%e9%95%9c%e5%83%8f class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker pull grafana/grafana</span></span></code></pre></td></tr></table></div></div><h3 id=2-运行grafana容器绑定host-volume class=heading-element><span>2. 运行grafana容器，绑定host volume</span>
+<a href=#2-%e8%bf%90%e8%a1%8cgrafana%e5%ae%b9%e5%99%a8%e7%bb%91%e5%ae%9ahost-volume class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p>可以先提前运行下grafana，然后将grafana配置copy出来</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker cp &lt;container_id&gt;:/usr/share/grafana $PWD/grafana</span></span></code></pre></td></tr></table></div></div><p>这样可以对grafana基础配置做修改，因为后面会将grafana页面嵌入到自己的项目中，所以需要对default.ini配置进行修改</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># set to true if you want to allow browsers to render Grafana in a &lt;frame&gt;, &lt;iframe&gt;, &lt;embed&gt; or &lt;object&gt;. default is false.
+</span></span><span class=line><span class=cl>allow_embedding = true</span></span></code></pre></td></tr></table></div></div><p>允许匿名访问</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#################################### Anonymous Auth ######################
+</span></span><span class=line><span class=cl>[auth.anonymous]
+</span></span><span class=line><span class=cl># enable anonymous access
+</span></span><span class=line><span class=cl>enabled = true</span></span></code></pre></td></tr></table></div></div><p>运行grafana容器</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>docker run -d --name grafana -p 3000:3000 --volume $PWD/grafana:/usr/share/grafana grafana/grafana</span></span></code></pre></td></tr></table></div></div><p>这样就看到了grafana登录页面了 http://localhost:3000</p><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png alt=image-20230519135734686 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png?size=large 2x" data-title=image-20230519135734686 style="--width:3296px;--aspect-ratio:3296 / 1906;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p><p>初始用户名和密码都是admin</p><h3 id=3-创建influxdb数据源 class=heading-element><span>3. 创建InfluxDB数据源</span>
+<a href=#3-%e5%88%9b%e5%bb%bainfluxdb%e6%95%b0%e6%8d%ae%e6%ba%90 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p>打开数据源地址 http://localhost:3000/connections/connect-data</p><p>选择influxdb数据源</p><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png alt=image-20230519135927128 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png?size=large 2x" data-title=image-20230519135927128 style="--width:1590px;--aspect-ratio:1590 / 748;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p><p>选择Flux查询语言，地址选择InfluxDB的container地址，也可以通过内网dns固定一个地址</p><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png alt=image-20230519141434073 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png?size=large 2x" data-title=image-20230519141434073 style="--width:1722px;--aspect-ratio:1722 / 1224;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p><p>因为用的influxdb2.0，所以认证方式采用token方式</p><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png alt=image-20230519141401432 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png?size=large 2x" data-title=image-20230519141401432 style="--width:1960px;--aspect-ratio:1960 / 1640;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p><h3 id=4-配置grafana仪表盘 class=heading-element><span>4. 配置grafana仪表盘</span>
+<a href=#4-%e9%85%8d%e7%bd%aegrafana%e4%bb%aa%e8%a1%a8%e7%9b%98 class=heading-mark><svg class="octicon octicon-link" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5.0 114.95 4.95l-2.5 2.5a3.5 3.5.0 01-4.95.0.751.751.0 01.018-1.042.751.751.0 011.042-.018 1.998 1.998.0 002.83.0l2.5-2.5a2.002 2.002.0 00-2.83-2.83l-1.25 1.25a.751.751.0 01-1.042-.018.751.751.0 01-.018-1.042zm-4.69 9.64a1.998 1.998.0 002.83.0l1.25-1.25a.751.751.0 011.042.018.751.751.0 01.018 1.042l-1.25 1.25a3.5 3.5.0 11-4.95-4.95l2.5-2.5a3.5 3.5.0 014.95.0.751.751.0 01-.018 1.042.751.751.0 01-1.042.018 1.998 1.998.0 00-2.83.0l-2.5 2.5a1.998 1.998.0 000 2.83z"/></svg></a></h3><p><img loading=lazy src=/tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png alt=image-20230519142754953 srcset="/tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png?size=small, /tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png?size=medium 1.5x, /tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png?size=large 2x" data-title=image-20230519142754953 style="--width:3302px;--aspect-ratio:3302 / 1370;background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="更新于 2023-05-19 17:04:22">更新于 2023-05-19&nbsp;
+<a class=git-hash href=https://github.com/AtticusLv/tech-blog/commit/1d57a80d70181cb16e684c79f794825dc13adf07 rel="external nofollow noopener noreferrer" target=_blank title="commit by AtticusLv(lvatticus@gmail.com) 1d57a80d70181cb16e684c79f794825dc13adf07: 2023-05-19 17:04:21 adjuest"><i class="fa-solid fa-hashtag fa-fw" aria-hidden=true></i>1d57a80</a></span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>CC BY-NC-SA 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/tech/cloudnative/influxdb_installation/index.md title=阅读原始文档 class=link-to-markdown>阅读原始文档</a></span><span><a href="https://github.com/AtticusLv/tech-blog/blob/main/content/tech/cloudnative/Influxdb_installation/index.md?plain=1" title=查看源码 target=_blank rel="external nofollow noopener noreferrer" class=link-to-source>查看源码</a></span><span><a href=https://github.com/AtticusLv/tech-blog/edit/main/content/tech/cloudnative/Influxdb_installation/index.md title=编辑此页 target=_blank rel="external nofollow noopener noreferrer" class=link-to-edit>编辑此页</a></span><span><a href="https://github.com/AtticusLv/tech-blog/issues/new?title=[BUG]%20%E4%BD%BF%E7%94%A8InfluxDB%E3%80%81Telegraf%E5%92%8CGrafana%E9%87%87%E9%9B%86%E5%92%8C%E5%B1%95%E7%A4%BA%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7c%E4%BD%BF%E7%94%A8InfluxDB%E3%80%81Telegraf%E5%92%8CGrafana%E9%87%87%E9%9B%86%E5%92%8C%E5%B1%95%E7%A4%BA%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%7c%0A%7cURL%7chttps://nuoyang.tech/tech/cloudnative/influxdb_installation/%7c%0A%7cFilename%7chttps://github.com/AtticusLv/tech-blog/blob/main/content/tech/cloudnative/Influxdb_installation/index.md?plain=1%7c" title=报告问题 target=_blank rel="external nofollow noopener noreferrer" class=link-to-report>报告问题</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/influxdb/ class=post-tag title="标签 - InfluxDB">InfluxDB</a><a href=/tags/telegraf/ class=post-tag title="标签 - Telegraf">Telegraf</a><a href=/tags/docker/ class=post-tag title="标签 - Docker">Docker</a><a href=/tags/grafana/ class=post-tag title="标签 - Grafana">Grafana</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav></div></div></article><aside class=toc id=toc-auto aria-label=目录><h2 class=toc-title>目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside></main><footer class=footer><div class=footer-container><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
 <span itemprop=copyrightYear>2018 - 2024</span><span class=author itemprop=copyrightHolder>
-<a href=/>大卓大卓卓</a></span></div><div class="footer-line statistics"></div><div class="footer-line beian"><span class="icp footer-divider"><div class=beian><a href=https://beian.miit.gov.cn/ rel=noopener target=_blank>蜀ICP备2021011057号-2 </a>| <img src=https://nuoyang.tech/beian.png alt><a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002976' rel=noopener target=_blank>川公网安备51019002002976号</a></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label=回到顶部><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div></div><div id=mask></div><div class=reading-progress-bar style="left:0;top:0;width:calc(100% - var(--progress))"></div><noscript><div class=noscript-warning>FixIt 主题在启用 JavaScript 的情况下效果最佳。</div></noscript></div><link rel=stylesheet href=/lib/katex/katex.min.css><script src=/lib/autocomplete/autocomplete.min.js defer></script><script src=/lib/lunr/lunr.min.js defer></script><script src=/lib/lunr/lunr.stemmer.support.min.js defer></script><script src=/lib/lunr/lunr.zh.min.js defer></script><script src=/lib/typeit/index.umd.js defer></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script>window.config={code:{copyTitle:"复制到剪贴板",editLockTitle:"锁定可编辑代码块",editUnLockTitle:"解锁可编辑代码块",editable:!0,maxShownLines:10},comment:{enable:!1},data:{"typeit-header-desktop":"大卓大卓卓","typeit-header-title-mobile":"大卓大卓卓"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",lunrLanguageCode:"zh",lunrSegmentitURL:"/lib/lunr/lunr.segmentit.js",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:30,type:"lunr"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"typeit-header-desktop":["typeit-header-desktop"],"typeit-header-title-mobile":["typeit-header-title-mobile"]},duration:-1,loop:!1,speed:100}}</script><script src=/js/theme.min.js defer></script></body></html>
+<a href=/>大卓</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><div class=beian><a href=https://beian.miit.gov.cn/ rel=noopener target=_blank>蜀ICP备2021011057号-2 </a>| <img src=https://nuoyang.tech/beian.png alt><a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002002976' rel=noopener target=_blank>川公网安备51019002002976号</a></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label=回到顶部><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div></div><div id=mask></div><div class=reading-progress-bar style=left:0;top:0></div><noscript><div class=noscript-warning>该网站在启用 JavaScript 的情况下效果最佳。</div></noscript></div><link rel=preload href=/lib/katex/katex.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/katex/katex.min.css></noscript><link rel=stylesheet href=/lib/pace/themes/silver/pace-theme-minimal.css><script src=/lib/autocomplete/autocomplete.min.js defer></script><script src=/lib/fuse/fuse.min.js defer></script><script src=/lib/typeit/index.umd.js defer></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script src=/lib/pace/pace.min.js async defer></script><script>window.config={code:{copyTitle:"复制到剪贴板",editLockTitle:"锁定可编辑代码块",editUnLockTitle:"解锁可编辑代码块",editable:!0,maxShownLines:10},comment:{enable:!1},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/search.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:30,threshold:.3,type:"fuse",useExtendedSearch:!1},typeit:{cursorChar:"|",cursorSpeed:1e3,duration:-1,loop:!1,speed:100},version:"v0.3.11"}</script><script src=/js/theme.min.js defer></script></body></html>
