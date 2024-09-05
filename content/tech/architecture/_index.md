@@ -1,5 +1,5 @@
 ---
-title: "架构目录"
+title: "架构"
 layout: architecture
 hidden: true
 type: architecture
@@ -9,7 +9,7 @@ menu:
   main:
     title: 架构文档
     parent: tech
-    weight: 10
+    weight: 8
     params:
       icon: fa-brands fa-readme
 catalog: 架构

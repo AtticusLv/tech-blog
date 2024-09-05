@@ -16,17 +16,16 @@
     {{- /* See https://github.com/hugo-fixit/FixIt/issues/124 */ -}}
     {{- $localData := newScratch -}}
     {{- range (where .Site.Pages "Type" "tech") -}}
-    {{- $localData.Add "totalWordCount" .WordCount -}}
+      {{- $localData.Add "totalWordCount" .WordCount -}}
     {{- end -}}
     {{- with ($localData.Get "totalWordCount") -}}
-    {{- $humanizedNum := . -}}
-    {{- if ge $humanizedNum 1000 -}}
-    {{- $humanizedNum = printf "%.2fK" (div $humanizedNum 1000.0) -}}
-    {{- end -}}
-    <p class="single-subtitle total-word-count" title='{{- T "taxonomy.totalwordCount" 1 }}'>
-      {{- dict "Class" "fa-regular fa-keyboard fa-fw" | partial "plugin/icon.html" }} {{ T "taxonomy.totalwordCount"
-      (dict "Count" $humanizedNum) -}}
-    </p>
+      {{- $humanizedNum := . -}}
+      {{- if ge $humanizedNum 1000 -}}
+        {{- $humanizedNum = printf "%.2fK" (div $humanizedNum 1000.0) -}}
+      {{- end -}}
+      <p class="single-subtitle total-word-count" title='{{- T "section.totalWordCount" . }}'>
+        {{- dict "Class" "fa-regular fa-keyboard fa-fw" | partial "plugin/icon.html" }} {{ T "section.totalWordCount" (dict "Count" $humanizedNum) -}}
+      </p>
     {{- end -}}
   </div>
 

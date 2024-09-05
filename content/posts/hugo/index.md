@@ -37,6 +37,11 @@ brew install hugo
 git submodule add https://github.com/AtticusLv/FixIt themes/FixIt
 ```
 
+升级主题
+```
+git submodule update --remote --merge themes/FixIt
+```
+
 ## 本地调试
 
 ```

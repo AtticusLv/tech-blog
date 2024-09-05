@@ -4,8 +4,8 @@ date: 2023-02-27T15:15:14+08:00
 tags:
 - apt-get
 categories:
-- Linux
-catalog: Linux
+- 技术
+catalog: 其他
 ---
 
 apt-get install是应用程序管理器，用于一键安装软件包，与源码安装不同的是，该指令会自动检测并安装依赖，而且用apt-get安装的包都是成熟的软件包，基本不存在安装包有严重bug或者文件缺失的情况。

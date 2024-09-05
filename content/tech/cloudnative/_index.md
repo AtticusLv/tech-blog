@@ -12,5 +12,5 @@ menu:
     weight: 9
     params:
       icon: fa-brands fa-readme
-catalog: CloudNative
+catalog: 云原生
 ---
