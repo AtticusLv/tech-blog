@@ -2,16 +2,6 @@
 title: 定风波
 subtitle:
 date: 2024-05-23T16:27:12+08:00
-draft: false
-author:
-  name:
-  link:
-  email:
-  avatar:
-description:
-keywords:
-license:
-comment: false
 tags:
   - 苏轼
   - 定风波

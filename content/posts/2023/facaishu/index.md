@@ -2,15 +2,6 @@
 title: 发财树养殖方法
 subtitle:
 date: 2023-07-30T14:28:03+08:00
-author:
-  name:
-  link:
-  email:
-  avatar:
-description:
-keywords:
-license:
-comment: false
 tags:
   - 发财树
 categories:
