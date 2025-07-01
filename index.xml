@@ -1,794 +1,1088 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>大卓个人技术博客</title><link>https://nuoyang.tech/</link><description>大卓个人技术博客</description><generator>Hugo 0.147.9 &amp; FixIt v0.3.21-89f9373b</generator><language>zh-cn</language><managingEditor>lvatticus@gmail.com (大卓)</managingEditor><webMaster>lvatticus@gmail.com (大卓)</webMaster><lastBuildDate>Tue, 06 Aug 2024 16:21:01 +0800</lastBuildDate><atom:link href="https://nuoyang.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>C4 Model</title><link>https://nuoyang.tech/tech/architecture/c4model/</link><pubDate>Tue, 06 Aug 2024 15:49:20 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/architecture/c4model/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;h3 class="heading-element" id="概述">&lt;span>&lt;strong>概述&lt;/strong>&lt;/span>
- &lt;a href="#%e6%a6%82%e8%bf%b0" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/abstractions.png' alt="img" height="1080" width="1920">&lt;/p>
-&lt;p>C4 Model是一种架构设计的方法(划重点：&lt;strong>画图吹逼&lt;/strong>)，C4 代表上下文（Context）、容器（Container）、组件（Component）和代码（Code）——一系列分层的图表，可以用这些图表来描述不同缩放级别的软件架构，每种图表都适用于不同的受众。要为你的代码创建框架图，首先需要一组通用的抽象来创建一种无处不在的语言，用来描述软件系统的静态结构。C4 模型使用容器（应用程序、数据存储、微服务等）、组件和代码来描述一个软件系统的静态结构。同时它还考虑到使用软件系统的不同人能够理解。&lt;/p>
-&lt;p>C4非常的简单好入手，对于复杂/简单的软件系统设计都提供了一种简明、好上手、易理解的架构思路，尤其是对于快速迭代的小团队来说非常好用，没有那么多废话和繁文缛节，感兴趣同学可以去看看原文：&lt;/p>
-&lt;p>源网站：https://c4model.com/﻿&lt;/p>
-&lt;p>中文版：https://www.infoq.cn/article/C4-architecture-model/﻿&lt;/p>
-&lt;p>﻿&lt;/p>
-&lt;h3 class="heading-element" id="1系统上下文system-context">&lt;span>&lt;strong>1、系统上下文（System Context）&lt;/strong>&lt;/span>
- &lt;a href="#1%e7%b3%bb%e7%bb%9f%e4%b8%8a%e4%b8%8b%e6%96%87system-context" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/SystemContext.png' alt="img" height="1748" width="2480">﻿&lt;/p>
-&lt;p>系统上下文(System Context)是构建一个软件系统的开始，例如上面的“互联网银行系统”示例，先画一个中心思想在最终解，然后周围画上使用系统的用户和其他相关交互的系统。这里并不需要体现详细实现内容，而是展示整体软件的全貌蓝图，也可以说是把业务用例详细的展示出来。&lt;/p>
-&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/SystemContext-key.png' alt="img" height="500" width="2500">&lt;/p>
-&lt;h3 class="heading-element" id="2容器container-diagram">&lt;span>&lt;strong>2、容器（Container Diagram）&lt;/strong>&lt;/span>
- &lt;a href="#2%e5%ae%b9%e5%99%a8container-diagram" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/Containers.png' alt="img" height="1748" width="2480">&lt;/p>
-&lt;p>在完成系统上下文后，系统大概需要的功能都清楚了，接下来就是“Container”详细绘制环节了。这里的容器Container的含义不是指Kubernetes虚拟化容器那些哈，而是类似单页服务、API、数据库、三方服务等等，指能够独立部署运行的系统单元。&lt;/p>
-&lt;p>Container能够展示出大致的软件架构了，各个分布系统的组成，而且有一些技术选型在这里已经能初步看到了（比方上面的SPA、Mobile App），大致哪些会自建，哪些去直接使用现成的SaaS或PaaS服务。&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/Containers-key.png' alt="img" height="1000" width="2500">﻿&lt;/p>
-&lt;h3 class="heading-element" id="3组件component-diagram">&lt;span>&lt;strong>3、组件（Component Diagram）&lt;/strong>&lt;/span>
- &lt;a href="#3%e7%bb%84%e4%bb%b6component-diagram" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/Components.png' alt="img" height="1748" width="2480">&lt;/p>
-&lt;p>深入某一个Container的内容，Container由一个个Component构成，这里可以轻微借鉴下DDD思想，高内聚低耦合的各个组件模块设计出来，包括功能、边界、系统中所处位置（比如说简单的Controller-Service-DAO的这种分层结构）&lt;/p>
-&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/Components-key.png' alt="img" height="1000" width="2500">﻿&lt;/p>
-&lt;h3 class="heading-element" id="4代码code-diagram">&lt;span>&lt;strong>4、代码（Code Diagram）&lt;/strong>&lt;/span>
- &lt;a href="#4%e4%bb%a3%e7%a0%81code-diagram" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/class-diagram.png' alt="img" height="1748" width="2480">&lt;/p>
-&lt;p>最后，就是深入到各个Component组件中，去设计详细的代码结构了，就拿java举例，包括包、类、类关系、异常处理、字段、方法等等，这里甚至除了用PlantUML建模工具外，也可以直接用IDE来设置产出（Idea Intellij中就有很多类图插件可以直接产出）。&lt;/p>
-&lt;h3 class="heading-element" id="结束语">&lt;span>&lt;strong>结束语&lt;/strong>&lt;/span>
- &lt;a href="#%e7%bb%93%e6%9d%9f%e8%af%ad" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>C4Model网站中提供了大量的案例，而且网站给出的架构思路相对比较严谨，对于初学者还有多年开发者学习和思考上非常有帮助，希望能在大家工作中帮助到大家。&lt;/p>
-&lt;p>﻿&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/c4model/index.assets/c4-overview.png' alt="img" height="1080" width="1920">&lt;/p></description></item><item><title>git迁移项目到新的地址</title><link>https://nuoyang.tech/tech/other/git_clone_new_project/</link><pubDate>Mon, 22 Jul 2024 15:27:01 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/git_clone_new_project/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;blockquote>
-&lt;p>将代码从仓库A迁移到仓库B&lt;/p>&lt;/blockquote>
-&lt;ol>
-&lt;li>创建一个新的仓库B&lt;/li>
-&lt;li>从原地址克隆(使用&amp;ndash;bare)&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git clone --bare git@git.com:test/A.git&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>3、进入到该目录，push mirror&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git push --mirror git@git.com:test/B.git&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>react-flow流程图库</title><link>https://nuoyang.tech/tech/other/react-flow/</link><pubDate>Mon, 16 Oct 2023 16:32:44 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/react-flow/</guid><category domain="https://nuoyang.tech/categories/%E5%89%8D%E7%AB%AF/">前端</category><description>&lt;h2 class="heading-element" id="react-flow介绍">&lt;span>react-flow介绍&lt;/span>
- &lt;a href="#react-flow%e4%bb%8b%e7%bb%8d" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/other/react-flow/index.assets/image-20231016163806989.png' alt="image-20231016163806989" height="517" width="1513">&lt;/p>
-&lt;p>React Flow是一个基于React的流程图库，用于在Web应用程序中创建可交互的流程图和节点编辑器。它提供了一个可定制的组件集合，可以轻松地创建和管理节点、连接和布局。React Flow支持拖放、缩放、平移和连接节点等交互功能。&lt;/p>
-&lt;p>React Flow的主要特点包括：&lt;/p>
-&lt;ol>
-&lt;li>可定制性：React Flow的组件是可定制的，可以根据需要添加样式、事件处理程序和自定义逻辑。用户可以完全控制节点和连接的外观和行为。&lt;/li>
-&lt;li>交互功能：React Flow提供了拖放、缩放、平移和连接节点等常见的交互功能。用户可以轻松地创建、修改和删除节点，以及连接它们。&lt;/li>
-&lt;li>布局算法：React Flow内置了多种布局算法，包括树状布局、网格布局和力导向布局等。用户可以根据需要选择合适的布局算法，以确保流程图的可视化效果。&lt;/li>
-&lt;li>扩展性：React Flow提供了丰富的API和事件钩子，以支持自定义行为和扩展。用户可以根据需要添加新的功能或修改现有功能。&lt;/li>
-&lt;li>可视化效果：React Flow使用CSS和SVG等技术来绘制流程图，可以创建出美观、高度可定制的可视化效果。&lt;/li>
-&lt;/ol>
-&lt;p>总之，React Flow是一个强大且灵活的库，适用于构建各种类型的流程图和节点编辑器。无论是构建工作流程、图表、组织结构图还是其他类型的图形应用，React Flow都可以提供丰富的功能和良好的用户体验。&lt;/p>
-&lt;p>&lt;a href="https://reactflow.dev/docs/quickstart/"target="_blank" rel="external nofollow noopener noreferrer">文档&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://github.com/wbkd/react-flow"target="_blank" rel="external nofollow noopener noreferrer">react-flow github&lt;/a>&lt;/p></description></item><item><title>几种常见的软件架构</title><link>https://nuoyang.tech/tech/architecture/software_architecture_styles/</link><pubDate>Sat, 07 Oct 2023 10:38:49 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/architecture/software_architecture_styles/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;blockquote>
-&lt;p>原文：&lt;a href="https://blog.bytebytego.com/p/ep68-top-architectural-styles?ref=dailydev"target="_blank" rel="external nofollow noopener noreferrer">https://blog.bytebytego.com/p/ep68-top-architectural-styles?ref=dailydev&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/architecture/software_architecture_styles/index.assets/software_architecture_styles.jpeg' alt="img" height="1810" width="1280">&lt;/p>
-&lt;ul>
-&lt;li>CQRS&lt;/li>
-&lt;li>Layered(n-tier)&lt;/li>
-&lt;li>Mirokernel&lt;/li>
-&lt;li>Microservices&lt;/li>
-&lt;li>Space-Based&lt;/li>
-&lt;li>DDD&lt;/li>
-&lt;li>Event-Driven&lt;/li>
-&lt;li>MVP&lt;/li>
-&lt;li>Orchestration&lt;/li>
-&lt;/ul></description></item><item><title>一张图说明Session、Token、JWT、SSO和OAuth</title><link>https://nuoyang.tech/tech/other/session_token_jwt_sso_oauth/</link><pubDate>Sat, 07 Oct 2023 10:34:28 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/session_token_jwt_sso_oauth/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;blockquote>
-&lt;p>原文：&lt;a href="https://blog.bytebytego.com/p/sessions-tokens-jwt-sso-and-oauth?ref=dailydev"target="_blank" rel="external nofollow noopener noreferrer">https://blog.bytebytego.com/p/sessions-tokens-jwt-sso-and-oauth?ref=dailydev&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/other/session_token_jwt_sso_oauth/index.assets/piture.jpeg' alt="img" height="1890" width="1446">&lt;/p></description></item><item><title>本地测试不注册Eureka</title><link>https://nuoyang.tech/tech/other/eureka_not_register_local_test/</link><pubDate>Tue, 23 May 2023 10:11:25 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/eureka_not_register_local_test/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;h2 class="heading-element" id="本地开发时不注册eureka">&lt;span>本地开发时不注册Eureka&lt;/span>
- &lt;a href="#%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%8f%91%e6%97%b6%e4%b8%8d%e6%b3%a8%e5%86%8ceureka" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>在启动指令中加入&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">--eureka.instance.metadata-map.version=LOCAL&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>使用InfluxDB、Telegraf和Grafana采集和展示时序数据</title><link>https://nuoyang.tech/tech/cloudnative/influxdb_installation/</link><pubDate>Wed, 17 May 2023 14:10:25 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/cloudnative/influxdb_installation/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;blockquote>
-&lt;p>参考&lt;/p>
-&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/444649783"target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/444649783&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h2 class="heading-element" id="安装influxdb和telegraf">&lt;span>安装InfluxDB和Telegraf&lt;/span>
- &lt;a href="#%e5%ae%89%e8%a3%85influxdb%e5%92%8ctelegraf" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 class="heading-element" id="1-获取influxdb和telegraf-image">&lt;span>1. 获取InfluxDB和telegraf image&lt;/span>
- &lt;a href="#1-%e8%8e%b7%e5%8f%96influxdb%e5%92%8ctelegraf-image" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker pull influxdb&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker pull telegraf&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 class="heading-element" id="2-运行influxdb">&lt;span>2. 运行InfluxDB&lt;/span>
- &lt;a href="#2-%e8%bf%90%e8%a1%8cinfluxdb" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>在运行InfluxDB之前，先在本地创建一个目录，方便去备份InfluxDB的存储&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker run -d --name influxdb -p 8086:8086 --volume $PWD:/root/.influxdbv2 influxdb&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>通过$PWD命令绑定host宿主机目录&lt;/p>
-&lt;h3 class="heading-element" id="3-运行telegraf">&lt;span>3. 运行telegraf&lt;/span>
- &lt;a href="#3-%e8%bf%90%e8%a1%8ctelegraf" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>直接运行telegraf会提示缺少config，可以先运行起来，后面创建了telegraf配置再配置telegraf.config文件&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker run -d --name=telegraf -P telegraf&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>报错信息如下&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">2023-05-17T05:59:52Z I! Loading config: /etc/telegraf/telegraf.conf
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2023-05-17T05:59:52Z E! [telegraf] Error running agent: no outputs found, did you provide a valid config file?&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 class="heading-element" id="4-打开influxdb">&lt;span>4. 打开InfluxDB&lt;/span>
- &lt;a href="#4-%e6%89%93%e5%bc%80influxdb" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>访问 &lt;a href="http://localhost:8086"target="_blank" rel="external nofollow noopener noreferrer">http://localhost:8086&lt;/a>&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230518135938194.png' alt="image-20230518135938194" height="1682" width="3252">&lt;/p>
-&lt;p>第一次登录的时候会提示配置用户名、密码、组织等信息，并且会生成一个api token&lt;/p>
-&lt;h3 class="heading-element" id="5-配置telegraf">&lt;span>5. 配置telegraf&lt;/span>
- &lt;a href="#5-%e9%85%8d%e7%bd%aetelegraf" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>可以在宿主机上创建telegraf目录，将telegraf.conf配置文件绑定到容器指定volume上，容器上目录地址&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">/etc/telegraf&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>telegraf.conf配置可以从influxdb的telegraf页面中获取到，也可以自己增加，下面是个配置参考，需要将url和token换成实际influxdb的值&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt"> 10
-&lt;/span>&lt;span class="lnt"> 11
-&lt;/span>&lt;span class="lnt"> 12
-&lt;/span>&lt;span class="lnt"> 13
-&lt;/span>&lt;span class="lnt"> 14
-&lt;/span>&lt;span class="lnt"> 15
-&lt;/span>&lt;span class="lnt"> 16
-&lt;/span>&lt;span class="lnt"> 17
-&lt;/span>&lt;span class="lnt"> 18
-&lt;/span>&lt;span class="lnt"> 19
-&lt;/span>&lt;span class="lnt"> 20
-&lt;/span>&lt;span class="lnt"> 21
-&lt;/span>&lt;span class="lnt"> 22
-&lt;/span>&lt;span class="lnt"> 23
-&lt;/span>&lt;span class="lnt"> 24
-&lt;/span>&lt;span class="lnt"> 25
-&lt;/span>&lt;span class="lnt"> 26
-&lt;/span>&lt;span class="lnt"> 27
-&lt;/span>&lt;span class="lnt"> 28
-&lt;/span>&lt;span class="lnt"> 29
-&lt;/span>&lt;span class="lnt"> 30
-&lt;/span>&lt;span class="lnt"> 31
-&lt;/span>&lt;span class="lnt"> 32
-&lt;/span>&lt;span class="lnt"> 33
-&lt;/span>&lt;span class="lnt"> 34
-&lt;/span>&lt;span class="lnt"> 35
-&lt;/span>&lt;span class="lnt"> 36
-&lt;/span>&lt;span class="lnt"> 37
-&lt;/span>&lt;span class="lnt"> 38
-&lt;/span>&lt;span class="lnt"> 39
-&lt;/span>&lt;span class="lnt"> 40
-&lt;/span>&lt;span class="lnt"> 41
-&lt;/span>&lt;span class="lnt"> 42
-&lt;/span>&lt;span class="lnt"> 43
-&lt;/span>&lt;span class="lnt"> 44
-&lt;/span>&lt;span class="lnt"> 45
-&lt;/span>&lt;span class="lnt"> 46
-&lt;/span>&lt;span class="lnt"> 47
-&lt;/span>&lt;span class="lnt"> 48
-&lt;/span>&lt;span class="lnt"> 49
-&lt;/span>&lt;span class="lnt"> 50
-&lt;/span>&lt;span class="lnt"> 51
-&lt;/span>&lt;span class="lnt"> 52
-&lt;/span>&lt;span class="lnt"> 53
-&lt;/span>&lt;span class="lnt"> 54
-&lt;/span>&lt;span class="lnt"> 55
-&lt;/span>&lt;span class="lnt"> 56
-&lt;/span>&lt;span class="lnt"> 57
-&lt;/span>&lt;span class="lnt"> 58
-&lt;/span>&lt;span class="lnt"> 59
-&lt;/span>&lt;span class="lnt"> 60
-&lt;/span>&lt;span class="lnt"> 61
-&lt;/span>&lt;span class="lnt"> 62
-&lt;/span>&lt;span class="lnt"> 63
-&lt;/span>&lt;span class="lnt"> 64
-&lt;/span>&lt;span class="lnt"> 65
-&lt;/span>&lt;span class="lnt"> 66
-&lt;/span>&lt;span class="lnt"> 67
-&lt;/span>&lt;span class="lnt"> 68
-&lt;/span>&lt;span class="lnt"> 69
-&lt;/span>&lt;span class="lnt"> 70
-&lt;/span>&lt;span class="lnt"> 71
-&lt;/span>&lt;span class="lnt"> 72
-&lt;/span>&lt;span class="lnt"> 73
-&lt;/span>&lt;span class="lnt"> 74
-&lt;/span>&lt;span class="lnt"> 75
-&lt;/span>&lt;span class="lnt"> 76
-&lt;/span>&lt;span class="lnt"> 77
-&lt;/span>&lt;span class="lnt"> 78
-&lt;/span>&lt;span class="lnt"> 79
-&lt;/span>&lt;span class="lnt"> 80
-&lt;/span>&lt;span class="lnt"> 81
-&lt;/span>&lt;span class="lnt"> 82
-&lt;/span>&lt;span class="lnt"> 83
-&lt;/span>&lt;span class="lnt"> 84
-&lt;/span>&lt;span class="lnt"> 85
-&lt;/span>&lt;span class="lnt"> 86
-&lt;/span>&lt;span class="lnt"> 87
-&lt;/span>&lt;span class="lnt"> 88
-&lt;/span>&lt;span class="lnt"> 89
-&lt;/span>&lt;span class="lnt"> 90
-&lt;/span>&lt;span class="lnt"> 91
-&lt;/span>&lt;span class="lnt"> 92
-&lt;/span>&lt;span class="lnt"> 93
-&lt;/span>&lt;span class="lnt"> 94
-&lt;/span>&lt;span class="lnt"> 95
-&lt;/span>&lt;span class="lnt"> 96
-&lt;/span>&lt;span class="lnt"> 97
-&lt;/span>&lt;span class="lnt"> 98
-&lt;/span>&lt;span class="lnt"> 99
-&lt;/span>&lt;span class="lnt">100
-&lt;/span>&lt;span class="lnt">101
-&lt;/span>&lt;span class="lnt">102
-&lt;/span>&lt;span class="lnt">103
-&lt;/span>&lt;span class="lnt">104
-&lt;/span>&lt;span class="lnt">105
-&lt;/span>&lt;span class="lnt">106
-&lt;/span>&lt;span class="lnt">107
-&lt;/span>&lt;span class="lnt">108
-&lt;/span>&lt;span class="lnt">109
-&lt;/span>&lt;span class="lnt">110
-&lt;/span>&lt;span class="lnt">111
-&lt;/span>&lt;span class="lnt">112
-&lt;/span>&lt;span class="lnt">113
-&lt;/span>&lt;span class="lnt">114
-&lt;/span>&lt;span class="lnt">115
-&lt;/span>&lt;span class="lnt">116
-&lt;/span>&lt;span class="lnt">117
-&lt;/span>&lt;span class="lnt">118
-&lt;/span>&lt;span class="lnt">119
-&lt;/span>&lt;span class="lnt">120
-&lt;/span>&lt;span class="lnt">121
-&lt;/span>&lt;span class="lnt">122
-&lt;/span>&lt;span class="lnt">123
-&lt;/span>&lt;span class="lnt">124
-&lt;/span>&lt;span class="lnt">125
-&lt;/span>&lt;span class="lnt">126
-&lt;/span>&lt;span class="lnt">127
-&lt;/span>&lt;span class="lnt">128
-&lt;/span>&lt;span class="lnt">129
-&lt;/span>&lt;span class="lnt">130
-&lt;/span>&lt;span class="lnt">131
-&lt;/span>&lt;span class="lnt">132
-&lt;/span>&lt;span class="lnt">133
-&lt;/span>&lt;span class="lnt">134
-&lt;/span>&lt;span class="lnt">135
-&lt;/span>&lt;span class="lnt">136
-&lt;/span>&lt;span class="lnt">137
-&lt;/span>&lt;span class="lnt">138
-&lt;/span>&lt;span class="lnt">139
-&lt;/span>&lt;span class="lnt">140
-&lt;/span>&lt;span class="lnt">141
-&lt;/span>&lt;span class="lnt">142
-&lt;/span>&lt;span class="lnt">143
-&lt;/span>&lt;span class="lnt">144
-&lt;/span>&lt;span class="lnt">145
-&lt;/span>&lt;span class="lnt">146
-&lt;/span>&lt;span class="lnt">147
-&lt;/span>&lt;span class="lnt">148
-&lt;/span>&lt;span class="lnt">149
-&lt;/span>&lt;span class="lnt">150
-&lt;/span>&lt;span class="lnt">151
-&lt;/span>&lt;span class="lnt">152
-&lt;/span>&lt;span class="lnt">153
-&lt;/span>&lt;span class="lnt">154
-&lt;/span>&lt;span class="lnt">155
-&lt;/span>&lt;span class="lnt">156
-&lt;/span>&lt;span class="lnt">157
-&lt;/span>&lt;span class="lnt">158
-&lt;/span>&lt;span class="lnt">159
-&lt;/span>&lt;span class="lnt">160
-&lt;/span>&lt;span class="lnt">161
-&lt;/span>&lt;span class="lnt">162
-&lt;/span>&lt;span class="lnt">163
-&lt;/span>&lt;span class="lnt">164
-&lt;/span>&lt;span class="lnt">165
-&lt;/span>&lt;span class="lnt">166
-&lt;/span>&lt;span class="lnt">167
-&lt;/span>&lt;span class="lnt">168
-&lt;/span>&lt;span class="lnt">169
-&lt;/span>&lt;span class="lnt">170
-&lt;/span>&lt;span class="lnt">171
-&lt;/span>&lt;span class="lnt">172
-&lt;/span>&lt;span class="lnt">173
-&lt;/span>&lt;span class="lnt">174
-&lt;/span>&lt;span class="lnt">175
-&lt;/span>&lt;span class="lnt">176
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Configuration for telegraf agent&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="n">agent&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Default data collection interval for all inputs&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">interval&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;1s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Rounds collection interval to &amp;#39;interval&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## ie, if interval=&amp;#34;10s&amp;#34; then always collect on :00, :10, :20, etc.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">round_interval&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Telegraf will send metrics to outputs in batches of at most&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## metric_batch_size metrics.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## This controls the size of writes that Telegraf sends to output plugins.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">metric_batch_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1000&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Maximum number of unwritten metrics per output. Increasing this value&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## allows for longer periods of output downtime without dropping metrics at the&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## cost of higher maximum memory usage.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">metric_buffer_limit&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10000&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Collection jitter is used to jitter the collection by a random amount.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Each plugin will sleep for a random time within jitter before collecting.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## This can be used to avoid many plugins querying things like sysfs at the&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## same time, which can have a measurable effect on the system.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">collection_jitter&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;0s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Default flushing interval for all outputs. Maximum flush_interval will be&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## flush_interval + flush_jitter&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">flush_interval&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;10s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Jitter the flush interval by a random amount. This is primarily to avoid&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## large write spikes for users running a large number of telegraf instances.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">flush_jitter&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;0s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## By default or when set to &amp;#34;0s&amp;#34;, precision will be set to the same&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## timestamp order as the collection interval, with the maximum being 1s.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## ie, when interval = &amp;#34;10s&amp;#34;, precision will be &amp;#34;1s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## when interval = &amp;#34;250ms&amp;#34;, precision will be &amp;#34;1ms&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Precision will NOT be used for service inputs. It is up to each individual&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## service input to set the timestamp at the appropriate precision.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Valid time units are &amp;#34;ns&amp;#34;, &amp;#34;us&amp;#34; (or &amp;#34;µs&amp;#34;), &amp;#34;ms&amp;#34;, &amp;#34;s&amp;#34;.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">precision&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Log at debug level.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># debug = false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Log only error level messages.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># quiet = false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Log target controls the destination for logs and can be one of &amp;#34;file&amp;#34;,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## &amp;#34;stderr&amp;#34; or, on Windows, &amp;#34;eventlog&amp;#34;. When set to &amp;#34;file&amp;#34;, the output file&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## is determined by the &amp;#34;logfile&amp;#34; setting.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># logtarget = &amp;#34;file&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Name of the file to be logged to when using the &amp;#34;file&amp;#34; logtarget. If set to&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## the empty string then logs are written to stderr.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># logfile = &amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## The logfile will be rotated after the time interval specified. When set&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## to 0 no time based rotation is performed. Logs are rotated only when&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## written to, if there is no log activity rotation may be delayed.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># logfile_rotation_interval = &amp;#34;0d&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## The logfile will be rotated when it becomes larger than the specified&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## size. When set to 0 no size based rotation is performed.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># logfile_rotation_max_size = &amp;#34;0MB&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Maximum number of rotated archives to keep, any older logs are deleted.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If set to -1, no archives are removed.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># logfile_rotation_max_archives = 5&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Pick a timezone to use when logging or type &amp;#39;local&amp;#39; for local time.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Example: America/Chicago&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># log_with_timezone = &amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Override default hostname, if empty use os.Hostname()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">hostname&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If set to true, do no set the &amp;#34;host&amp;#34; tag in the telegraf agent.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">omit_hostname&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="n">outputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">influxdb_v2&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## The URLs of the InfluxDB cluster nodes.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">##&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Multiple URLs can be specified for a single cluster, only ONE of the&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## urls will be written to each interval.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## ex: urls = [&amp;#34;https://us-west-2-1.aws.cloud2.influxdata.com&amp;#34;]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">urls&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;http://localhost:8086&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Token for authentication.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">token&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;$INFLUX_TOKEN&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Organization is the name of the organization you wish to write to; must exist.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">organization&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;org&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Destination bucket to write into.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">bucket&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;test&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## The value of this tag will be used to determine the bucket. If this&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## tag is not set the &amp;#39;bucket&amp;#39; option is used as the default.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># bucket_tag = &amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If true, the bucket tag will not be added to the metric.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># exclude_bucket_tag = false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Timeout for HTTP messages.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># timeout = &amp;#34;5s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Additional HTTP headers&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># http_headers = {&amp;#34;X-Special-Header&amp;#34; = &amp;#34;Special-Value&amp;#34;}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## HTTP Proxy override, if unset values the standard proxy environment&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## variables are consulted to determine which proxy, if any, should be used.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># http_proxy = &amp;#34;http://corporate.proxy:3128&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## HTTP User-Agent&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># user_agent = &amp;#34;telegraf&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Content-Encoding for write request body, can be set to &amp;#34;gzip&amp;#34; to&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## compress body or &amp;#34;identity&amp;#34; to apply no encoding.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># content_encoding = &amp;#34;gzip&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Enable or disable uint support for writing uints influxdb 2.0.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># influx_uint_support = false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Optional TLS Config for use on HTTP connections.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># tls_ca = &amp;#34;/etc/telegraf/ca.pem&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># tls_cert = &amp;#34;/etc/telegraf/cert.pem&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># tls_key = &amp;#34;/etc/telegraf/key.pem&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Use TLS but skip chain &amp;amp; host verification&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># insecure_skip_verify = false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Read metrics about cpu usage&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">cpu&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Whether to report per-cpu stats or not&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">percpu&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Whether to report total system cpu stats or not&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">totalcpu&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If true, collect raw CPU time metrics&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">collect_cpu_time&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If true, compute and report the sum of all non-idle CPU states&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">report_active&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If true and the info is available then add core_id and physical_id tags&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">core_tags&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="bp">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Generate metrics for test and demonstration purposes&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mock&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Set the metric name to use for reporting&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">metric_name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;mock&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Optional string key-value pairs of tags to add to all metrics&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mock&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tags&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;key&amp;#34;&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;mock_tag&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## One or more mock data fields *must* be defined.&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">##&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mock&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">constant&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;constant&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">mock&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;rand&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">min&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">1.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">6.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## [[inputs.mock.sine_wave]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## name = &amp;#34;wave&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## amplitude = 1.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## period = 0.5&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## [[inputs.mock.step]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## name = &amp;#34;plus_one&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## start = 0.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## step = 1.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## [[inputs.mock.stock]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## name = &amp;#34;abc&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## price = 50.00&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## volatility = 0.2&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Read metrics about system load &amp;amp; uptime&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">system&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># no configuration&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Monitor wifi signal strength and quality&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[[&lt;/span>&lt;span class="n">inputs&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wireless&lt;/span>&lt;span class="p">]]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## Sets &amp;#39;proc&amp;#39; directory path&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">## If not specified, then default is /proc&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># host_proc = &amp;#34;/proc&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这里我们安装了一个Mock插件来产生一些&lt;/p>
-&lt;p>InfluxDB中telegraf页面也会提供一些配置引导&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230519103141173.png' alt="image-20230519103141173" height="1780" width="3276">&lt;/p>
-&lt;p>运行telegraf&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker run -d --name telegraf -P --volume $PWD:/etc/telegraf telegraf&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="安装grafana打通influxdb">&lt;span>安装Grafana打通InfluxDB&lt;/span>
- &lt;a href="#%e5%ae%89%e8%a3%85grafana%e6%89%93%e9%80%9ainfluxdb" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>InfluxDB提供了Dashboard，我们也可以通过Grafana面板连通InfluxDB数据源&lt;/p>
-&lt;h3 class="heading-element" id="1-拉取grafana镜像">&lt;span>1. 拉取grafana镜像&lt;/span>
- &lt;a href="#1-%e6%8b%89%e5%8f%96grafana%e9%95%9c%e5%83%8f" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker pull grafana/grafana&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 class="heading-element" id="2-运行grafana容器绑定host-volume">&lt;span>2. 运行grafana容器，绑定host volume&lt;/span>
- &lt;a href="#2-%e8%bf%90%e8%a1%8cgrafana%e5%ae%b9%e5%99%a8%e7%bb%91%e5%ae%9ahost-volume" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>可以先提前运行下grafana，然后将grafana配置copy出来&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker cp &amp;lt;container_id&amp;gt;:/usr/share/grafana $PWD/grafana&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这样可以对grafana基础配置做修改，因为后面会将grafana页面嵌入到自己的项目中，所以需要对default.ini配置进行修改&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># set to true if you want to allow browsers to render Grafana in a &amp;lt;frame&amp;gt;, &amp;lt;iframe&amp;gt;, &amp;lt;embed&amp;gt; or &amp;lt;object&amp;gt;. default is false.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allow_embedding = true&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>允许匿名访问&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">#################################### Anonymous Auth ######################
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[auth.anonymous]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># enable anonymous access
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">enabled = true&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>运行grafana容器&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">docker run -d --name grafana -p 3000:3000 --volume $PWD/grafana:/usr/share/grafana grafana/grafana&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>这样就看到了grafana登录页面了 http://localhost:3000&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230519135734686.png' alt="image-20230519135734686" height="1906" width="3296">&lt;/p>
-&lt;p>初始用户名和密码都是admin&lt;/p>
-&lt;h3 class="heading-element" id="3-创建influxdb数据源">&lt;span>3. 创建InfluxDB数据源&lt;/span>
- &lt;a href="#3-%e5%88%9b%e5%bb%bainfluxdb%e6%95%b0%e6%8d%ae%e6%ba%90" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>打开数据源地址 http://localhost:3000/connections/connect-data&lt;/p>
-&lt;p>选择influxdb数据源&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230519135927128.png' alt="image-20230519135927128" height="748" width="1590">&lt;/p>
-&lt;p>选择Flux查询语言，地址选择InfluxDB的container地址，也可以通过内网dns固定一个地址&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230519141434073.png' alt="image-20230519141434073" height="1224" width="1722">&lt;/p>
-&lt;p>因为用的influxdb2.0，所以认证方式采用token方式&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230519141401432.png' alt="image-20230519141401432" height="1640" width="1960">&lt;/p>
-&lt;h3 class="heading-element" id="4-配置grafana仪表盘">&lt;span>4. 配置grafana仪表盘&lt;/span>
- &lt;a href="#4-%e9%85%8d%e7%bd%aegrafana%e4%bb%aa%e8%a1%a8%e7%9b%98" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/cloudnative/influxdb_installation/index.assets/image-20230519142754953.png' alt="image-20230519142754953" height="1370" width="3302">&lt;/p></description></item><item><title>git迁移已有仓库到新仓库</title><link>https://nuoyang.tech/tech/other/git_migrate_existed_repository/</link><pubDate>Tue, 04 Apr 2023 10:40:57 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/git_migrate_existed_repository/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;h2 class="heading-element" id="目标">&lt;span>目标&lt;/span>
- &lt;a href="#%e7%9b%ae%e6%a0%87" class="heading-mark">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>大卓个人技术博客</title><link>https://nuoyang.tech/</link><description>大卓个人技术博客</description><generator>Hugo 0.147.9 &amp; FixIt v0.3.21-89f9373b</generator><language>zh-cn</language><managingEditor>lvatticus@gmail.com (大卓)</managingEditor><webMaster>lvatticus@gmail.com (大卓)</webMaster><lastBuildDate>Mon, 30 Jun 2025 14:15:47 +0800</lastBuildDate><atom:link href="https://nuoyang.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>《非暴力沟通》学习</title><link>https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link><pubDate>Mon, 30 Jun 2025 14:15:47 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="观察-感受-需要-请求">&lt;span>观察-感受-需要-请求&lt;/span>
+ &lt;a href="#%e8%a7%82%e5%af%9f-%e6%84%9f%e5%8f%97-%e9%9c%80%e8%a6%81-%e8%af%b7%e6%b1%82" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
 &lt;/h2>&lt;ul>
-&lt;li data-task="x" title="已完成">
-&lt;p>&lt;i class="checkbox-icon fa-fw fa-solid fa-check-square" aria-hidden="true">&lt;/i>将一个已有的仓库里全部内容迁移到新的仓库里去&lt;/p>
+&lt;li>&lt;strong>观察（Observation）&lt;/strong>
+&lt;ul>
+&lt;li>暴力沟通：“你总是迟到！” &amp;ndash; 带有指责&lt;/li>
+&lt;li>非暴力沟通：“你今天会议有1次迟到” &amp;ndash; 客观陈述&lt;/li>
+&lt;/ul>
 &lt;/li>
-&lt;li data-task="x" title="已完成">
-&lt;p>&lt;i class="checkbox-icon fa-fw fa-solid fa-check-square" aria-hidden="true">&lt;/i>迁移后保留commit历史记录和所有分支&lt;/p>
+&lt;li>&lt;strong>感受（Feeling）&lt;/strong>
+&lt;ul>
+&lt;li>暴力沟通：“我觉得你不责任” &amp;ndash; 批判&lt;/li>
+&lt;li>非暴力沟通：“我感到焦虑，担心xxxx” &amp;ndash; 表达真实感受&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>需要（Need）&lt;/strong>
+&lt;ul>
+&lt;li>暴力沟通：“你能不能不这么自私！” &amp;ndash; 攻击人格&lt;/li>
+&lt;li>非暴力沟通：“我希望能准时开会，这样我们效率才高” &amp;ndash; 表达需求&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>请求（Request）&lt;/strong>
+&lt;ul>
+&lt;li>暴力沟通：“下次不准迟到！” &amp;ndash; 强制要求&lt;/li>
+&lt;li>非暴力沟通：“下次开会你愿意提前五分钟到么” &amp;ndash; 尊重对方意愿，提出请求&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h2 class="heading-element" id="步骤">&lt;span>步骤&lt;/span>
- &lt;a href="#%e6%ad%a5%e9%aa%a4" class="heading-mark">
+&lt;hr>
+&lt;h2 class="heading-element" id="倾听理解比说服重要">&lt;span>倾听：理解比说服重要&lt;/span>
+ &lt;a href="#%e5%80%be%e5%90%ac%e7%90%86%e8%a7%a3%e6%af%94%e8%af%b4%e6%9c%8d%e9%87%8d%e8%a6%81" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h2>&lt;h3 class="heading-element" id="1-创建新仓库">&lt;span>1. 创建新仓库&lt;/span>
- &lt;a href="#1-%e5%88%9b%e5%bb%ba%e6%96%b0%e4%bb%93%e5%ba%93" class="heading-mark">
+&lt;/h2>&lt;blockquote>
+&lt;p>全身心理解对方的感受和需求&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>对方抱怨时，不要急于辩解，而是尝试反馈&lt;/li>
+&lt;li>对方闹情绪时，不要压制情绪，而是共情&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 class="heading-element" id="每一个抱怨背后都有一个未被满足的需求每一次愤怒之下都藏着一颗渴望被理解的心">&lt;span>每一个抱怨背后，都有一个未被满足的需求；每一次愤怒之下，都藏着一颗渴望被理解的心&lt;/span>
+ &lt;a href="#%e6%af%8f%e4%b8%80%e4%b8%aa%e6%8a%b1%e6%80%a8%e8%83%8c%e5%90%8e%e9%83%bd%e6%9c%89%e4%b8%80%e4%b8%aa%e6%9c%aa%e8%a2%ab%e6%bb%a1%e8%b6%b3%e7%9a%84%e9%9c%80%e6%b1%82%e6%af%8f%e4%b8%80%e6%ac%a1%e6%84%a4%e6%80%92%e4%b9%8b%e4%b8%8b%e9%83%bd%e8%97%8f%e7%9d%80%e4%b8%80%e9%a2%97%e6%b8%b4%e6%9c%9b%e8%a2%ab%e7%90%86%e8%a7%a3%e7%9a%84%e5%bf%83" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h3>&lt;p>在git托管平台上手动创建代码仓库&lt;/p>
-&lt;h3 class="heading-element" id="2-克隆旧仓库">&lt;span>2. 克隆旧仓库&lt;/span>
- &lt;a href="#2-%e5%85%8b%e9%9a%86%e6%97%a7%e4%bb%93%e5%ba%93" class="heading-mark">
+&lt;/h2></description></item><item><title>人生成功与幸福</title><link>https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/</link><pubDate>Thu, 10 Oct 2024 10:22:24 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>一命二运三风水&lt;/p>
+&lt;p>四积阴德五读书&lt;/p>
+&lt;p>六名七相八敬神&lt;/p>
+&lt;p>九交贵人十养生&lt;/p>
+&lt;p>十一择业与择偶&lt;/p>
+&lt;p>十二趋吉与避凶。&lt;/p></description></item><item><title>海拉尔旅游规划</title><link>https://nuoyang.tech/posts/2024/hailaer_travel/</link><pubDate>Fri, 23 Aug 2024 10:17:34 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/hailaer_travel/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="1行程规划">&lt;span>1、行程规划&lt;/span>
+ &lt;a href="#1%e8%a1%8c%e7%a8%8b%e8%a7%84%e5%88%92" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;/h2>&lt;h2 class="heading-element" id="出发归途">&lt;span>出发&amp;amp;归途&lt;/span>
+ &lt;a href="#%e5%87%ba%e5%8f%91%e5%bd%92%e9%80%94" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>9.14-9.21 共8天，9.14 9.18-9.20请假4d&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>9.14&lt;/strong> 出发&lt;/p>
+&lt;ul>
+&lt;li>6:55 成都双流T2&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>9.15&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>15:50 哈尔滨太平T2&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>9.21&lt;/strong> 返程&lt;/p>
+&lt;ul>
+&lt;li>9:50 呼伦贝尔海拉尔机场&lt;/li>
+&lt;li>14:10 鄂尔多斯伊金霍洛机场&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 class="heading-element" id="具体行程">&lt;span>具体行程&lt;/span>
+ &lt;a href="#%e5%85%b7%e4%bd%93%e8%a1%8c%e7%a8%8b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>天数&lt;/th>
+ &lt;th>日期&lt;/th>
+ &lt;th>出发&lt;/th>
+ &lt;th>目的地&lt;/th>
+ &lt;th>住宿&lt;/th>
+ &lt;th>游玩&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>D1&lt;/td>
+ &lt;td>9.14&lt;/td>
+ &lt;td>成都(双流机场) 4:30&lt;/td>
+ &lt;td>哈尔滨(太平机场) 11:00&lt;/td>
+ &lt;td>哈尔滨(美澜酒店)&lt;/td>
+ &lt;td>中央大街 早市&lt;/td>
+ &lt;td>去程：飞机&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D2&lt;/td>
+ &lt;td>9.15&lt;/td>
+ &lt;td>哈尔滨(太平机场) 15:50&lt;/td>
+ &lt;td>海拉尔东山机场 17:15&lt;/td>
+ &lt;td>海拉尔&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>飞机&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D3&lt;/td>
+ &lt;td>9.16&lt;/td>
+ &lt;td>海拉尔&lt;/td>
+ &lt;td>莫日格勒河-额尔古纳&lt;/td>
+ &lt;td>额尔古纳&lt;/td>
+ &lt;td>早餐：孟根楚鲁茶食&lt;/td>
+ &lt;td>135km&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D4&lt;/td>
+ &lt;td>9.17&lt;/td>
+ &lt;td>额尔古纳&lt;/td>
+ &lt;td>恩和-室韦-恩和&lt;/td>
+ &lt;td>恩和&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>130km&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D5&lt;/td>
+ &lt;td>9.18&lt;/td>
+ &lt;td>恩和&lt;/td>
+ &lt;td>黑山头&lt;/td>
+ &lt;td>黑山头（蒙古包）&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>140km&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D6&lt;/td>
+ &lt;td>9.19&lt;/td>
+ &lt;td>黑山头&lt;/td>
+ &lt;td>满洲里&lt;/td>
+ &lt;td>满洲里&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>200km&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D7&lt;/td>
+ &lt;td>9.20&lt;/td>
+ &lt;td>满洲里&lt;/td>
+ &lt;td>海拉尔&lt;/td>
+ &lt;td>海拉尔&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>228km&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>D8&lt;/td>
+ &lt;td>9.21&lt;/td>
+ &lt;td>海拉尔东山机场 9:50&lt;/td>
+ &lt;td>鄂尔多斯 14:10 - 成都&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>返程：飞机&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="住宿酒店">&lt;span>住宿酒店&lt;/span>
+ &lt;a href="#%e4%bd%8f%e5%ae%bf%e9%85%92%e5%ba%97" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>日期&lt;/th>
+ &lt;th>城市&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>9.14&lt;/td>
+ &lt;td>哈尔滨&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9.15&lt;/td>
+ &lt;td>呼伦贝尔&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9.16&lt;/td>
+ &lt;td>额尔古纳&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9.17&lt;/td>
+ &lt;td>恩和&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9.18&lt;/td>
+ &lt;td>黑山头&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9.19&lt;/td>
+ &lt;td>满洲里&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9.20&lt;/td>
+ &lt;td>呼伦贝尔&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="2出行装备list">&lt;span>2、出行装备List&lt;/span>
+ &lt;a href="#2%e5%87%ba%e8%a1%8c%e8%a3%85%e5%a4%87list" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>必备&lt;/p>
+&lt;ul>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>身份证&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>驾驶证&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>现金&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>口罩&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>衣服&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>电子产品&lt;/p>
+&lt;ul>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>办公电脑&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>手机充电线&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>电脑充电线&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>充电宝&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>洗护&lt;/p>
+&lt;ul>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>洗面奶&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>护肤品&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>牙刷牙膏&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>洗发水&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>沐浴露&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>香皂。洗衣液&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>洗脸巾&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>纸巾&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>口罩&lt;/li>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>保温杯&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>防护&lt;/p>
+&lt;ul>
+&lt;li data-task=" " title="未完成">
+&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>雨伞&lt;/p>
+&lt;/li>
+&lt;li data-task=" " title="未完成">
+&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>防晒霜&lt;/p>
+&lt;/li>
+&lt;li data-task=" " title="未完成">
+&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>花露水+驱蚊&lt;/p>
+&lt;/li>
+&lt;li data-task=" " title="未完成">
+&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>帽子&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>药品&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其他&lt;/p>
+&lt;ul>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>零食&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 class="heading-element" id="3天气情况">&lt;span>3、天气情况&lt;/span>
+ &lt;a href="#3%e5%a4%a9%e6%b0%94%e6%83%85%e5%86%b5" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>整体气温在19-4度左右，需要准备厚一点的衣服&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2024/hailaer_travel/index.assets/image-20240823154920105.png' alt="image-20240823154920105" height="990" width="2170">&lt;/p>
+&lt;h2 class="heading-element" id="4租车">&lt;span>4、租车&lt;/span>
+ &lt;a href="#4%e7%a7%9f%e8%bd%a6" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>分类&lt;/th>
+ &lt;th>费用&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>租车&lt;/td>
+ &lt;td>￥2084&lt;/td>
+ &lt;td>SUV 大众探岳&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>燃油费&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>过路费&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="5旅游费用">&lt;span>5、旅游费用&lt;/span>
+ &lt;a href="#5%e6%97%85%e6%b8%b8%e8%b4%b9%e7%94%a8" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>项目&lt;/th>
+ &lt;th>预算金额&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>机票&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>住宿费用&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>租车费用&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>经典门票&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>油费+过路费&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>伙食费&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>定风波</title><link>https://nuoyang.tech/posts/2024/dingfengbo/</link><pubDate>Thu, 23 May 2024 16:27:12 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/dingfengbo/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="定风波苏轼">&lt;span>定风波——苏轼&lt;/span>
+ &lt;a href="#%e5%ae%9a%e9%a3%8e%e6%b3%a2%e8%8b%8f%e8%bd%bc" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>莫听穿林打叶声&lt;/p>
+&lt;p>何妨吟啸且徐行&lt;/p>
+&lt;p>竹杖芒鞋轻胜马&lt;/p>
+&lt;p>谁怕，一蓑烟雨任平生&lt;/p>
+&lt;p>料峭春风吹酒醒&lt;/p>
+&lt;p>山头斜照却相迎&lt;/p>
+&lt;p>回首向来萧瑟处&lt;/p>
+&lt;p>归去，也无风雨也无晴&lt;/p></description></item><item><title>发财树养殖方法</title><link>https://nuoyang.tech/posts/2023/facaishu/</link><pubDate>Sun, 30 Jul 2023 14:28:03 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/facaishu/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/0c6cd1a1de739d4f42fe7f58b12559f.jpg' alt="0c6cd1a1de739d4f42fe7f58b12559f" height="2479" width="1920">&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/7ec686c87af64975bc0e12c54b2c4d5.jpg' alt="7ec686c87af64975bc0e12c54b2c4d5" height="2466" width="1920">&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/aae7c8d4b67b06e8792473036a1a612.jpg' alt="aae7c8d4b67b06e8792473036a1a612" height="939" width="750">&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/1405cebf510aa563013122813227b77.jpg' alt="1405cebf510aa563013122813227b77" height="971" width="750">&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/8de3ffb5d7004d2718d058a7030de36.jpg' alt="8de3ffb5d7004d2718d058a7030de36" height="2480" width="1920">&lt;/p></description></item><item><title>Bing AI聊天试用</title><link>https://nuoyang.tech/posts/2023/bing-ai/</link><pubDate>Wed, 15 Mar 2023 16:09:32 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/bing-ai/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p>最近chatGPT和openai的GPT-4大火，来试一下bing搜索引擎的ai功能&lt;/p>
+&lt;h2 class="heading-element" id="如何使用bing-ai聊天">&lt;span>如何使用Bing AI聊天&lt;/span>
+ &lt;a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8bing-ai%e8%81%8a%e5%a4%a9" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>首先要访问 &lt;a href="https://bing.com/new"target="_blank" rel="external nofollow noopener noreferrer">https://bing.com/new&lt;/a>，需要先登录微软账号，加入到waitlist就可以直接用了&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161304540.png' alt="image-20230315161304540" height="1191" width="1365">&lt;/p>
+&lt;p>界面看起来还是比价清爽的&lt;/p>
+&lt;h2 class="heading-element" id="专业技术问题询问">&lt;span>专业技术问题询问&lt;/span>
+ &lt;a href="#%e4%b8%93%e4%b8%9a%e6%8a%80%e6%9c%af%e9%97%ae%e9%a2%98%e8%af%a2%e9%97%ae" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h2 class="heading-element" id="第一个话题baas">&lt;span>第一个话题BaaS&lt;/span>
+ &lt;a href="#%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%af%9d%e9%a2%98baas" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>最近在研究BaaS，所以问了问啥是BaaS，BaaS有哪些&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161404971.png' alt="image-20230315161404971" height="769" width="1164">&lt;/p>
+&lt;p>回答内容主要是一些提供服务的厂商&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161459786.png' alt="image-20230315161459786" height="939" width="1160">&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161514224.png' alt="image-20230315161514224" height="981" width="1131">&lt;/p>
+&lt;p>对于小白来说，跟着它做一些起点的调研还是够的，不过作为深度的技术人员，它回答的内容远远不够&lt;/p>
+&lt;h2 class="heading-element" id="第二个话题-faas">&lt;span>第二个话题 FaaS&lt;/span>
+ &lt;a href="#%e7%ac%ac%e4%ba%8c%e4%b8%aa%e8%af%9d%e9%a2%98-faas" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>开始第2个话题 faas&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315164541426.png' alt="image-20230315164541426" height="863" width="1143">&lt;/p>
+&lt;p>作为基础的检索功能还是很快就提供了想要的内容，不过除了OpenFunction和OpenFaaS外，其他开源的项目并没有列举出来&lt;/p>
+&lt;p>所以，如果bing收了钱用来影响ai的回答结论，这个也细想想也挺可怕的&lt;/p></description></item><item><title>三亚旅游规划</title><link>https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/</link><pubDate>Thu, 02 Mar 2023 16:41:39 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="三亚旅游攻略">&lt;span>三亚旅游攻略&lt;/span>
+ &lt;a href="#%e4%b8%89%e4%ba%9a%e6%97%85%e6%b8%b8%e6%94%bb%e7%95%a5" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h2 class="heading-element" id="行程">&lt;span>行程&lt;/span>
+ &lt;a href="#%e8%a1%8c%e7%a8%8b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>日期&lt;/th>
+ &lt;th>时间段&lt;/th>
+ &lt;th>地点&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;u>&lt;strong>03-03&lt;/strong>&lt;/u>&lt;/td>
+ &lt;td>中午&lt;/td>
+ &lt;td>🛬三亚凤凰机场&lt;/td>
+ &lt;td>抵达三亚&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>下午&lt;/td>
+ &lt;td>取租车🚗 入驻亚龙湾酒店&lt;/td>
+ &lt;td>酒店玩耍&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>晚上&lt;/td>
+ &lt;td>海鲜市场吃海鲜🦈🦐🦀&lt;/td>
+ &lt;td>&lt;strong>保持警惕 谨防被宰！&lt;/strong>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;u>&lt;strong>03-04&lt;/strong>&lt;/u>&lt;/td>
+ &lt;td>上午&lt;/td>
+ &lt;td>🍜酒店早餐&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>中午&lt;/td>
+ &lt;td>【出发】去南海观音，就近吃饭&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>下午&lt;/td>
+ &lt;td>南海观音&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>晚上&lt;/td>
+ &lt;td>椰梦长廊🌅&lt;/td>
+ &lt;td>18点前赶到看日落&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>&lt;u>03-05&lt;/u>&lt;/strong>&lt;/td>
+ &lt;td>上午&lt;/td>
+ &lt;td>🍜酒店早餐&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>中午&lt;/td>
+ &lt;td>【出发】去海棠湾酒店，路上就近吃饭&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>下午&lt;/td>
+ &lt;td>入住海棠湾 海棠湾酒店 沙滩玩耍🏖🏊&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>晚上&lt;/td>
+ &lt;td>就近吃饭🥘&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;u>&lt;strong>03-06&lt;/strong>&lt;/u>&lt;/td>
+ &lt;td>上午&lt;/td>
+ &lt;td>🍜酒店早餐，&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>中午&lt;/td>
+ &lt;td>蜈支洲岛🏝&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>下午&lt;/td>
+ &lt;td>蜈支洲岛🏝&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>晚上&lt;/td>
+ &lt;td>返回酒店&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;u>&lt;strong>03-07&lt;/strong>&lt;/u>&lt;/td>
+ &lt;td>上午&lt;/td>
+ &lt;td>🍜酒店早餐，收拾准备返程&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>中午&lt;/td>
+ &lt;td>开车去机场，路上看看玩什么，也可以在酒店玩&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>下午&lt;/td>
+ &lt;td>返还租车🚗 返程🛫&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="租车">&lt;span>租车&lt;/span>
+ &lt;a href="#%e7%a7%9f%e8%bd%a6" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>租车平台对比&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>名称&lt;/th>
+ &lt;th>是否押金&lt;/th>
+ &lt;th>价格&lt;/th>
+ &lt;th>靠谱度&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>一嗨租车&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>⭐️⭐️⭐️⭐️⭐️&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>神州租车&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>⭐️⭐️⭐️⭐️⭐️&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>携程&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>⭐️&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>一嗨租车在三亚凤凰机场的停车场里取就行，很方便，走的时候直接在机场还车就可以&lt;/p>
+&lt;h2 class="heading-element" id="住宿">&lt;span>住宿&lt;/span>
+ &lt;a href="#%e4%bd%8f%e5%ae%bf" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 class="heading-element" id="亚龙湾">&lt;span>亚龙湾&lt;/span>
+ &lt;a href="#%e4%ba%9a%e9%be%99%e6%b9%be" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;h4 class="heading-element" id="三亚亚龙湾星华套房假日酒店">&lt;span>三亚亚龙湾星华套房假日酒店&lt;/span>
+ &lt;a href="#%e4%b8%89%e4%ba%9a%e4%ba%9a%e9%be%99%e6%b9%be%e6%98%9f%e5%8d%8e%e5%a5%97%e6%88%bf%e5%81%87%e6%97%a5%e9%85%92%e5%ba%97" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h4>&lt;p>地点：三亚市吉阳区亚龙湾国家旅游度假区龙塘路14号&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230302233809738.png' alt="image-20230302233809738" height="1700" width="3034">&lt;/p>
+&lt;h3 class="heading-element" id="海棠湾">&lt;span>海棠湾&lt;/span>
+ &lt;a href="#%e6%b5%b7%e6%a3%a0%e6%b9%be" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;h4 class="heading-element" id="三亚-hotel海棠湾阳光壹酒店">&lt;span>三亚 Hotel海棠湾阳光壹酒店&lt;/span>
+ &lt;a href="#%e4%b8%89%e4%ba%9a-hotel%e6%b5%b7%e6%a3%a0%e6%b9%be%e9%98%b3%e5%85%89%e5%a3%b9%e9%85%92%e5%ba%97" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h4>&lt;p>地点：三亚市海棠区海棠南路4号&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230302234140508.png' alt="image-20230302234140508" height="1506" width="3290">&lt;/p>
+&lt;p>出门过个马路就是海边，可以赶海捡贝壳🐚 这里可以看日出&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317131147803.png' alt="image-20230317131147803" height="960" width="1280">&lt;/p>
+&lt;h2 class="heading-element" id="景点">&lt;span>景点&lt;/span>
+ &lt;a href="#%e6%99%af%e7%82%b9" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 class="heading-element" id="椰梦长廊">&lt;span>椰梦长廊&lt;/span>
+ &lt;a href="#%e6%a4%b0%e6%a2%a6%e9%95%bf%e5%bb%8a" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>看日落&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230303001736112.png' alt="image-20230303001736112" height="790" width="1372">&lt;/p>
+&lt;h3 class="heading-element" id="南海观音">&lt;span>南海观音&lt;/span>
+ &lt;a href="#%e5%8d%97%e6%b5%b7%e8%a7%82%e9%9f%b3" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>壮观的景象&lt;/p>
+&lt;h3 class="heading-element" id="亚龙湾热带天堂森林公园">&lt;span>亚龙湾热带天堂森林公园&lt;/span>
+ &lt;a href="#%e4%ba%9a%e9%be%99%e6%b9%be%e7%83%ad%e5%b8%a6%e5%a4%a9%e5%a0%82%e6%a3%ae%e6%9e%97%e5%85%ac%e5%9b%ad" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;h3 class="heading-element" id="蜈支洲岛">&lt;span>蜈支洲岛&lt;/span>
+ &lt;a href="#%e8%9c%88%e6%94%af%e6%b4%b2%e5%b2%9b" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;blockquote>
+&lt;p>登岛时间为08:00至16:00；离岛时间为08:30至18:30&lt;/p>
+&lt;p>蜈支洲岛码头轮渡：上岛时间8:00-16:00；下岛时间08:30-18:30；人较多，早上排队上岛时间通常需要1小时左右&lt;/p>&lt;/blockquote>
+&lt;img src="index.assets/image-20230302235444990.png" alt="image-20230302235444990" style="zoom:50%;" />
+&lt;h3 class="heading-element" id="小东海">&lt;span>小东海&lt;/span>
+ &lt;a href="#%e5%b0%8f%e4%b8%9c%e6%b5%b7" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317131356521.png' alt="image-20230317131356521" height="251" width="568">&lt;/p>
+&lt;p>这里早上可以赶海，潮水褪去后 石头都露出来，可以在里面捡螃蟹和海星&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317132023346.png' alt="image-20230317132023346" height="357" width="1063">&lt;/p>
+&lt;h3 class="heading-element" id="后海村">&lt;span>后海村&lt;/span>
+ &lt;a href="#%e5%90%8e%e6%b5%b7%e6%9d%91" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>很多冲浪在这里，但是自驾过来慎重，路很窄，很堵，要是想看日落要提前一些出发，基本7点不到就看不到日落了&lt;/p>
+&lt;h3 class="heading-element" id="海昌不夜城">&lt;span>海昌不夜城&lt;/span>
+ &lt;a href="#%e6%b5%b7%e6%98%8c%e4%b8%8d%e5%a4%9c%e5%9f%8e" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>很多小孩玩的东西，离海棠湾和免税店二期很近，有很大的摩天轮&lt;/p>
+&lt;h2 class="heading-element" id="吃饭">&lt;span>吃饭&lt;/span>
+ &lt;a href="#%e5%90%83%e9%a5%ad" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;blockquote>
+&lt;p>一天两顿饭感觉就够了，一顿酒店早餐，一顿当地特色&lt;/p>
+&lt;p>每天一个椰子🥥 喝起来还是很开心的&lt;/p>&lt;/blockquote>
+&lt;h3 class="heading-element" id="六盘村">&lt;span>六盘村&lt;/span>
+ &lt;a href="#%e5%85%ad%e7%9b%98%e6%9d%91" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>一个小村改造的，很多东北人开店的地方，也有网红店，吃饭可以挑一挑再吃&lt;/p>
+&lt;h3 class="heading-element" id="亿恒夜市">&lt;span>亿恒夜市&lt;/span>
+ &lt;a href="#%e4%ba%bf%e6%81%92%e5%a4%9c%e5%b8%82" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>千万不要去！！！太坑了&lt;/p>
+&lt;h3 class="heading-element" id="第一海鲜市场">&lt;span>第一海鲜市场&lt;/span>
+ &lt;a href="#%e7%ac%ac%e4%b8%80%e6%b5%b7%e9%b2%9c%e5%b8%82%e5%9c%ba" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>没去过，被夜市坑了后就不想再去了&lt;/p>
+&lt;h3 class="heading-element" id="椰子鸡">&lt;span>椰子鸡&lt;/span>
+ &lt;a href="#%e6%a4%b0%e5%ad%90%e9%b8%a1" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>吃了两顿椰子鸡，一顿是在酒店里赠送的，分量很大，另外一份是在大众点评上搜的排名靠前的&lt;/p></description></item><item><title>技术新闻博客收集</title><link>https://nuoyang.tech/posts/2023/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%94%B6%E9%9B%86/</link><pubDate>Thu, 02 Mar 2023 09:57:48 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%94%B6%E9%9B%86/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;h2 class="heading-element" id="技术新闻博客类">&lt;span>技术新闻博客类&lt;/span>
+ &lt;a href="#%e6%8a%80%e6%9c%af%e6%96%b0%e9%97%bb%e5%8d%9a%e5%ae%a2%e7%b1%bb" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>名称&lt;/th>
+ &lt;th>链接&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>DB-Engines&lt;/td>
+ &lt;td>&lt;a href="https://db-engines.com/"target="_blank" rel="external nofollow noopener noreferrer">https://db-engines.com/&lt;/a>&lt;/td>
+ &lt;td>数据库相关、数据库排名&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>APM Digest&lt;/td>
+ &lt;td>&lt;a href="https://www.apmdigest.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.apmdigest.com/&lt;/a>&lt;/td>
+ &lt;td>APM监控相关资料和新闻、趋势&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DevOps Digest&lt;/td>
+ &lt;td>&lt;a href="https://www.devopsdigest.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.devopsdigest.com/&lt;/a>&lt;/td>
+ &lt;td>devops相关资料和新闻、趋势&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CNCF&lt;/td>
+ &lt;td>&lt;a href="https://www.cncf.io/"target="_blank" rel="external nofollow noopener noreferrer">https://www.cncf.io/&lt;/a>&lt;/td>
+ &lt;td>云原生基金会&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>InfoQ&lt;/td>
+ &lt;td>&lt;a href="https://www.infoq.cn/"target="_blank" rel="external nofollow noopener noreferrer">https://www.infoq.cn/&lt;/a> &lt;br/>&lt;a href="https://infoq.com/"target="_blank" rel="external nofollow noopener noreferrer">https://infoq.com/&lt;/a>&lt;/td>
+ &lt;td>InfoQ&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Hacker News&lt;/td>
+ &lt;td>&lt;a href="https://news.ycombinator.com/"target="_blank" rel="external nofollow noopener noreferrer">https://news.ycombinator.com/&lt;/a>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Linux&lt;/td>
+ &lt;td>&lt;a href="https://www.linux.com"target="_blank" rel="external nofollow noopener noreferrer">www.linux.com&lt;/a>&lt;/td>
+ &lt;td>topics and blog related with Linux System&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Thoughtworks&lt;/td>
+ &lt;td>&lt;a href="https://www.thoughtworks.com/insights/technology"target="_blank" rel="external nofollow noopener noreferrer">https://www.thoughtworks.com/insights/technology&lt;/a>&lt;/td>
+ &lt;td>Thoughtworks insight&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>web.dev&lt;/td>
+ &lt;td>&lt;a href="https://web.dev/"target="_blank" rel="external nofollow noopener noreferrer">https://web.dev/&lt;/a>&lt;/td>
+ &lt;td>谷歌web开发网站&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="教程系列">&lt;span>教程系列&lt;/span>
+ &lt;a href="#%e6%95%99%e7%a8%8b%e7%b3%bb%e5%88%97" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>名称&lt;/th>
+ &lt;th>链接&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Baeldung&lt;/td>
+ &lt;td>&lt;a href="https://www.baeldung.com/spring-tutorial"target="_blank" rel="external nofollow noopener noreferrer">https://www.baeldung.com/spring-tutorial&lt;/a>&lt;/td>
+ &lt;td>一系列初级教程，比如spring、java、mesh等&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Javapoint系列教程&lt;/td>
+ &lt;td>&lt;a href="https://www.javatpoint.com/operating-system"target="_blank" rel="external nofollow noopener noreferrer">https://www.javatpoint.com/operating-system&lt;/a>&lt;/td>
+ &lt;td>除了java，还有操作系统的初级教程&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="技术大佬博客">&lt;span>技术大佬博客&lt;/span>
+ &lt;a href="#%e6%8a%80%e6%9c%af%e5%a4%a7%e4%bd%ac%e5%8d%9a%e5%ae%a2" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>名称&lt;/th>
+ &lt;th>链接&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Bilgin Ibryam&lt;/td>
+ &lt;td>&lt;a href="http://www.ofbizian.com/"target="_blank" rel="external nofollow noopener noreferrer">http://www.ofbizian.com/&lt;/a>&lt;/td>
+ &lt;td>云原生布道，架构&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Martin Fowler&lt;/td>
+ &lt;td>&lt;a href="https://martinfowler.com/"target="_blank" rel="external nofollow noopener noreferrer">https://martinfowler.com/&lt;/a>&lt;/td>
+ &lt;td>ThoughtWorks 微服务&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>敖小剑&lt;/td>
+ &lt;td>&lt;a href="https://skyao.io/"target="_blank" rel="external nofollow noopener noreferrer">https://skyao.io/&lt;/a>&lt;/td>
+ &lt;td>国内 云原生布道&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>赵化冰&lt;/td>
+ &lt;td>&lt;a href="https://www.zhaohuabing.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.zhaohuabing.com/&lt;/a>&lt;/td>
+ &lt;td>国内 云原生布道&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Brendan Gregg&lt;/td>
+ &lt;td>&lt;a href="https://www.brendangregg.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.brendangregg.com/&lt;/a>&lt;/td>
+ &lt;td>内核性能&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Thorsten Ball&lt;/td>
+ &lt;td>&lt;a href="https://thorstenball.com/"target="_blank" rel="external nofollow noopener noreferrer">https://thorstenball.com/&lt;/a>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Kamil Grzybek&lt;/td>
+ &lt;td>&lt;a href="https://www.kamilgrzybek.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.kamilgrzybek.com/&lt;/a>&lt;/td>
+ &lt;td>Modular Monolith System Architecture&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ROC&lt;/td>
+ &lt;td>&lt;a href="https://imroc.cc/"target="_blank" rel="external nofollow noopener noreferrer">https://imroc.cc/&lt;/a>&lt;/td>
+ &lt;td>云原生&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mark Zhu&lt;/td>
+ &lt;td>&lt;a href="https://blog.mygraphql.com/zh/"target="_blank" rel="external nofollow noopener noreferrer">https://blog.mygraphql.com/zh/&lt;/a>&lt;/td>
+ &lt;td>云原生&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jimmy Song&lt;/td>
+ &lt;td>&lt;a href="https://jimmysong.io/"target="_blank" rel="external nofollow noopener noreferrer">https://jimmysong.io/&lt;/a>&lt;/td>
+ &lt;td>云原生&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>阮一峰&lt;/td>
+ &lt;td>&lt;a href="http://www.ruanyifeng.com/blog/"target="_blank" rel="external nofollow noopener noreferrer">http://www.ruanyifeng.com/blog/&lt;/a>&lt;/td>
+ &lt;td>每周五精选内容&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 class="heading-element" id="科技公司博客">&lt;span>科技公司博客&lt;/span>
+ &lt;a href="#%e7%a7%91%e6%8a%80%e5%85%ac%e5%8f%b8%e5%8d%9a%e5%ae%a2" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>名称&lt;/th>
+ &lt;th>链接&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>美团&lt;/td>
+ &lt;td>&lt;a href="https://tech.meituan.com"target="_blank" rel="external nofollow noopener noreferrer">https://tech.meituan.com&lt;/a>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Shopify&lt;/td>
+ &lt;td>&lt;a href="https://shopify.engineering"target="_blank" rel="external nofollow noopener noreferrer">https://shopify.engineering&lt;/a>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Netflix&lt;/td>
+ &lt;td>&lt;a href="https://netflixtechblog.com"target="_blank" rel="external nofollow noopener noreferrer">https://netflixtechblog.com&lt;/a>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Facebook/Meta&lt;/td>
+ &lt;td>&lt;a href="https://tech.facebook.com"target="_blank" rel="external nofollow noopener noreferrer">https://tech.facebook.com&lt;/a>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Hugo写作指南</title><link>https://nuoyang.tech/posts/2023/hugo/</link><pubDate>Tue, 28 Feb 2023 09:59:43 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/hugo/</guid><category domain="https://nuoyang.tech/categories/hugo/">Hugo</category><description>&lt;blockquote>
+&lt;p>Tips：&lt;/p>
+&lt;p>本站点针对技术文档做过调整，写作方式只针对本博客&lt;/p>&lt;/blockquote>
+&lt;h2 class="heading-element" id="hugo初始化搭建">&lt;span>Hugo初始化搭建&lt;/span>
+ &lt;a href="#hugo%e5%88%9d%e5%a7%8b%e5%8c%96%e6%90%ad%e5%bb%ba" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>官网：https://gohugo.io/&lt;/p>
+&lt;h2 class="heading-element" id="安装hugo">&lt;span>安装Hugo&lt;/span>
+ &lt;a href="#%e5%ae%89%e8%a3%85hugo" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>安装方式有如下两种：&lt;/p>
+&lt;ul>
+&lt;li>使用brew工具安装（国内镜像源一般都不是最新版本，有些新的主题无法使用）&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git clone git@github.com:xxx/A.git --bare&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew install hugo&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 class="heading-element" id="3-推送新仓库">&lt;span>3. 推送新仓库&lt;/span>
- &lt;a href="#3-%e6%8e%a8%e9%80%81%e6%96%b0%e4%bb%93%e5%ba%93" class="heading-mark">
+&lt;/div>&lt;ul>
+&lt;li>直接下载release文件绑定到PATH上&lt;/li>
+&lt;/ul>
+&lt;p>最新的release包可以在&lt;a href="https://github.com/gohugoio/hugo/releases"target="_blank" rel="external nofollow noopener noreferrer">Hugo releases&lt;/a>拿到&lt;/p>
+&lt;h2 class="heading-element" id="安装theme">&lt;span>安装Theme&lt;/span>
+ &lt;a href="#%e5%ae%89%e8%a3%85theme" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git submodule add https://github.com/AtticusLv/FixIt themes/FixIt&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>升级主题&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git submodule update --remote --merge themes/FixIt&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 class="heading-element" id="本地调试">&lt;span>本地调试&lt;/span>
+ &lt;a href="#%e6%9c%ac%e5%9c%b0%e8%b0%83%e8%af%95" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo server&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>编译静态文件，生成目录为/public&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 class="heading-element" id="创建日常博客">&lt;span>创建日常博客&lt;/span>
+ &lt;a href="#%e5%88%9b%e5%bb%ba%e6%97%a5%e5%b8%b8%e5%8d%9a%e5%ae%a2" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>只文字版&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new posts/xxx.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>图文版&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new posts/xxx/index.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>使用typora编辑时，会自动在posts/xxx/目录下增加相关图片目录&lt;/p>
+&lt;h2 class="heading-element" id="创建技术文档">&lt;span>创建技术文档&lt;/span>
+ &lt;a href="#%e5%88%9b%e5%bb%ba%e6%8a%80%e6%9c%af%e6%96%87%e6%a1%a3" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>只文字版&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new tech/[catalog]/xxx.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>图文版&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new tech/[catalog]/xxx/index.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>例如，要创建一个技术文档，并且包换图片，catalog为「云原生」，那运行的命令为&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new tech/cloudnative/istio_proxy/index.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在index.md文件中修改title、catalog，然后直接deploy到github上就完成发布了&lt;/p>
+&lt;h2 class="heading-element" id="增加catalog分类">&lt;span>增加catalog分类&lt;/span>
+ &lt;a href="#%e5%a2%9e%e5%8a%a0catalog%e5%88%86%e7%b1%bb" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>在&lt;code>layouts/tech/tech.html&lt;/code>模板中，增加了下面的代码，可以根据文章中 &lt;strong>catalog&lt;/strong> 字段来分类，这样让技术文章就具备层级结构了&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cd A.git
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 推送所有分支
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push git@github.com:xxx/B.git --all
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 推送所有tag
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push git@github.com:xxx/B.git --tags&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> tech.html中内容
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .....
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- 显示所有tech下的文档 --&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {{- $curpages := where .Site.Pages &amp;#34;Type&amp;#34; &amp;#34;tech&amp;#34; -}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- 根据catalog字段内容分类 --&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {{- $pages := $curpages.GroupByParam &amp;#34;catalog&amp;#34; -}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .....&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>maven无法更新source</title><link>https://nuoyang.tech/tech/other/maven_cannot_found_source/</link><pubDate>Mon, 03 Apr 2023 10:36:49 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/maven_cannot_found_source/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;h2 class="heading-element" id="问题">&lt;span>问题&lt;/span>
- &lt;a href="#%e9%97%ae%e9%a2%98" class="heading-mark">
+&lt;/div>&lt;p>在tech目录下new出来的文章，会根据tech的模板，自动加上catalog字段&lt;/p>
+&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/hugo/index.assets/image-20230301181507278.png' alt="image-20230301181507278" height="402" width="1236">&lt;/p>
+&lt;h2 class="heading-element" id="如何在1级标题栏技术文档增加2级目录">&lt;span>如何在1级标题栏【技术文档】增加2级目录&lt;/span>
+ &lt;a href="#%e5%a6%82%e4%bd%95%e5%9c%a81%e7%ba%a7%e6%a0%87%e9%a2%98%e6%a0%8f%e6%8a%80%e6%9c%af%e6%96%87%e6%a1%a3%e5%a2%9e%e5%8a%a02%e7%ba%a7%e7%9b%ae%e5%bd%95" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h2>&lt;p>更新了idea intellij到最新版本后，无法拉到jar source源码，显示&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/other/maven_cannot_found_source/index.assets/image-20230404095950626.png' alt="image-20230404095950626" height="47" width="264">&lt;/p>
-&lt;p>这样就看不到jar的源码了，排查问题很痛苦&lt;/p>
-&lt;h2 class="heading-element" id="原因">&lt;span>原因&lt;/span>
- &lt;a href="#%e5%8e%9f%e5%9b%a0" class="heading-mark">
+&lt;/h2>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/hugo/index.assets/image-20230301130258500.png' alt="image-20230301130258500" height="144" width="358">&lt;/p>
+&lt;p>以【cloudnative】举例&lt;/p>
+&lt;ol>
+&lt;li>在tech下创建目录/tech/cloudnative&lt;/li>
+&lt;li>/tech/cloudnative下创建 &lt;code>_index.md&lt;/code> 文件，可以手动创建，也可以用命令行创建，内容如下：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">title: &amp;#34;云原生目录&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">layout: cloudnative
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hidden: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">type: cloudnative
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">summary: 历史文章按照年月归档.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">url: /tech/cloudnative
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">menu:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> main:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> title: 架构文档
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parent: tech
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> weight: 0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> params:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> icon: fa-brands fa-readme
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">catalog: 云原生
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>需要注意catalog、layout和type字段，其中menu是用来在1级标题栏下增加2级标题栏的主要代码，weight控制2级目录显示顺序，越大越靠上，越小越靠下&lt;/p>
+&lt;ol start="3">
+&lt;li>在layouts下创建目录/tech/cloudnative，创建文件&lt;code>cloudnative.html&lt;/code>，内容可以从posts模板或者其他地方模板下复制过来，内容略&lt;/li>
+&lt;/ol>
+&lt;h2 class="heading-element" id="更新theme样式">&lt;span>更新Theme样式&lt;/span>
+ &lt;a href="#%e6%9b%b4%e6%96%b0theme%e6%a0%b7%e5%bc%8f" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h2>&lt;p>本地的maven版本和idea默认的版本（新版本是3.8.1）不一致，导致无法拉取到source jar包&lt;/p>
-&lt;p>一般是idea默认的maven版本太高了&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/other/maven_cannot_found_source/index.assets/image-20230404100429858.png' alt="image-20230404100429858" height="640" width="955">&lt;/p>
-&lt;h2 class="heading-element" id="解决方法">&lt;span>解决方法&lt;/span>
- &lt;a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 class="heading-element" id="1-将idea的maven版本配置成和本地一样的版本">&lt;span>1. 将idea的maven版本配置成和本地一样的版本&lt;/span>
- &lt;a href="#1-%e5%b0%86idea%e7%9a%84maven%e7%89%88%e6%9c%ac%e9%85%8d%e7%bd%ae%e6%88%90%e5%92%8c%e6%9c%ac%e5%9c%b0%e4%b8%80%e6%a0%b7%e7%9a%84%e7%89%88%e6%9c%ac" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>查看本地的maven版本&lt;/p>
+&lt;/h2>&lt;p>站点样式采用 &lt;a href="https://github.com/hugo-fixit/FixIt"target="_blank" rel="external nofollow noopener noreferrer">&lt;strong>FixIt&lt;/strong>&lt;/a>，因为有部分样式要调整，已fork到 &lt;code>https://github.com/AtticusLv/FixIt&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">mvn -version&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git submodule update --remote --merge&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/other/maven_cannot_found_source/index.assets/image-20230404100725148.png' alt="image-20230404100725148" height="136" width="707">&lt;/p>
-&lt;p>将maven路径直接拷贝到idea maven的配置里&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/tech/other/maven_cannot_found_source/index.assets/image-20230404100614044.png' alt="image-20230404100614044" height="73" width="711">&lt;/p>
-&lt;p>此时idea会直接显示出maven路径的版本，如果没有显示，说明配置地址不对&lt;/p>
-&lt;h3 class="heading-element" id="2-将本地的maven升级到和idea版本一致">&lt;span>2. 将本地的maven升级到和idea版本一致&lt;/span>
- &lt;a href="#2-%e5%b0%86%e6%9c%ac%e5%9c%b0%e7%9a%84maven%e5%8d%87%e7%ba%a7%e5%88%b0%e5%92%8cidea%e7%89%88%e6%9c%ac%e4%b8%80%e8%87%b4" class="heading-mark">
+&lt;/div>&lt;h2 class="heading-element" id="使用bash一键提交">&lt;span>使用bash一键提交&lt;/span>
+ &lt;a href="#%e4%bd%bf%e7%94%a8bash%e4%b8%80%e9%94%ae%e6%8f%90%e4%ba%a4" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h3>&lt;p>这种要重新去下载对应版本的maven，本地PATH重新绑定&lt;/p>
-&lt;blockquote>
-&lt;p>注意：对于一些老工程已经依赖了旧版本的maven，只能保持maven和工程里版本一致&lt;/p>&lt;/blockquote>
-&lt;h3 class="heading-element" id="3-maven-wrapper">&lt;span>3. maven wrapper&lt;/span>
- &lt;a href="#3-maven-wrapper" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>使用maven wrapper，其实就是工程里将maven的包放置进来，直接使用工程里的maven版本&lt;/p>
-&lt;h2 class="heading-element" id="参考">&lt;span>参考&lt;/span>
- &lt;a href="#%e5%8f%82%e8%80%83" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>&lt;a href="https://stackoverflow.com/questions/70214833/intellij-2021-3-maven-not-able-to-resolve-dependencies-after-update-to-intellij"target="_blank" rel="external nofollow noopener noreferrer">https://stackoverflow.com/questions/70214833/intellij-2021-3-maven-not-able-to-resolve-dependencies-after-update-to-intellij&lt;/a>&lt;/p></description></item><item><title>maven pom文件多版本管理revision</title><link>https://nuoyang.tech/tech/other/maven_reversion/</link><pubDate>Thu, 16 Mar 2023 15:24:46 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/tech/other/maven_reversion/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p>maven工程中，对多个子module及相应的pom版本进行管理是很头疼的事，利用&lt;strong>flatten-maven-plugin&lt;/strong> 插件将pom版本统一管理起来，在变更的时候只需要改&lt;/p>
-&lt;!-- more -->
+&lt;/h2>&lt;p>编辑bash脚本&lt;code>./deploy.sh&lt;/code>一键提交git&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;revision&amp;gt;1.0.0-SNAPSHOT&amp;lt;/revision&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">./deploy.sh &amp;#34;[commit content]&amp;#34;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="使用姿势">&lt;span>使用姿势&lt;/span>
- &lt;a href="#%e4%bd%bf%e7%94%a8%e5%a7%bf%e5%8a%bf" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>使用${revision}对maven工程中多个pom里的版本号进行关联&lt;/p>
-&lt;h2 class="heading-element" id="父pom">&lt;span>父pom&lt;/span>
- &lt;a href="#%e7%88%b6pom" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;project&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;parent&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;groupId&amp;gt;org.apache&amp;lt;/groupId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;artifactId&amp;gt;apache&amp;lt;/artifactId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;version&amp;gt;18&amp;lt;/version&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/parent&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;groupId&amp;gt;org.apache.maven.ci&amp;lt;/groupId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;artifactId&amp;gt;ci-parent&amp;lt;/artifactId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;name&amp;gt;First CI Friendly&amp;lt;/name&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;version&amp;gt;${revision}&amp;lt;/version&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;properties&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;revision&amp;gt;1.0.0-SNAPSHOT&amp;lt;/revision&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/properties&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;/project&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>注意revision在properties中声明&lt;/p>
-&lt;p>在build中使用相关插件&lt;/p>
+&lt;/div>&lt;p>脚本内容如下：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -806,102 +1100,45 @@
 &lt;/span>&lt;span class="lnt">13
 &lt;/span>&lt;span class="lnt">14
 &lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;span class="lnt">24
-&lt;/span>&lt;span class="lnt">25
-&lt;/span>&lt;span class="lnt">26
-&lt;/span>&lt;span class="lnt">27
-&lt;/span>&lt;span class="lnt">28
-&lt;/span>&lt;span class="lnt">29
-&lt;/span>&lt;span class="lnt">30
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;build&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;plugins&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;plugin&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;artifactId&amp;gt;flatten-maven-plugin&amp;lt;/artifactId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;version&amp;gt;1.1.0&amp;lt;/version&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;configuration&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- 是否更新pom文件，此处还有更高级的用法 --&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;updatePomFile&amp;gt;true&amp;lt;/updatePomFile&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;flattenMode&amp;gt;resolveCiFriendliesOnly&amp;lt;/flattenMode&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/configuration&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;executions&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;execution&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;id&amp;gt;flatten&amp;lt;/id&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;phase&amp;gt;process-resources&amp;lt;/phase&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;goals&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;goal&amp;gt;flatten&amp;lt;/goal&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/goals&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/execution&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;execution&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;id&amp;gt;flatten.clean&amp;lt;/id&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;phase&amp;gt;clean&amp;lt;/phase&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;goals&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;goal&amp;gt;clean&amp;lt;/goal&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/goals&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/execution&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/executions&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/plugin&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/plugins&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/build&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="c1"># date time&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">currentDateTime&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>date &lt;span class="s1">&amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;&lt;/span>&lt;span class="sb">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">commitMsg&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$currentDateTime&lt;/span>&lt;span class="s2">&amp;#34; &amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;提交commit: &amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">commitMsg&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">commitMsg&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git pull
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;git add/commit/pull done...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># push to remote main branch&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="子pom">&lt;span>子pom&lt;/span>
- &lt;a href="#%e5%ad%90pom" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>在parent的声明version中直接使用${revision}即可&lt;/p>
+&lt;/div>&lt;p>&lt;strong>注意&lt;/strong>：使用前需要给脚本添加权限&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;project&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;parent&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;groupId&amp;gt;org.apache.maven.ci&amp;lt;/groupId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;artifactId&amp;gt;ci-parent&amp;lt;/artifactId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;version&amp;gt;${revision}&amp;lt;/version&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/parent&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;groupId&amp;gt;org.apache.maven.ci&amp;lt;/groupId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;artifactId&amp;gt;ci-child&amp;lt;/artifactId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;dependencies&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;dependency&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;groupId&amp;gt;org.apache.maven.ci&amp;lt;/groupId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;artifactId&amp;gt;child2&amp;lt;/artifactId&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;version&amp;gt;${project.version}&amp;lt;/version&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/dependency&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;/dependencies&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;/project&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod 755 deploy.sh&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="参考">&lt;span>参考&lt;/span>
- &lt;a href="#%e5%8f%82%e8%80%83" class="heading-mark">
+&lt;/div>&lt;h2 class="heading-element" id="特别注意">&lt;span>特别注意&lt;/span>
+ &lt;a href="#%e7%89%b9%e5%88%ab%e6%b3%a8%e6%84%8f" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
-&lt;/h2>&lt;p>&lt;a href="https://www.cnblogs.com/ElEGenT/p/12938773.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.cnblogs.com/ElEGenT/p/12938773.html&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/h2>&lt;h2 class="heading-element" id="无图片文章转换为有图片文章">&lt;span>无图片文章转换为有图片文章&lt;/span>
+ &lt;a href="#%e6%97%a0%e5%9b%be%e7%89%87%e6%96%87%e7%ab%a0%e8%bd%ac%e6%8d%a2%e4%b8%ba%e6%9c%89%e5%9b%be%e7%89%87%e6%96%87%e7%ab%a0" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;strong>因为hugo结构的原因，如果要将没有图片的文章转换为有图片的文章，需要单独创建一个目录，将原理的.md文件移入，并且重命名为index.md&lt;/strong>&lt;/p>
+&lt;h2 class="heading-element" id="剩余未完成工作">&lt;span>剩余未完成工作&lt;/span>
+ &lt;a href="#%e5%89%a9%e4%bd%99%e6%9c%aa%e5%ae%8c%e6%88%90%e5%b7%a5%e4%bd%9c" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>代码块行数和复制功能&lt;/li>
+&lt;/ul></description></item></channel></rss>
