@@ -1,7 +1,7 @@
 # 编程开发工具
 
 
-&gt; 工欲善其事必先利其器
+> 工欲善其事必先利其器
 
 ## IDE
 
@@ -33,7 +33,7 @@ redis管理可视化工具   开源版代码 https://github.com/luin/medis
 
 
 
-## Test &amp; Debug
+## Test & Debug
 
 - Charles
 - Wireshark

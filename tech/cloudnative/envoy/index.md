@@ -29,7 +29,7 @@ https://academy.tetrate.io/courses/envoy-fundamentals-zh  中文
 
 ​		https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/front_proxy.html
 
-- 视频&amp;实验室教程
+- 视频&实验室教程
 
   https://academy.tetrate.io/courses/envoy-fundamentals-zh
 
@@ -83,7 +83,7 @@ Using Envoy to route internal requests https://blog.asana.com/2021/08/route-inte
 
 
 
-- [Istio EnvoyFilter&#43;Lua 简单实现动态路由转发](https://blog.csdn.net/MichaelJScofield/article/details/126948885)
+- [Istio EnvoyFilter+Lua 简单实现动态路由转发](https://blog.csdn.net/MichaelJScofield/article/details/126948885)
 
 
 

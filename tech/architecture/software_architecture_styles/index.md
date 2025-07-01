@@ -3,7 +3,7 @@
 
 
 
-&gt; 原文：[https://blog.bytebytego.com/p/ep68-top-architectural-styles?ref=dailydev](https://blog.bytebytego.com/p/ep68-top-architectural-styles?ref=dailydev)
+> 原文：[https://blog.bytebytego.com/p/ep68-top-architectural-styles?ref=dailydev](https://blog.bytebytego.com/p/ep68-top-architectural-styles?ref=dailydev)
 
 ![img](index.assets/software_architecture_styles.jpeg)
 

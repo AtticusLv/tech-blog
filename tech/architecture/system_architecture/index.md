@@ -27,7 +27,7 @@ https://www.kamilgrzybek.com/
 
 ### Multi-Runtime Microservices Architecture
 
-&gt; mecha架构
+> mecha架构
 
 https://www.infoq.com/articles/multi-runtime-microservice-architecture/
 

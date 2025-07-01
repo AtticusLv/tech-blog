@@ -1,7 +1,7 @@
 # 调整Istio Proxy日志级别
 
 
-&gt; 日志级别包括```trace, debug, info, warning, error, critical, off```
+> 日志级别包括```trace, debug, info, warning, error, critical, off```
 
 ## istioctl命令动态调整
 
@@ -47,7 +47,7 @@ istioctl pc log --help
   template:
     metadata:
       annotations:
-        &#34;sidecar.istio.io/logLevel&#34;: debug # 可选: trace, debug, info, warning, error, critical, off
+        "sidecar.istio.io/logLevel": debug # 可选: trace, debug, info, warning, error, critical, off
 ```
 
 ## 全局配置
@@ -74,7 +74,7 @@ istioctl install --set profile=demo --set values.global.proxy.logLevel=debug
   template:
     metadata:
       annotations:
-        &#34;sidecar.istio.io/componentLogLevel&#34;: &#34;ext_authz:trace,filter:debug&#34;
+        "sidecar.istio.io/componentLogLevel": "ext_authz:trace,filter:debug"
 ```
 
 可以参考：https://www.envoyproxy.io/docs/envoy/latest/operations/cli#cmdoption-component-log-level

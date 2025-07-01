@@ -3,7 +3,7 @@
 
 
 
-&gt; 原文：[https://blog.bytebytego.com/p/sessions-tokens-jwt-sso-and-oauth?ref=dailydev](https://blog.bytebytego.com/p/sessions-tokens-jwt-sso-and-oauth?ref=dailydev)
+> 原文：[https://blog.bytebytego.com/p/sessions-tokens-jwt-sso-and-oauth?ref=dailydev](https://blog.bytebytego.com/p/sessions-tokens-jwt-sso-and-oauth?ref=dailydev)
 
 ![img](index.assets/piture.jpeg)
 

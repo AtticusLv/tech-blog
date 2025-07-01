@@ -1,9 +1,9 @@
 # Hugo写作指南
 
-&lt;!--more--&gt;
-&gt; Tips：
-&gt;
-&gt; 本站点针对技术文档做过调整，写作方式只针对本博客
+<!--more-->
+> Tips：
+>
+> 本站点针对技术文档做过调整，写作方式只针对本博客
 
 # Hugo初始化搭建
 
@@ -95,10 +95,10 @@ hugo new tech/cloudnative/istio_proxy/index.md
 ```
   tech.html中内容
   .....
-  &lt;!-- 显示所有tech下的文档 --&gt;
-  {{- $curpages := where .Site.Pages &#34;Type&#34; &#34;tech&#34; -}}
-  &lt;!-- 根据catalog字段内容分类 --&gt;
-  {{- $pages := $curpages.GroupByParam &#34;catalog&#34; -}}
+  <!-- 显示所有tech下的文档 -->
+  {{- $curpages := where .Site.Pages "Type" "tech" -}}
+  <!-- 根据catalog字段内容分类 -->
+  {{- $pages := $curpages.GroupByParam "catalog" -}}
   .....
 ```
 
@@ -117,7 +117,7 @@ hugo new tech/cloudnative/istio_proxy/index.md
 
 ```
 ---
-title: &#34;云原生目录&#34;
+title: "云原生目录"
 layout: cloudnative
 hidden: true
 type: cloudnative
@@ -154,7 +154,7 @@ git submodule update --remote --merge
 编辑bash脚本```./deploy.sh```一键提交git
 
 ```
-./deploy.sh &#34;[commit content]&#34;
+./deploy.sh "[commit content]"
 ```
 
 脚本内容如下：
@@ -162,17 +162,17 @@ git submodule update --remote --merge
 ```
 #!/bin/bash
 # date time
-currentDateTime=`date &#39;&#43;%Y-%m-%d %H:%M:%S&#39;`
-commitMsg=$currentDateTime&#34; &#34;$1
+currentDateTime=`date '+%Y-%m-%d %H:%M:%S'`
+commitMsg=$currentDateTime" "$1
 
-echo &#34;提交commit: &#34;${commitMsg}
+echo "提交commit: "${commitMsg}
 
 git add .
-git commit -m &#34;${commitMsg}&#34;
+git commit -m "${commitMsg}"
 git pull
 git status
 
-echo &#34;git add/commit/pull done...&#34;
+echo "git add/commit/pull done..."
 # push to remote main branch
 git push -u origin main
 ```

@@ -3,9 +3,9 @@
 
 
 
-&gt; 参考
-&gt;
-&gt; https://zhuanlan.zhihu.com/p/444649783
+> 参考
+>
+> https://zhuanlan.zhihu.com/p/444649783
 
 
 
@@ -78,9 +78,9 @@ telegraf.conf配置可以从influxdb的telegraf页面中获取到，也可以自
 # Configuration for telegraf agent
 [agent]
   ## Default data collection interval for all inputs
-  interval = &#34;1s&#34;
-  ## Rounds collection interval to &#39;interval&#39;
-  ## ie, if interval=&#34;10s&#34; then always collect on :00, :10, :20, etc.
+  interval = "1s"
+  ## Rounds collection interval to 'interval'
+  ## ie, if interval="10s" then always collect on :00, :10, :20, etc.
   round_interval = true
 
   ## Telegraf will send metrics to outputs in batches of at most
@@ -97,109 +97,109 @@ telegraf.conf配置可以从influxdb的telegraf页面中获取到，也可以自
   ## Each plugin will sleep for a random time within jitter before collecting.
   ## This can be used to avoid many plugins querying things like sysfs at the
   ## same time, which can have a measurable effect on the system.
-  collection_jitter = &#34;0s&#34;
+  collection_jitter = "0s"
 
   ## Default flushing interval for all outputs. Maximum flush_interval will be
-  ## flush_interval &#43; flush_jitter
-  flush_interval = &#34;10s&#34;
+  ## flush_interval + flush_jitter
+  flush_interval = "10s"
   ## Jitter the flush interval by a random amount. This is primarily to avoid
   ## large write spikes for users running a large number of telegraf instances.
   ## ie, a jitter of 5s and interval 10s means flushes will happen every 10-15s
-  flush_jitter = &#34;0s&#34;
+  flush_jitter = "0s"
 
-  ## By default or when set to &#34;0s&#34;, precision will be set to the same
+  ## By default or when set to "0s", precision will be set to the same
   ## timestamp order as the collection interval, with the maximum being 1s.
-  ##   ie, when interval = &#34;10s&#34;, precision will be &#34;1s&#34;
-  ##       when interval = &#34;250ms&#34;, precision will be &#34;1ms&#34;
+  ##   ie, when interval = "10s", precision will be "1s"
+  ##       when interval = "250ms", precision will be "1ms"
   ## Precision will NOT be used for service inputs. It is up to each individual
   ## service input to set the timestamp at the appropriate precision.
-  ## Valid time units are &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;, &#34;s&#34;.
-  precision = &#34;&#34;
+  ## Valid time units are "ns", "us" (or "µs"), "ms", "s".
+  precision = ""
 
   ## Log at debug level.
   # debug = false
   ## Log only error level messages.
   # quiet = false
 
-  ## Log target controls the destination for logs and can be one of &#34;file&#34;,
-  ## &#34;stderr&#34; or, on Windows, &#34;eventlog&#34;.  When set to &#34;file&#34;, the output file
-  ## is determined by the &#34;logfile&#34; setting.
-  # logtarget = &#34;file&#34;
+  ## Log target controls the destination for logs and can be one of "file",
+  ## "stderr" or, on Windows, "eventlog".  When set to "file", the output file
+  ## is determined by the "logfile" setting.
+  # logtarget = "file"
 
-  ## Name of the file to be logged to when using the &#34;file&#34; logtarget.  If set to
+  ## Name of the file to be logged to when using the "file" logtarget.  If set to
   ## the empty string then logs are written to stderr.
-  # logfile = &#34;&#34;
+  # logfile = ""
 
   ## The logfile will be rotated after the time interval specified.  When set
   ## to 0 no time based rotation is performed.  Logs are rotated only when
   ## written to, if there is no log activity rotation may be delayed.
-  # logfile_rotation_interval = &#34;0d&#34;
+  # logfile_rotation_interval = "0d"
 
   ## The logfile will be rotated when it becomes larger than the specified
   ## size.  When set to 0 no size based rotation is performed.
-  # logfile_rotation_max_size = &#34;0MB&#34;
+  # logfile_rotation_max_size = "0MB"
 
   ## Maximum number of rotated archives to keep, any older logs are deleted.
   ## If set to -1, no archives are removed.
   # logfile_rotation_max_archives = 5
 
-  ## Pick a timezone to use when logging or type &#39;local&#39; for local time.
+  ## Pick a timezone to use when logging or type 'local' for local time.
   ## Example: America/Chicago
-  # log_with_timezone = &#34;&#34;
+  # log_with_timezone = ""
 
   ## Override default hostname, if empty use os.Hostname()
-  hostname = &#34;&#34;
-  ## If set to true, do no set the &#34;host&#34; tag in the telegraf agent.
+  hostname = ""
+  ## If set to true, do no set the "host" tag in the telegraf agent.
   omit_hostname = false
 [[outputs.influxdb_v2]]
   ## The URLs of the InfluxDB cluster nodes.
   ##
   ## Multiple URLs can be specified for a single cluster, only ONE of the
   ## urls will be written to each interval.
-  ##   ex: urls = [&#34;https://us-west-2-1.aws.cloud2.influxdata.com&#34;]
-  urls = [&#34;http://localhost:8086&#34;]
+  ##   ex: urls = ["https://us-west-2-1.aws.cloud2.influxdata.com"]
+  urls = ["http://localhost:8086"]
 
   ## Token for authentication.
-  token = &#34;$INFLUX_TOKEN&#34;
+  token = "$INFLUX_TOKEN"
 
   ## Organization is the name of the organization you wish to write to; must exist.
-  organization = &#34;org&#34;
+  organization = "org"
 
   ## Destination bucket to write into.
-  bucket = &#34;test&#34;
+  bucket = "test"
 
   ## The value of this tag will be used to determine the bucket.  If this
-  ## tag is not set the &#39;bucket&#39; option is used as the default.
-  # bucket_tag = &#34;&#34;
+  ## tag is not set the 'bucket' option is used as the default.
+  # bucket_tag = ""
 
   ## If true, the bucket tag will not be added to the metric.
   # exclude_bucket_tag = false
 
   ## Timeout for HTTP messages.
-  # timeout = &#34;5s&#34;
+  # timeout = "5s"
 
   ## Additional HTTP headers
-  # http_headers = {&#34;X-Special-Header&#34; = &#34;Special-Value&#34;}
+  # http_headers = {"X-Special-Header" = "Special-Value"}
 
   ## HTTP Proxy override, if unset values the standard proxy environment
   ## variables are consulted to determine which proxy, if any, should be used.
-  # http_proxy = &#34;http://corporate.proxy:3128&#34;
+  # http_proxy = "http://corporate.proxy:3128"
 
   ## HTTP User-Agent
-  # user_agent = &#34;telegraf&#34;
+  # user_agent = "telegraf"
 
-  ## Content-Encoding for write request body, can be set to &#34;gzip&#34; to
-  ## compress body or &#34;identity&#34; to apply no encoding.
-  # content_encoding = &#34;gzip&#34;
+  ## Content-Encoding for write request body, can be set to "gzip" to
+  ## compress body or "identity" to apply no encoding.
+  # content_encoding = "gzip"
 
   ## Enable or disable uint support for writing uints influxdb 2.0.
   # influx_uint_support = false
 
   ## Optional TLS Config for use on HTTP connections.
-  # tls_ca = &#34;/etc/telegraf/ca.pem&#34;
-  # tls_cert = &#34;/etc/telegraf/cert.pem&#34;
-  # tls_key = &#34;/etc/telegraf/key.pem&#34;
-  ## Use TLS but skip chain &amp; host verification
+  # tls_ca = "/etc/telegraf/ca.pem"
+  # tls_cert = "/etc/telegraf/cert.pem"
+  # tls_key = "/etc/telegraf/key.pem"
+  ## Use TLS but skip chain & host verification
   # insecure_skip_verify = false
 # Read metrics about cpu usage
 [[inputs.cpu]]
@@ -216,41 +216,41 @@ telegraf.conf配置可以从influxdb的telegraf页面中获取到，也可以自
 # Generate metrics for test and demonstration purposes
 [[inputs.mock]]
   ## Set the metric name to use for reporting
-  metric_name = &#34;mock&#34;
+  metric_name = "mock"
 
   ## Optional string key-value pairs of tags to add to all metrics
   [inputs.mock.tags]
-  &#34;key&#34; = &#34;mock_tag&#34;
+  "key" = "mock_tag"
 
   ## One or more mock data fields *must* be defined.
   ##
   [[inputs.mock.constant]]
-    name = &#34;constant&#34;
+    name = "constant"
     value = 10
   [[inputs.mock.random]]
-    name = &#34;rand&#34;
+    name = "rand"
     min = 1.0
     max = 6.0
   ## [[inputs.mock.sine_wave]]
-  ##   name = &#34;wave&#34;
+  ##   name = "wave"
   ##   amplitude = 1.0
   ##   period = 0.5
   ## [[inputs.mock.step]]
-  ##   name = &#34;plus_one&#34;
+  ##   name = "plus_one"
   ##   start = 0.0
   ##   step = 1.0
   ## [[inputs.mock.stock]]
-  ##   name = &#34;abc&#34;
+  ##   name = "abc"
   ##   price = 50.00
   ##   volatility = 0.2
-# Read metrics about system load &amp; uptime
+# Read metrics about system load & uptime
 [[inputs.system]]
   # no configuration
 # Monitor wifi signal strength and quality
 [[inputs.wireless]]
-  ## Sets &#39;proc&#39; directory path
+  ## Sets 'proc' directory path
   ## If not specified, then default is /proc
-  # host_proc = &#34;/proc&#34;
+  # host_proc = "/proc"
 
 ```
 
@@ -285,13 +285,13 @@ docker pull grafana/grafana
 可以先提前运行下grafana，然后将grafana配置copy出来
 
 ```
-docker cp &lt;container_id&gt;:/usr/share/grafana $PWD/grafana
+docker cp <container_id>:/usr/share/grafana $PWD/grafana
 ```
 
 这样可以对grafana基础配置做修改，因为后面会将grafana页面嵌入到自己的项目中，所以需要对default.ini配置进行修改
 
 ```
-# set to true if you want to allow browsers to render Grafana in a &lt;frame&gt;, &lt;iframe&gt;, &lt;embed&gt; or &lt;object&gt;. default is false.
+# set to true if you want to allow browsers to render Grafana in a <frame>, <iframe>, <embed> or <object>. default is false.
 allow_embedding = true
 ```
 

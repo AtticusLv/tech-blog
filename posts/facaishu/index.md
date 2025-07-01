@@ -1,7 +1,7 @@
 # 发财树养殖方法
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 ![0c6cd1a1de739d4f42fe7f58b12559f](./index.assets/0c6cd1a1de739d4f42fe7f58b12559f.jpg)
 

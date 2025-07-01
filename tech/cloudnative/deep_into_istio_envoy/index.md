@@ -3,7 +3,7 @@
 
 
 
-&gt; Envoy是service mesh中常用的数据面板（data plane），用来流量劫持和转发的。istio（一种控制面板的实现方式）中常是用envoy来作为sidecar，istio在envoy的xDS协议上做了很多扩展逻辑，流量劫持背后主要通过iptables技术将出入pod流量都劫持到sidecar上，这里主要参考Jimmy Song大佬的博客，深挖下enovy的基本原理和相关配置，收集整理了下相关资料
+> Envoy是service mesh中常用的数据面板（data plane），用来流量劫持和转发的。istio（一种控制面板的实现方式）中常是用envoy来作为sidecar，istio在envoy的xDS协议上做了很多扩展逻辑，流量劫持背后主要通过iptables技术将出入pod流量都劫持到sidecar上，这里主要参考Jimmy Song大佬的博客，深挖下enovy的基本原理和相关配置，收集整理了下相关资料
 
 ## Envoy
 
@@ -49,7 +49,7 @@
 
 ### 关于xDS版本
 
-​	xDS在envoy和mesh架构中是一个很重要的概念，也是选址规则的核心逻辑。目前envoy的xDS协议有v1和v2版本，在isito1.0&#43;版本中只支持v2版本的xDS API了，目前istio官网的bookinfo示例中也是指定了```--v2-config-only``` ，需要注意的是v2版本并不直接向下兼容v1版本。envoy不同版本对v1和v2版本的支持。
+​	xDS在envoy和mesh架构中是一个很重要的概念，也是选址规则的核心逻辑。目前envoy的xDS协议有v1和v2版本，在isito1.0+版本中只支持v2版本的xDS API了，目前istio官网的bookinfo示例中也是指定了```--v2-config-only``` ，需要注意的是v2版本并不直接向下兼容v1版本。envoy不同版本对v1和v2版本的支持。
 
 ​	关于xDS，CNCF已经开源出来了，也是主流的数据面板的api规范，感兴趣可以到[cncf/xds](https://github.com/cncf/xds)查看下，最新官网已经出了v3的版本，仍在开发中。v2版本是当前的稳定版本。
 
@@ -72,12 +72,12 @@ curl http://localhost:15000/config_dump
 ​	也可以通过kubectl命令将文件dump下来
 
 ```
-kubectl -n default exec ratings-v1-7c9949d479-dwkr4 -c istio-proxy curl http://localhost:15000/config_dump &gt; dump-rating.json
+kubectl -n default exec ratings-v1-7c9949d479-dwkr4 -c istio-proxy curl http://localhost:15000/config_dump > dump-rating.json
 ```
 
 ​	这里用到了envoy的admin接口，详细的admin接口介绍可以在envoy文档中看到
 
-#### istio&#43;envoy启动过程
+#### istio+envoy启动过程
 
 
 
@@ -135,9 +135,9 @@ cluster 的服务发现类型主要有：
 
 ```
 {
-    &#34;name&#34;: &#34;BlackHoleCluster&#34;,
-    &#34;type&#34;: &#34;STATIC&#34;,
-    &#34;connectTimeout&#34;: &#34;10s&#34;
+    "name": "BlackHoleCluster",
+    "type": "STATIC",
+    "connectTimeout": "10s"
 }
 ```
 
@@ -149,17 +149,17 @@ cluster 的服务发现类型主要有：
 
 ```
 {
-    &#34;name&#34;: &#34;PassthroughCluster&#34;,
-    &#34;type&#34;: &#34;ORIGINAL_DST&#34;,
-    &#34;connectTimeout&#34;: &#34;10s&#34;,
-    &#34;lbPolicy&#34;: &#34;CLUSTER_PROVIDED&#34;,
-    &#34;circuitBreakers&#34;: {
-       &#34;thresholds&#34;: [
+    "name": "PassthroughCluster",
+    "type": "ORIGINAL_DST",
+    "connectTimeout": "10s",
+    "lbPolicy": "CLUSTER_PROVIDED",
+    "circuitBreakers": {
+       "thresholds": [
           {
-              &#34;maxConnections&#34;: 4294967295,
-               &#34;maxPendingRequests&#34;: 4294967295,
-               &#34;maxRequests&#34;: 4294967295,
-               &#34;maxRetries&#34;: 4294967295
+              "maxConnections": 4294967295,
+               "maxPendingRequests": 4294967295,
+               "maxRequests": 4294967295,
+               "maxRetries": 4294967295
             }
         ]
  }

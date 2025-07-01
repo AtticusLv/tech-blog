@@ -1,7 +1,7 @@
 # 技术新闻博客收集
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 # 技术新闻博客类
 
@@ -11,7 +11,7 @@
 | APM Digest    | https://www.apmdigest.com/                       | APM监控相关资料和新闻、趋势               |
 | DevOps Digest | https://www.devopsdigest.com/                    | devops相关资料和新闻、趋势                |
 | CNCF          | https://www.cncf.io/                             | 云原生基金会                              |
-| InfoQ         | https://www.infoq.cn/ &lt;br/&gt;https://infoq.com/    | InfoQ                                     |
+| InfoQ         | https://www.infoq.cn/ <br/>https://infoq.com/    | InfoQ                                     |
 | Hacker News   | https://news.ycombinator.com/                    |                                           |
 | Linux         | www.linux.com                                    | topics and blog related with Linux System |
 | Thoughtworks  | https://www.thoughtworks.com/insights/technology | Thoughtworks insight                      |

@@ -6,10 +6,10 @@
 
 maven工程中，对多个子module及相应的pom版本进行管理是很头疼的事，利用**flatten-maven-plugin** 插件将pom版本统一管理起来，在变更的时候只需要改
 
-&lt;!-- more --&gt;
+<!-- more -->
 
 ```
-&lt;revision&gt;1.0.0-SNAPSHOT&lt;/revision&gt;
+<revision>1.0.0-SNAPSHOT</revision>
 ```
 
 # 使用姿势
@@ -19,22 +19,22 @@ maven工程中，对多个子module及相应的pom版本进行管理是很头疼
 ## 父pom
 
 ```
-&lt;project&gt;
-  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-  &lt;parent&gt;
-    &lt;groupId&gt;org.apache&lt;/groupId&gt;
-    &lt;artifactId&gt;apache&lt;/artifactId&gt;
-    &lt;version&gt;18&lt;/version&gt;
-  &lt;/parent&gt;
-  &lt;groupId&gt;org.apache.maven.ci&lt;/groupId&gt;
-  &lt;artifactId&gt;ci-parent&lt;/artifactId&gt;
-  &lt;name&gt;First CI Friendly&lt;/name&gt;
-  &lt;version&gt;${revision}&lt;/version&gt;
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>18</version>
+  </parent>
+  <groupId>org.apache.maven.ci</groupId>
+  <artifactId>ci-parent</artifactId>
+  <name>First CI Friendly</name>
+  <version>${revision}</version>
   ...
-  &lt;properties&gt;
-    &lt;revision&gt;1.0.0-SNAPSHOT&lt;/revision&gt;
-  &lt;/properties&gt;
-&lt;/project&gt;
+  <properties>
+    <revision>1.0.0-SNAPSHOT</revision>
+  </properties>
+</project>
 ```
 
 注意revision在properties中声明
@@ -42,59 +42,59 @@ maven工程中，对多个子module及相应的pom版本进行管理是很头疼
 在build中使用相关插件
 
 ```
-&lt;build&gt;
-  &lt;plugins&gt;
-    &lt;plugin&gt;
-      &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-      &lt;artifactId&gt;flatten-maven-plugin&lt;/artifactId&gt;
-      &lt;version&gt;1.1.0&lt;/version&gt;
-      &lt;configuration&gt;
-          &lt;!-- 是否更新pom文件，此处还有更高级的用法 --&gt;
-        &lt;updatePomFile&gt;true&lt;/updatePomFile&gt;
-        &lt;flattenMode&gt;resolveCiFriendliesOnly&lt;/flattenMode&gt;
-      &lt;/configuration&gt;
-      &lt;executions&gt;
-        &lt;execution&gt;
-          &lt;id&gt;flatten&lt;/id&gt;
-          &lt;phase&gt;process-resources&lt;/phase&gt;
-          &lt;goals&gt;
-            &lt;goal&gt;flatten&lt;/goal&gt;
-          &lt;/goals&gt;
-        &lt;/execution&gt;
-        &lt;execution&gt;
-          &lt;id&gt;flatten.clean&lt;/id&gt;
-          &lt;phase&gt;clean&lt;/phase&gt;
-          &lt;goals&gt;
-            &lt;goal&gt;clean&lt;/goal&gt;
-          &lt;/goals&gt;
-        &lt;/execution&gt;
-      &lt;/executions&gt;
-    &lt;/plugin&gt;
-  &lt;/plugins&gt;
-  &lt;/build&gt;
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>flatten-maven-plugin</artifactId>
+      <version>1.1.0</version>
+      <configuration>
+          <!-- 是否更新pom文件，此处还有更高级的用法 -->
+        <updatePomFile>true</updatePomFile>
+        <flattenMode>resolveCiFriendliesOnly</flattenMode>
+      </configuration>
+      <executions>
+        <execution>
+          <id>flatten</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>flatten</goal>
+          </goals>
+        </execution>
+        <execution>
+          <id>flatten.clean</id>
+          <phase>clean</phase>
+          <goals>
+            <goal>clean</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+  </build>
 ```
 ## 子pom
 在parent的声明version中直接使用${revision}即可
 
 ```
-&lt;project&gt;
-  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-  &lt;parent&gt;
-    &lt;groupId&gt;org.apache.maven.ci&lt;/groupId&gt;
-    &lt;artifactId&gt;ci-parent&lt;/artifactId&gt;
-    &lt;version&gt;${revision}&lt;/version&gt;
-  &lt;/parent&gt;
-  &lt;groupId&gt;org.apache.maven.ci&lt;/groupId&gt;
-  &lt;artifactId&gt;ci-child&lt;/artifactId&gt;
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.maven.ci</groupId>
+    <artifactId>ci-parent</artifactId>
+    <version>${revision}</version>
+  </parent>
+  <groupId>org.apache.maven.ci</groupId>
+  <artifactId>ci-child</artifactId>
    ...
-  &lt;dependencies&gt;
-        &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.maven.ci&lt;/groupId&gt;
-      &lt;artifactId&gt;child2&lt;/artifactId&gt;
-      &lt;version&gt;${project.version}&lt;/version&gt;
-    &lt;/dependency&gt;
-  &lt;/dependencies&gt;
-&lt;/project&gt;
+  <dependencies>
+        <dependency>
+      <groupId>org.apache.maven.ci</groupId>
+      <artifactId>child2</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+</project>
 ```
 
 # 参考

@@ -4,7 +4,7 @@
 在构建docker镜像时遇到
 
 ```
- =&gt; ERROR [internal] load metadata for docker.io/library/openjdk:8u252-jdk-slim   
+ => ERROR [internal] load metadata for docker.io/library/openjdk:8u252-jdk-slim   
 ```
 
 直接在mac上拉取镜像发现拉不到，换了一个平台架构发现镜像是存在的

@@ -1,7 +1,7 @@
 # Bing AI聊天试用
 
 
-&lt;!--more--&gt;
+<!--more-->
 
 最近chatGPT和openai的GPT-4大火，来试一下bing搜索引擎的ai功能
 
