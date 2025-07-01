@@ -132,5 +132,5 @@
 ---
 
 > 作者: 大卓  
-> URL: https://nuoyang.tech/posts/hailaer_travel/  
+> URL: https://nuoyang.tech/posts/2024/hailaer_travel/  
 

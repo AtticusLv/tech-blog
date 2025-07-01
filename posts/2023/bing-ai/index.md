@@ -51,5 +51,5 @@
 ---
 
 > 作者: 大卓  
-> URL: https://nuoyang.tech/posts/bing-ai/  
+> URL: https://nuoyang.tech/posts/2023/bing-ai/  
 

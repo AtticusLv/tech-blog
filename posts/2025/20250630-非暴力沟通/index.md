@@ -40,5 +40,5 @@
 ---
 
 > 作者: 大卓  
-> URL: https://nuoyang.tech/posts/a1cdc9b/  
+> URL: https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/  
 

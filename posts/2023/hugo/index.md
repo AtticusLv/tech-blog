@@ -201,5 +201,5 @@ chmod 755 deploy.sh
 ---
 
 > 作者: 大卓  
-> URL: https://nuoyang.tech/posts/hugo/  
+> URL: https://nuoyang.tech/posts/2023/hugo/  
 

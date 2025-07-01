@@ -19,5 +19,5 @@
 ---
 
 > 作者: 大卓  
-> URL: https://nuoyang.tech/posts/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/  
+> URL: https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/  
 
