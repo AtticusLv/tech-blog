@@ -34,7 +34,11 @@ enableRobotsTXT = true
 enableGitInfo = true
 # whether to use emoji code
 enableEmoji = true
-
+# the main sections of a siteAdd commentMore actions
+# 主站点的主要部分,控制主页显示哪些
+mainSections = [
+  "posts"
+]
 # -------------------------------------------------------------------------------------
 # Menu Configuration
 # See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
@@ -1189,3 +1193,4 @@ enableEmoji = true
       [params.page.seo.publisher]
         name = ""
         logoUrl = ""
+
