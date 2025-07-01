@@ -11,7 +11,7 @@
 # -------------------------------------------------------------------------------------
 
 # website title
-title = "大卓大卓卓个人技术博客"
+title = "大卓个人技术博客"
 # Hostname (and path) to the root
 baseURL = "https://nuoyang.tech"
 # theme list
@@ -220,7 +220,7 @@ enableEmoji = true
 
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = "posts/:slugorfilename"
+  posts = "posts/:year/:slugorfilename"
 
 # -------------------------------------------------------------------------------------
 # Privacy Configuration
@@ -930,7 +930,7 @@ enableEmoji = true
         # whether to enable auto heading numbering
         enable = false
         # FixIt 0.3.3 | NEW only enable in main section pages (default is posts)
-        onlyMainSection = true
+        onlyMainSection = false
         [params.page.heading.number.format]
           h1 = "{title}"
           h2 = "{h2} {title}"
