@@ -1,1146 +1,702 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>大卓个人技术博客</title><link>https://nuoyang.tech/</link><description>大卓个人技术博客</description><generator>Hugo 0.148.1 &amp; FixIt v0.3.21-89f9373b</generator><language>zh-cn</language><managingEditor>lvatticus@gmail.com (大卓)</managingEditor><webMaster>lvatticus@gmail.com (大卓)</webMaster><lastBuildDate>Tue, 22 Jul 2025 09:53:11 +0800</lastBuildDate><atom:link href="https://nuoyang.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>20250722感悟</title><link>https://nuoyang.tech/posts/2025/20250722/</link><pubDate>Tue, 22 Jul 2025 09:52:47 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2025/20250722/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>眼看它高楼起&lt;/p>
-&lt;p>眼看它宴宾客&lt;/p>
-&lt;p>眼看它楼塌了&lt;/p></description></item><item><title>《非暴力沟通》学习</title><link>https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link><pubDate>Mon, 30 Jun 2025 14:15:47 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="观察-感受-需要-请求">&lt;span>观察-感受-需要-请求&lt;/span>
- &lt;a href="#%e8%a7%82%e5%af%9f-%e6%84%9f%e5%8f%97-%e9%9c%80%e8%a6%81-%e8%af%b7%e6%b1%82" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>观察（Observation）&lt;/strong>
-&lt;ul>
-&lt;li>暴力沟通：“你总是迟到！” &amp;ndash; 带有指责&lt;/li>
-&lt;li>非暴力沟通：“你今天会议有1次迟到” &amp;ndash; 客观陈述&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>感受（Feeling）&lt;/strong>
-&lt;ul>
-&lt;li>暴力沟通：“我觉得你不责任” &amp;ndash; 批判&lt;/li>
-&lt;li>非暴力沟通：“我感到焦虑，担心xxxx” &amp;ndash; 表达真实感受&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>需要（Need）&lt;/strong>
-&lt;ul>
-&lt;li>暴力沟通：“你能不能不这么自私！” &amp;ndash; 攻击人格&lt;/li>
-&lt;li>非暴力沟通：“我希望能准时开会，这样我们效率才高” &amp;ndash; 表达需求&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>请求（Request）&lt;/strong>
-&lt;ul>
-&lt;li>暴力沟通：“下次不准迟到！” &amp;ndash; 强制要求&lt;/li>
-&lt;li>非暴力沟通：“下次开会你愿意提前五分钟到么” &amp;ndash; 尊重对方意愿，提出请求&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 class="heading-element" id="倾听理解比说服重要">&lt;span>倾听：理解比说服重要&lt;/span>
- &lt;a href="#%e5%80%be%e5%90%ac%e7%90%86%e8%a7%a3%e6%af%94%e8%af%b4%e6%9c%8d%e9%87%8d%e8%a6%81" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;blockquote>
-&lt;p>全身心理解对方的感受和需求&lt;/p>&lt;/blockquote>
-&lt;ul>
-&lt;li>对方抱怨时，不要急于辩解，而是尝试反馈&lt;/li>
-&lt;li>对方闹情绪时，不要压制情绪，而是共情&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 class="heading-element" id="每一个抱怨背后都有一个未被满足的需求每一次愤怒之下都藏着一颗渴望被理解的心">&lt;span>每一个抱怨背后，都有一个未被满足的需求；每一次愤怒之下，都藏着一颗渴望被理解的心&lt;/span>
- &lt;a href="#%e6%af%8f%e4%b8%80%e4%b8%aa%e6%8a%b1%e6%80%a8%e8%83%8c%e5%90%8e%e9%83%bd%e6%9c%89%e4%b8%80%e4%b8%aa%e6%9c%aa%e8%a2%ab%e6%bb%a1%e8%b6%b3%e7%9a%84%e9%9c%80%e6%b1%82%e6%af%8f%e4%b8%80%e6%ac%a1%e6%84%a4%e6%80%92%e4%b9%8b%e4%b8%8b%e9%83%bd%e8%97%8f%e7%9d%80%e4%b8%80%e9%a2%97%e6%b8%b4%e6%9c%9b%e8%a2%ab%e7%90%86%e8%a7%a3%e7%9a%84%e5%bf%83" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2></description></item><item><title>人生成功与幸福</title><link>https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/</link><pubDate>Thu, 10 Oct 2024 10:22:24 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>一命二运三风水&lt;/p>
-&lt;p>四积阴德五读书&lt;/p>
-&lt;p>六名七相八敬神&lt;/p>
-&lt;p>九交贵人十养生&lt;/p>
-&lt;p>十一择业与择偶&lt;/p>
-&lt;p>十二趋吉与避凶。&lt;/p></description></item><item><title>海拉尔旅游规划</title><link>https://nuoyang.tech/posts/2024/hailaer_travel/</link><pubDate>Fri, 23 Aug 2024 10:17:34 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/hailaer_travel/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="1行程规划">&lt;span>1、行程规划&lt;/span>
- &lt;a href="#1%e8%a1%8c%e7%a8%8b%e8%a7%84%e5%88%92" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h2 class="heading-element" id="出发归途">&lt;span>出发&amp;amp;归途&lt;/span>
- &lt;a href="#%e5%87%ba%e5%8f%91%e5%bd%92%e9%80%94" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>9.14-9.21 共8天，9.14 9.18-9.20请假4d&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>9.14&lt;/strong> 出发&lt;/p>
-&lt;ul>
-&lt;li>6:55 成都双流T2&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>9.15&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>15:50 哈尔滨太平T2&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>9.21&lt;/strong> 返程&lt;/p>
-&lt;ul>
-&lt;li>9:50 呼伦贝尔海拉尔机场&lt;/li>
-&lt;li>14:10 鄂尔多斯伊金霍洛机场&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 class="heading-element" id="具体行程">&lt;span>具体行程&lt;/span>
- &lt;a href="#%e5%85%b7%e4%bd%93%e8%a1%8c%e7%a8%8b" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>天数&lt;/th>
- &lt;th>日期&lt;/th>
- &lt;th>出发&lt;/th>
- &lt;th>目的地&lt;/th>
- &lt;th>住宿&lt;/th>
- &lt;th>游玩&lt;/th>
- &lt;th>备注&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>D1&lt;/td>
- &lt;td>9.14&lt;/td>
- &lt;td>成都(双流机场) 4:30&lt;/td>
- &lt;td>哈尔滨(太平机场) 11:00&lt;/td>
- &lt;td>哈尔滨(美澜酒店)&lt;/td>
- &lt;td>中央大街 早市&lt;/td>
- &lt;td>去程：飞机&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D2&lt;/td>
- &lt;td>9.15&lt;/td>
- &lt;td>哈尔滨(太平机场) 15:50&lt;/td>
- &lt;td>海拉尔东山机场 17:15&lt;/td>
- &lt;td>海拉尔&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>飞机&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D3&lt;/td>
- &lt;td>9.16&lt;/td>
- &lt;td>海拉尔&lt;/td>
- &lt;td>莫日格勒河-额尔古纳&lt;/td>
- &lt;td>额尔古纳&lt;/td>
- &lt;td>早餐：孟根楚鲁茶食&lt;/td>
- &lt;td>135km&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D4&lt;/td>
- &lt;td>9.17&lt;/td>
- &lt;td>额尔古纳&lt;/td>
- &lt;td>恩和-室韦-恩和&lt;/td>
- &lt;td>恩和&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>130km&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D5&lt;/td>
- &lt;td>9.18&lt;/td>
- &lt;td>恩和&lt;/td>
- &lt;td>黑山头&lt;/td>
- &lt;td>黑山头（蒙古包）&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>140km&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D6&lt;/td>
- &lt;td>9.19&lt;/td>
- &lt;td>黑山头&lt;/td>
- &lt;td>满洲里&lt;/td>
- &lt;td>满洲里&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>200km&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D7&lt;/td>
- &lt;td>9.20&lt;/td>
- &lt;td>满洲里&lt;/td>
- &lt;td>海拉尔&lt;/td>
- &lt;td>海拉尔&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>228km&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>D8&lt;/td>
- &lt;td>9.21&lt;/td>
- &lt;td>海拉尔东山机场 9:50&lt;/td>
- &lt;td>鄂尔多斯 14:10 - 成都&lt;/td>
- &lt;td>-&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>返程：飞机&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="住宿酒店">&lt;span>住宿酒店&lt;/span>
- &lt;a href="#%e4%bd%8f%e5%ae%bf%e9%85%92%e5%ba%97" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>日期&lt;/th>
- &lt;th>城市&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>9.14&lt;/td>
- &lt;td>哈尔滨&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>9.15&lt;/td>
- &lt;td>呼伦贝尔&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>9.16&lt;/td>
- &lt;td>额尔古纳&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>9.17&lt;/td>
- &lt;td>恩和&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>9.18&lt;/td>
- &lt;td>黑山头&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>9.19&lt;/td>
- &lt;td>满洲里&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>9.20&lt;/td>
- &lt;td>呼伦贝尔&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="2出行装备list">&lt;span>2、出行装备List&lt;/span>
- &lt;a href="#2%e5%87%ba%e8%a1%8c%e8%a3%85%e5%a4%87list" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>
-&lt;p>必备&lt;/p>
-&lt;ul>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>身份证&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>驾驶证&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>现金&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>口罩&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>衣服&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>电子产品&lt;/p>
-&lt;ul>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>办公电脑&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>手机充电线&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>电脑充电线&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>充电宝&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>洗护&lt;/p>
-&lt;ul>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>洗面奶&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>护肤品&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>牙刷牙膏&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>洗发水&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>沐浴露&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>香皂。洗衣液&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>洗脸巾&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>纸巾&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>口罩&lt;/li>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>保温杯&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>防护&lt;/p>
-&lt;ul>
-&lt;li data-task=" " title="未完成">
-&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>雨伞&lt;/p>
-&lt;/li>
-&lt;li data-task=" " title="未完成">
-&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>防晒霜&lt;/p>
-&lt;/li>
-&lt;li data-task=" " title="未完成">
-&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>花露水+驱蚊&lt;/p>
-&lt;/li>
-&lt;li data-task=" " title="未完成">
-&lt;p>&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>帽子&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>药品&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>其他&lt;/p>
-&lt;ul>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>零食&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 class="heading-element" id="3天气情况">&lt;span>3、天气情况&lt;/span>
- &lt;a href="#3%e5%a4%a9%e6%b0%94%e6%83%85%e5%86%b5" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>整体气温在19-4度左右，需要准备厚一点的衣服&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2024/hailaer_travel/index.assets/image-20240823154920105.png' alt="image-20240823154920105" height="990" width="2170">&lt;/p>
-&lt;h2 class="heading-element" id="4租车">&lt;span>4、租车&lt;/span>
- &lt;a href="#4%e7%a7%9f%e8%bd%a6" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>分类&lt;/th>
- &lt;th>费用&lt;/th>
- &lt;th>备注&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>租车&lt;/td>
- &lt;td>￥2084&lt;/td>
- &lt;td>SUV 大众探岳&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>燃油费&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>过路费&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="5旅游费用">&lt;span>5、旅游费用&lt;/span>
- &lt;a href="#5%e6%97%85%e6%b8%b8%e8%b4%b9%e7%94%a8" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>项目&lt;/th>
- &lt;th>预算金额&lt;/th>
- &lt;th>备注&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>机票&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>住宿费用&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>租车费用&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>经典门票&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>油费+过路费&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>伙食费&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table></description></item><item><title>定风波</title><link>https://nuoyang.tech/posts/2024/dingfengbo/</link><pubDate>Thu, 23 May 2024 16:27:12 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/dingfengbo/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="定风波苏轼">&lt;span>定风波——苏轼&lt;/span>
- &lt;a href="#%e5%ae%9a%e9%a3%8e%e6%b3%a2%e8%8b%8f%e8%bd%bc" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>莫听穿林打叶声&lt;/p>
-&lt;p>何妨吟啸且徐行&lt;/p>
-&lt;p>竹杖芒鞋轻胜马&lt;/p>
-&lt;p>谁怕，一蓑烟雨任平生&lt;/p>
-&lt;p>料峭春风吹酒醒&lt;/p>
-&lt;p>山头斜照却相迎&lt;/p>
-&lt;p>回首向来萧瑟处&lt;/p>
-&lt;p>归去，也无风雨也无晴&lt;/p></description></item><item><title>发财树养殖方法</title><link>https://nuoyang.tech/posts/2023/facaishu/</link><pubDate>Sun, 30 Jul 2023 14:28:03 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/facaishu/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/0c6cd1a1de739d4f42fe7f58b12559f.jpg' alt="0c6cd1a1de739d4f42fe7f58b12559f" height="2479" width="1920">&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/7ec686c87af64975bc0e12c54b2c4d5.jpg' alt="7ec686c87af64975bc0e12c54b2c4d5" height="2466" width="1920">&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/aae7c8d4b67b06e8792473036a1a612.jpg' alt="aae7c8d4b67b06e8792473036a1a612" height="939" width="750">&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/1405cebf510aa563013122813227b77.jpg' alt="1405cebf510aa563013122813227b77" height="971" width="750">&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/8de3ffb5d7004d2718d058a7030de36.jpg' alt="8de3ffb5d7004d2718d058a7030de36" height="2480" width="1920">&lt;/p></description></item><item><title>Bing AI聊天试用</title><link>https://nuoyang.tech/posts/2023/bing-ai/</link><pubDate>Wed, 15 Mar 2023 16:09:32 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/bing-ai/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p>最近chatGPT和openai的GPT-4大火，来试一下bing搜索引擎的ai功能&lt;/p>
-&lt;h2 class="heading-element" id="如何使用bing-ai聊天">&lt;span>如何使用Bing AI聊天&lt;/span>
- &lt;a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8bing-ai%e8%81%8a%e5%a4%a9" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>首先要访问 &lt;a href="https://bing.com/new"target="_blank" rel="external nofollow noopener noreferrer">https://bing.com/new&lt;/a>，需要先登录微软账号，加入到waitlist就可以直接用了&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161304540.png' alt="image-20230315161304540" height="1191" width="1365">&lt;/p>
-&lt;p>界面看起来还是比价清爽的&lt;/p>
-&lt;h2 class="heading-element" id="专业技术问题询问">&lt;span>专业技术问题询问&lt;/span>
- &lt;a href="#%e4%b8%93%e4%b8%9a%e6%8a%80%e6%9c%af%e9%97%ae%e9%a2%98%e8%af%a2%e9%97%ae" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h2 class="heading-element" id="第一个话题baas">&lt;span>第一个话题BaaS&lt;/span>
- &lt;a href="#%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%af%9d%e9%a2%98baas" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>最近在研究BaaS，所以问了问啥是BaaS，BaaS有哪些&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161404971.png' alt="image-20230315161404971" height="769" width="1164">&lt;/p>
-&lt;p>回答内容主要是一些提供服务的厂商&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161459786.png' alt="image-20230315161459786" height="939" width="1160">&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161514224.png' alt="image-20230315161514224" height="981" width="1131">&lt;/p>
-&lt;p>对于小白来说，跟着它做一些起点的调研还是够的，不过作为深度的技术人员，它回答的内容远远不够&lt;/p>
-&lt;h2 class="heading-element" id="第二个话题-faas">&lt;span>第二个话题 FaaS&lt;/span>
- &lt;a href="#%e7%ac%ac%e4%ba%8c%e4%b8%aa%e8%af%9d%e9%a2%98-faas" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>开始第2个话题 faas&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315164541426.png' alt="image-20230315164541426" height="863" width="1143">&lt;/p>
-&lt;p>作为基础的检索功能还是很快就提供了想要的内容，不过除了OpenFunction和OpenFaaS外，其他开源的项目并没有列举出来&lt;/p>
-&lt;p>所以，如果bing收了钱用来影响ai的回答结论，这个也细想想也挺可怕的&lt;/p></description></item><item><title>三亚旅游规划</title><link>https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/</link><pubDate>Thu, 02 Mar 2023 16:41:39 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="三亚旅游攻略">&lt;span>三亚旅游攻略&lt;/span>
- &lt;a href="#%e4%b8%89%e4%ba%9a%e6%97%85%e6%b8%b8%e6%94%bb%e7%95%a5" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h2 class="heading-element" id="行程">&lt;span>行程&lt;/span>
- &lt;a href="#%e8%a1%8c%e7%a8%8b" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>日期&lt;/th>
- &lt;th>时间段&lt;/th>
- &lt;th>地点&lt;/th>
- &lt;th>备注&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;u>&lt;strong>03-03&lt;/strong>&lt;/u>&lt;/td>
- &lt;td>中午&lt;/td>
- &lt;td>🛬三亚凤凰机场&lt;/td>
- &lt;td>抵达三亚&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>下午&lt;/td>
- &lt;td>取租车🚗 入驻亚龙湾酒店&lt;/td>
- &lt;td>酒店玩耍&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>晚上&lt;/td>
- &lt;td>海鲜市场吃海鲜🦈🦐🦀&lt;/td>
- &lt;td>&lt;strong>保持警惕 谨防被宰！&lt;/strong>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;u>&lt;strong>03-04&lt;/strong>&lt;/u>&lt;/td>
- &lt;td>上午&lt;/td>
- &lt;td>🍜酒店早餐&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>中午&lt;/td>
- &lt;td>【出发】去南海观音，就近吃饭&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>下午&lt;/td>
- &lt;td>南海观音&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>晚上&lt;/td>
- &lt;td>椰梦长廊🌅&lt;/td>
- &lt;td>18点前赶到看日落&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;strong>&lt;u>03-05&lt;/u>&lt;/strong>&lt;/td>
- &lt;td>上午&lt;/td>
- &lt;td>🍜酒店早餐&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>中午&lt;/td>
- &lt;td>【出发】去海棠湾酒店，路上就近吃饭&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>下午&lt;/td>
- &lt;td>入住海棠湾 海棠湾酒店 沙滩玩耍🏖🏊&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>晚上&lt;/td>
- &lt;td>就近吃饭🥘&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;u>&lt;strong>03-06&lt;/strong>&lt;/u>&lt;/td>
- &lt;td>上午&lt;/td>
- &lt;td>🍜酒店早餐，&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>中午&lt;/td>
- &lt;td>蜈支洲岛🏝&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>下午&lt;/td>
- &lt;td>蜈支洲岛🏝&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>晚上&lt;/td>
- &lt;td>返回酒店&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;u>&lt;strong>03-07&lt;/strong>&lt;/u>&lt;/td>
- &lt;td>上午&lt;/td>
- &lt;td>🍜酒店早餐，收拾准备返程&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>中午&lt;/td>
- &lt;td>开车去机场，路上看看玩什么，也可以在酒店玩&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>下午&lt;/td>
- &lt;td>返还租车🚗 返程🛫&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="租车">&lt;span>租车&lt;/span>
- &lt;a href="#%e7%a7%9f%e8%bd%a6" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>租车平台对比&lt;/p>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>名称&lt;/th>
- &lt;th>是否押金&lt;/th>
- &lt;th>价格&lt;/th>
- &lt;th>靠谱度&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>一嗨租车&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>⭐️⭐️⭐️⭐️⭐️&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>神州租车&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>⭐️⭐️⭐️⭐️⭐️&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>携程&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>⭐️&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>一嗨租车在三亚凤凰机场的停车场里取就行，很方便，走的时候直接在机场还车就可以&lt;/p>
-&lt;h2 class="heading-element" id="住宿">&lt;span>住宿&lt;/span>
- &lt;a href="#%e4%bd%8f%e5%ae%bf" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 class="heading-element" id="亚龙湾">&lt;span>亚龙湾&lt;/span>
- &lt;a href="#%e4%ba%9a%e9%be%99%e6%b9%be" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;h4 class="heading-element" id="三亚亚龙湾星华套房假日酒店">&lt;span>三亚亚龙湾星华套房假日酒店&lt;/span>
- &lt;a href="#%e4%b8%89%e4%ba%9a%e4%ba%9a%e9%be%99%e6%b9%be%e6%98%9f%e5%8d%8e%e5%a5%97%e6%88%bf%e5%81%87%e6%97%a5%e9%85%92%e5%ba%97" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h4>&lt;p>地点：三亚市吉阳区亚龙湾国家旅游度假区龙塘路14号&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230302233809738.png' alt="image-20230302233809738" height="1700" width="3034">&lt;/p>
-&lt;h3 class="heading-element" id="海棠湾">&lt;span>海棠湾&lt;/span>
- &lt;a href="#%e6%b5%b7%e6%a3%a0%e6%b9%be" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;h4 class="heading-element" id="三亚-hotel海棠湾阳光壹酒店">&lt;span>三亚 Hotel海棠湾阳光壹酒店&lt;/span>
- &lt;a href="#%e4%b8%89%e4%ba%9a-hotel%e6%b5%b7%e6%a3%a0%e6%b9%be%e9%98%b3%e5%85%89%e5%a3%b9%e9%85%92%e5%ba%97" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h4>&lt;p>地点：三亚市海棠区海棠南路4号&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230302234140508.png' alt="image-20230302234140508" height="1506" width="3290">&lt;/p>
-&lt;p>出门过个马路就是海边，可以赶海捡贝壳🐚 这里可以看日出&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317131147803.png' alt="image-20230317131147803" height="960" width="1280">&lt;/p>
-&lt;h2 class="heading-element" id="景点">&lt;span>景点&lt;/span>
- &lt;a href="#%e6%99%af%e7%82%b9" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 class="heading-element" id="椰梦长廊">&lt;span>椰梦长廊&lt;/span>
- &lt;a href="#%e6%a4%b0%e6%a2%a6%e9%95%bf%e5%bb%8a" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>看日落&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230303001736112.png' alt="image-20230303001736112" height="790" width="1372">&lt;/p>
-&lt;h3 class="heading-element" id="南海观音">&lt;span>南海观音&lt;/span>
- &lt;a href="#%e5%8d%97%e6%b5%b7%e8%a7%82%e9%9f%b3" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>壮观的景象&lt;/p>
-&lt;h3 class="heading-element" id="亚龙湾热带天堂森林公园">&lt;span>亚龙湾热带天堂森林公园&lt;/span>
- &lt;a href="#%e4%ba%9a%e9%be%99%e6%b9%be%e7%83%ad%e5%b8%a6%e5%a4%a9%e5%a0%82%e6%a3%ae%e6%9e%97%e5%85%ac%e5%9b%ad" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;h3 class="heading-element" id="蜈支洲岛">&lt;span>蜈支洲岛&lt;/span>
- &lt;a href="#%e8%9c%88%e6%94%af%e6%b4%b2%e5%b2%9b" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;blockquote>
-&lt;p>登岛时间为08:00至16:00；离岛时间为08:30至18:30&lt;/p>
-&lt;p>蜈支洲岛码头轮渡：上岛时间8:00-16:00；下岛时间08:30-18:30；人较多，早上排队上岛时间通常需要1小时左右&lt;/p>&lt;/blockquote>
-&lt;img src="index.assets/image-20230302235444990.png" alt="image-20230302235444990" style="zoom:50%;" />
-&lt;h3 class="heading-element" id="小东海">&lt;span>小东海&lt;/span>
- &lt;a href="#%e5%b0%8f%e4%b8%9c%e6%b5%b7" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317131356521.png' alt="image-20230317131356521" height="251" width="568">&lt;/p>
-&lt;p>这里早上可以赶海，潮水褪去后 石头都露出来，可以在里面捡螃蟹和海星&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317132023346.png' alt="image-20230317132023346" height="357" width="1063">&lt;/p>
-&lt;h3 class="heading-element" id="后海村">&lt;span>后海村&lt;/span>
- &lt;a href="#%e5%90%8e%e6%b5%b7%e6%9d%91" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>很多冲浪在这里，但是自驾过来慎重，路很窄，很堵，要是想看日落要提前一些出发，基本7点不到就看不到日落了&lt;/p>
-&lt;h3 class="heading-element" id="海昌不夜城">&lt;span>海昌不夜城&lt;/span>
- &lt;a href="#%e6%b5%b7%e6%98%8c%e4%b8%8d%e5%a4%9c%e5%9f%8e" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>很多小孩玩的东西，离海棠湾和免税店二期很近，有很大的摩天轮&lt;/p>
-&lt;h2 class="heading-element" id="吃饭">&lt;span>吃饭&lt;/span>
- &lt;a href="#%e5%90%83%e9%a5%ad" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;blockquote>
-&lt;p>一天两顿饭感觉就够了，一顿酒店早餐，一顿当地特色&lt;/p>
-&lt;p>每天一个椰子🥥 喝起来还是很开心的&lt;/p>&lt;/blockquote>
-&lt;h3 class="heading-element" id="六盘村">&lt;span>六盘村&lt;/span>
- &lt;a href="#%e5%85%ad%e7%9b%98%e6%9d%91" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>一个小村改造的，很多东北人开店的地方，也有网红店，吃饭可以挑一挑再吃&lt;/p>
-&lt;h3 class="heading-element" id="亿恒夜市">&lt;span>亿恒夜市&lt;/span>
- &lt;a href="#%e4%ba%bf%e6%81%92%e5%a4%9c%e5%b8%82" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>千万不要去！！！太坑了&lt;/p>
-&lt;h3 class="heading-element" id="第一海鲜市场">&lt;span>第一海鲜市场&lt;/span>
- &lt;a href="#%e7%ac%ac%e4%b8%80%e6%b5%b7%e9%b2%9c%e5%b8%82%e5%9c%ba" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>没去过，被夜市坑了后就不想再去了&lt;/p>
-&lt;h3 class="heading-element" id="椰子鸡">&lt;span>椰子鸡&lt;/span>
- &lt;a href="#%e6%a4%b0%e5%ad%90%e9%b8%a1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>吃了两顿椰子鸡，一顿是在酒店里赠送的，分量很大，另外一份是在大众点评上搜的排名靠前的&lt;/p></description></item><item><title>技术新闻博客收集</title><link>https://nuoyang.tech/posts/2023/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%94%B6%E9%9B%86/</link><pubDate>Thu, 02 Mar 2023 09:57:48 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%94%B6%E9%9B%86/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;h2 class="heading-element" id="技术新闻博客类">&lt;span>技术新闻博客类&lt;/span>
- &lt;a href="#%e6%8a%80%e6%9c%af%e6%96%b0%e9%97%bb%e5%8d%9a%e5%ae%a2%e7%b1%bb" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>名称&lt;/th>
- &lt;th>链接&lt;/th>
- &lt;th>描述&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>DB-Engines&lt;/td>
- &lt;td>&lt;a href="https://db-engines.com/"target="_blank" rel="external nofollow noopener noreferrer">https://db-engines.com/&lt;/a>&lt;/td>
- &lt;td>数据库相关、数据库排名&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>APM Digest&lt;/td>
- &lt;td>&lt;a href="https://www.apmdigest.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.apmdigest.com/&lt;/a>&lt;/td>
- &lt;td>APM监控相关资料和新闻、趋势&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>DevOps Digest&lt;/td>
- &lt;td>&lt;a href="https://www.devopsdigest.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.devopsdigest.com/&lt;/a>&lt;/td>
- &lt;td>devops相关资料和新闻、趋势&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>CNCF&lt;/td>
- &lt;td>&lt;a href="https://www.cncf.io/"target="_blank" rel="external nofollow noopener noreferrer">https://www.cncf.io/&lt;/a>&lt;/td>
- &lt;td>云原生基金会&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>InfoQ&lt;/td>
- &lt;td>&lt;a href="https://www.infoq.cn/"target="_blank" rel="external nofollow noopener noreferrer">https://www.infoq.cn/&lt;/a> &lt;br/>&lt;a href="https://infoq.com/"target="_blank" rel="external nofollow noopener noreferrer">https://infoq.com/&lt;/a>&lt;/td>
- &lt;td>InfoQ&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Hacker News&lt;/td>
- &lt;td>&lt;a href="https://news.ycombinator.com/"target="_blank" rel="external nofollow noopener noreferrer">https://news.ycombinator.com/&lt;/a>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Linux&lt;/td>
- &lt;td>&lt;a href="https://www.linux.com"target="_blank" rel="external nofollow noopener noreferrer">www.linux.com&lt;/a>&lt;/td>
- &lt;td>topics and blog related with Linux System&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Thoughtworks&lt;/td>
- &lt;td>&lt;a href="https://www.thoughtworks.com/insights/technology"target="_blank" rel="external nofollow noopener noreferrer">https://www.thoughtworks.com/insights/technology&lt;/a>&lt;/td>
- &lt;td>Thoughtworks insight&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>web.dev&lt;/td>
- &lt;td>&lt;a href="https://web.dev/"target="_blank" rel="external nofollow noopener noreferrer">https://web.dev/&lt;/a>&lt;/td>
- &lt;td>谷歌web开发网站&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="教程系列">&lt;span>教程系列&lt;/span>
- &lt;a href="#%e6%95%99%e7%a8%8b%e7%b3%bb%e5%88%97" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>名称&lt;/th>
- &lt;th>链接&lt;/th>
- &lt;th>描述&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Baeldung&lt;/td>
- &lt;td>&lt;a href="https://www.baeldung.com/spring-tutorial"target="_blank" rel="external nofollow noopener noreferrer">https://www.baeldung.com/spring-tutorial&lt;/a>&lt;/td>
- &lt;td>一系列初级教程，比如spring、java、mesh等&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Javapoint系列教程&lt;/td>
- &lt;td>&lt;a href="https://www.javatpoint.com/operating-system"target="_blank" rel="external nofollow noopener noreferrer">https://www.javatpoint.com/operating-system&lt;/a>&lt;/td>
- &lt;td>除了java，还有操作系统的初级教程&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="技术大佬博客">&lt;span>技术大佬博客&lt;/span>
- &lt;a href="#%e6%8a%80%e6%9c%af%e5%a4%a7%e4%bd%ac%e5%8d%9a%e5%ae%a2" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>名称&lt;/th>
- &lt;th>链接&lt;/th>
- &lt;th>描述&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Bilgin Ibryam&lt;/td>
- &lt;td>&lt;a href="http://www.ofbizian.com/"target="_blank" rel="external nofollow noopener noreferrer">http://www.ofbizian.com/&lt;/a>&lt;/td>
- &lt;td>云原生布道，架构&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Martin Fowler&lt;/td>
- &lt;td>&lt;a href="https://martinfowler.com/"target="_blank" rel="external nofollow noopener noreferrer">https://martinfowler.com/&lt;/a>&lt;/td>
- &lt;td>ThoughtWorks 微服务&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>敖小剑&lt;/td>
- &lt;td>&lt;a href="https://skyao.io/"target="_blank" rel="external nofollow noopener noreferrer">https://skyao.io/&lt;/a>&lt;/td>
- &lt;td>国内 云原生布道&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>赵化冰&lt;/td>
- &lt;td>&lt;a href="https://www.zhaohuabing.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.zhaohuabing.com/&lt;/a>&lt;/td>
- &lt;td>国内 云原生布道&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Brendan Gregg&lt;/td>
- &lt;td>&lt;a href="https://www.brendangregg.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.brendangregg.com/&lt;/a>&lt;/td>
- &lt;td>内核性能&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Thorsten Ball&lt;/td>
- &lt;td>&lt;a href="https://thorstenball.com/"target="_blank" rel="external nofollow noopener noreferrer">https://thorstenball.com/&lt;/a>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Kamil Grzybek&lt;/td>
- &lt;td>&lt;a href="https://www.kamilgrzybek.com/"target="_blank" rel="external nofollow noopener noreferrer">https://www.kamilgrzybek.com/&lt;/a>&lt;/td>
- &lt;td>Modular Monolith System Architecture&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>ROC&lt;/td>
- &lt;td>&lt;a href="https://imroc.cc/"target="_blank" rel="external nofollow noopener noreferrer">https://imroc.cc/&lt;/a>&lt;/td>
- &lt;td>云原生&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Mark Zhu&lt;/td>
- &lt;td>&lt;a href="https://blog.mygraphql.com/zh/"target="_blank" rel="external nofollow noopener noreferrer">https://blog.mygraphql.com/zh/&lt;/a>&lt;/td>
- &lt;td>云原生&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Jimmy Song&lt;/td>
- &lt;td>&lt;a href="https://jimmysong.io/"target="_blank" rel="external nofollow noopener noreferrer">https://jimmysong.io/&lt;/a>&lt;/td>
- &lt;td>云原生&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>阮一峰&lt;/td>
- &lt;td>&lt;a href="http://www.ruanyifeng.com/blog/"target="_blank" rel="external nofollow noopener noreferrer">http://www.ruanyifeng.com/blog/&lt;/a>&lt;/td>
- &lt;td>每周五精选内容&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 class="heading-element" id="科技公司博客">&lt;span>科技公司博客&lt;/span>
- &lt;a href="#%e7%a7%91%e6%8a%80%e5%85%ac%e5%8f%b8%e5%8d%9a%e5%ae%a2" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>名称&lt;/th>
- &lt;th>链接&lt;/th>
- &lt;th>描述&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>美团&lt;/td>
- &lt;td>&lt;a href="https://tech.meituan.com"target="_blank" rel="external nofollow noopener noreferrer">https://tech.meituan.com&lt;/a>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Shopify&lt;/td>
- &lt;td>&lt;a href="https://shopify.engineering"target="_blank" rel="external nofollow noopener noreferrer">https://shopify.engineering&lt;/a>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Netflix&lt;/td>
- &lt;td>&lt;a href="https://netflixtechblog.com"target="_blank" rel="external nofollow noopener noreferrer">https://netflixtechblog.com&lt;/a>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Facebook/Meta&lt;/td>
- &lt;td>&lt;a href="https://tech.facebook.com"target="_blank" rel="external nofollow noopener noreferrer">https://tech.facebook.com&lt;/a>&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table></description></item><item><title>Hugo写作指南</title><link>https://nuoyang.tech/posts/2023/hugo/</link><pubDate>Tue, 28 Feb 2023 09:59:43 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/hugo/</guid><category domain="https://nuoyang.tech/categories/hugo/">Hugo</category><description>&lt;blockquote>
-&lt;p>Tips：&lt;/p>
-&lt;p>本站点针对技术文档做过调整，写作方式只针对本博客&lt;/p>&lt;/blockquote>
-&lt;h2 class="heading-element" id="hugo初始化搭建">&lt;span>Hugo初始化搭建&lt;/span>
- &lt;a href="#hugo%e5%88%9d%e5%a7%8b%e5%8c%96%e6%90%ad%e5%bb%ba" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>官网：https://gohugo.io/&lt;/p>
-&lt;h2 class="heading-element" id="安装hugo">&lt;span>安装Hugo&lt;/span>
- &lt;a href="#%e5%ae%89%e8%a3%85hugo" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>安装方式有如下两种：&lt;/p>
-&lt;ul>
-&lt;li>使用brew工具安装（国内镜像源一般都不是最新版本，有些新的主题无法使用）&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">brew install hugo&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>直接下载release文件绑定到PATH上&lt;/li>
-&lt;/ul>
-&lt;p>最新的release包可以在&lt;a href="https://github.com/gohugoio/hugo/releases"target="_blank" rel="external nofollow noopener noreferrer">Hugo releases&lt;/a>拿到&lt;/p>
-&lt;h2 class="heading-element" id="安装theme">&lt;span>安装Theme&lt;/span>
- &lt;a href="#%e5%ae%89%e8%a3%85theme" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git submodule add https://github.com/AtticusLv/FixIt themes/FixIt&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>升级主题&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git submodule update --remote --merge themes/FixIt&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="本地调试">&lt;span>本地调试&lt;/span>
- &lt;a href="#%e6%9c%ac%e5%9c%b0%e8%b0%83%e8%af%95" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo server&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>编译静态文件，生成目录为/public&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="创建日常博客">&lt;span>创建日常博客&lt;/span>
- &lt;a href="#%e5%88%9b%e5%bb%ba%e6%97%a5%e5%b8%b8%e5%8d%9a%e5%ae%a2" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>只文字版&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new posts/xxx.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>图文版&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new posts/xxx/index.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>使用typora编辑时，会自动在posts/xxx/目录下增加相关图片目录&lt;/p>
-&lt;h2 class="heading-element" id="创建技术文档">&lt;span>创建技术文档&lt;/span>
- &lt;a href="#%e5%88%9b%e5%bb%ba%e6%8a%80%e6%9c%af%e6%96%87%e6%a1%a3" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>只文字版&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new tech/[catalog]/xxx.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>图文版&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new tech/[catalog]/xxx/index.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>例如，要创建一个技术文档，并且包换图片，catalog为「云原生」，那运行的命令为&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hugo new tech/cloudnative/istio_proxy/index.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>在index.md文件中修改title、catalog，然后直接deploy到github上就完成发布了&lt;/p>
-&lt;h2 class="heading-element" id="增加catalog分类">&lt;span>增加catalog分类&lt;/span>
- &lt;a href="#%e5%a2%9e%e5%8a%a0catalog%e5%88%86%e7%b1%bb" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>在&lt;code>layouts/tech/tech.html&lt;/code>模板中，增加了下面的代码，可以根据文章中 &lt;strong>catalog&lt;/strong> 字段来分类，这样让技术文章就具备层级结构了&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> tech.html中内容
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .....
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- 显示所有tech下的文档 --&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {{- $curpages := where .Site.Pages &amp;#34;Type&amp;#34; &amp;#34;tech&amp;#34; -}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;lt;!-- 根据catalog字段内容分类 --&amp;gt;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> {{- $pages := $curpages.GroupByParam &amp;#34;catalog&amp;#34; -}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> .....&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>在tech目录下new出来的文章，会根据tech的模板，自动加上catalog字段&lt;/p>
-&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/hugo/index.assets/image-20230301181507278.png' alt="image-20230301181507278" height="402" width="1236">&lt;/p>
-&lt;h2 class="heading-element" id="如何在1级标题栏技术文档增加2级目录">&lt;span>如何在1级标题栏【技术文档】增加2级目录&lt;/span>
- &lt;a href="#%e5%a6%82%e4%bd%95%e5%9c%a81%e7%ba%a7%e6%a0%87%e9%a2%98%e6%a0%8f%e6%8a%80%e6%9c%af%e6%96%87%e6%a1%a3%e5%a2%9e%e5%8a%a02%e7%ba%a7%e7%9b%ae%e5%bd%95" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/hugo/index.assets/image-20230301130258500.png' alt="image-20230301130258500" height="144" width="358">&lt;/p>
-&lt;p>以【cloudnative】举例&lt;/p>
-&lt;ol>
-&lt;li>在tech下创建目录/tech/cloudnative&lt;/li>
-&lt;li>/tech/cloudnative下创建 &lt;code>_index.md&lt;/code> 文件，可以手动创建，也可以用命令行创建，内容如下：&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">---
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">title: &amp;#34;云原生目录&amp;#34;
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">layout: cloudnative
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hidden: true
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">type: cloudnative
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">summary: 历史文章按照年月归档.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">url: /tech/cloudnative
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">menu:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> main:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> title: 架构文档
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parent: tech
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> weight: 0
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> params:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> icon: fa-brands fa-readme
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">catalog: 云原生
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>需要注意catalog、layout和type字段，其中menu是用来在1级标题栏下增加2级标题栏的主要代码，weight控制2级目录显示顺序，越大越靠上，越小越靠下&lt;/p>
-&lt;ol start="3">
-&lt;li>在layouts下创建目录/tech/cloudnative，创建文件&lt;code>cloudnative.html&lt;/code>，内容可以从posts模板或者其他地方模板下复制过来，内容略&lt;/li>
-&lt;/ol>
-&lt;h2 class="heading-element" id="更新theme样式">&lt;span>更新Theme样式&lt;/span>
- &lt;a href="#%e6%9b%b4%e6%96%b0theme%e6%a0%b7%e5%bc%8f" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>站点样式采用 &lt;a href="https://github.com/hugo-fixit/FixIt"target="_blank" rel="external nofollow noopener noreferrer">&lt;strong>FixIt&lt;/strong>&lt;/a>，因为有部分样式要调整，已fork到 &lt;code>https://github.com/AtticusLv/FixIt&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git submodule update --remote --merge&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="使用bash一键提交">&lt;span>使用bash一键提交&lt;/span>
- &lt;a href="#%e4%bd%bf%e7%94%a8bash%e4%b8%80%e9%94%ae%e6%8f%90%e4%ba%a4" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>编辑bash脚本&lt;code>./deploy.sh&lt;/code>一键提交git&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">./deploy.sh &amp;#34;[commit content]&amp;#34;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>脚本内容如下：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="c1"># date time&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">currentDateTime&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sb">`&lt;/span>date &lt;span class="s1">&amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;&lt;/span>&lt;span class="sb">`&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">commitMsg&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nv">$currentDateTime&lt;/span>&lt;span class="s2">&amp;#34; &amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;提交commit: &amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">commitMsg&lt;/span>&lt;span class="si">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">commitMsg&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git pull
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git status
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;git add/commit/pull done...&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># push to remote main branch&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>注意&lt;/strong>：使用前需要给脚本添加权限&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod 755 deploy.sh&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 class="heading-element" id="特别注意">&lt;span>特别注意&lt;/span>
- &lt;a href="#%e7%89%b9%e5%88%ab%e6%b3%a8%e6%84%8f" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h2 class="heading-element" id="无图片文章转换为有图片文章">&lt;span>无图片文章转换为有图片文章&lt;/span>
- &lt;a href="#%e6%97%a0%e5%9b%be%e7%89%87%e6%96%87%e7%ab%a0%e8%bd%ac%e6%8d%a2%e4%b8%ba%e6%9c%89%e5%9b%be%e7%89%87%e6%96%87%e7%ab%a0" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>&lt;strong>因为hugo结构的原因，如果要将没有图片的文章转换为有图片的文章，需要单独创建一个目录，将原理的.md文件移入，并且重命名为index.md&lt;/strong>&lt;/p>
-&lt;h2 class="heading-element" id="剩余未完成工作">&lt;span>剩余未完成工作&lt;/span>
- &lt;a href="#%e5%89%a9%e4%bd%99%e6%9c%aa%e5%ae%8c%e6%88%90%e5%b7%a5%e4%bd%9c" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li data-task=" " title="未完成">&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true">&lt;/i>代码块行数和复制功能&lt;/li>
-&lt;/ul></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>大卓个人技术博客</title><link>https://nuoyang.tech/</link><description>大卓个人技术博客</description><generator>Hugo 0.155.3 &amp; FixIt v0.3.21-89f9373b</generator><language>zh-cn</language><managingEditor>lvatticus@gmail.com (大卓)</managingEditor><webMaster>lvatticus@gmail.com (大卓)</webMaster><lastBuildDate>Sat, 14 Feb 2026 15:36:36 +0800</lastBuildDate><atom:link href="https://nuoyang.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>使用命令行查询目录下文件大小</title><link>https://nuoyang.tech/posts/2026/72ab2f1/</link><pubDate>Sat, 14 Feb 2026 15:31:21 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2026/72ab2f1/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p&gt;命令如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;find . -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d ! -name &lt;span class="s2"&gt;&amp;#34;.&amp;#34;&lt;/span&gt; ! -name &lt;span class="s2"&gt;&amp;#34;..&amp;#34;&lt;/span&gt; -print0 2&amp;gt;/dev/null &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;|&lt;/span&gt; xargs -0 du -sk 2&amp;gt;/dev/null &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;|&lt;/span&gt; sort -rn &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt; size = $1 / 1024;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt; path = $0;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt; sub(/^[0-9]+[[:space:]]+/, &amp;#34;&amp;#34;, path); # 移除开头的数字和空白
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt; gsub(/^\.\/+/, &amp;#34;&amp;#34;, path); # 清理路径前缀 &amp;#34;./&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt; printf &amp;#34;%7.2f MB %s\n&amp;#34;, size, path
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt; }&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>提升判断力</title><link>https://nuoyang.tech/posts/2025/20250804-%E6%8F%90%E5%8D%87%E5%88%A4%E6%96%AD%E5%8A%9B/</link><pubDate>Mon, 04 Aug 2025 14:00:50 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2025/20250804-%E6%8F%90%E5%8D%87%E5%88%A4%E6%96%AD%E5%8A%9B/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="提升判断力"&gt;&lt;span&gt;提升判断力&lt;/span&gt;
+ &lt;a href="#%e6%8f%90%e5%8d%87%e5%88%a4%e6%96%ad%e5%8a%9b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;</description></item><item><title>20250722感悟</title><link>https://nuoyang.tech/posts/2025/20250722/</link><pubDate>Tue, 22 Jul 2025 09:52:47 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2025/20250722/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p&gt;眼看它高楼起&lt;/p&gt;
+&lt;p&gt;眼看它宴宾客&lt;/p&gt;
+&lt;p&gt;眼看它楼塌了&lt;/p&gt;</description></item><item><title>《非暴力沟通》学习</title><link>https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</link><pubDate>Mon, 30 Jun 2025 14:15:47 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2025/20250630-%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="观察-感受-需要-请求"&gt;&lt;span&gt;观察-感受-需要-请求&lt;/span&gt;
+ &lt;a href="#%e8%a7%82%e5%af%9f-%e6%84%9f%e5%8f%97-%e9%9c%80%e8%a6%81-%e8%af%b7%e6%b1%82" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;观察（Observation）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;暴力沟通：“你总是迟到！” &amp;ndash; 带有指责&lt;/li&gt;
+&lt;li&gt;非暴力沟通：“你今天会议有1次迟到” &amp;ndash; 客观陈述&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;感受（Feeling）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;暴力沟通：“我觉得你不责任” &amp;ndash; 批判&lt;/li&gt;
+&lt;li&gt;非暴力沟通：“我感到焦虑，担心xxxx” &amp;ndash; 表达真实感受&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;需要（Need）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;暴力沟通：“你能不能不这么自私！” &amp;ndash; 攻击人格&lt;/li&gt;
+&lt;li&gt;非暴力沟通：“我希望能准时开会，这样我们效率才高” &amp;ndash; 表达需求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;请求（Request）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;暴力沟通：“下次不准迟到！” &amp;ndash; 强制要求&lt;/li&gt;
+&lt;li&gt;非暴力沟通：“下次开会你愿意提前五分钟到么” &amp;ndash; 尊重对方意愿，提出请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 class="heading-element" id="倾听理解比说服重要"&gt;&lt;span&gt;倾听：理解比说服重要&lt;/span&gt;
+ &lt;a href="#%e5%80%be%e5%90%ac%e7%90%86%e8%a7%a3%e6%af%94%e8%af%b4%e6%9c%8d%e9%87%8d%e8%a6%81" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;全身心理解对方的感受和需求&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;对方抱怨时，不要急于辩解，而是尝试反馈&lt;/li&gt;
+&lt;li&gt;对方闹情绪时，不要压制情绪，而是共情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 class="heading-element" id="每一个抱怨背后都有一个未被满足的需求每一次愤怒之下都藏着一颗渴望被理解的心"&gt;&lt;span&gt;每一个抱怨背后，都有一个未被满足的需求；每一次愤怒之下，都藏着一颗渴望被理解的心&lt;/span&gt;
+ &lt;a href="#%e6%af%8f%e4%b8%80%e4%b8%aa%e6%8a%b1%e6%80%a8%e8%83%8c%e5%90%8e%e9%83%bd%e6%9c%89%e4%b8%80%e4%b8%aa%e6%9c%aa%e8%a2%ab%e6%bb%a1%e8%b6%b3%e7%9a%84%e9%9c%80%e6%b1%82%e6%af%8f%e4%b8%80%e6%ac%a1%e6%84%a4%e6%80%92%e4%b9%8b%e4%b8%8b%e9%83%bd%e8%97%8f%e7%9d%80%e4%b8%80%e9%a2%97%e6%b8%b4%e6%9c%9b%e8%a2%ab%e7%90%86%e8%a7%a3%e7%9a%84%e5%bf%83" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;</description></item><item><title>人生成功与幸福</title><link>https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/</link><pubDate>Thu, 10 Oct 2024 10:22:24 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/%E4%BA%BA%E7%94%9F%E6%88%90%E5%8A%9F%E4%B8%8E%E5%B9%B8%E7%A6%8F/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p&gt;一命二运三风水&lt;/p&gt;
+&lt;p&gt;四积阴德五读书&lt;/p&gt;
+&lt;p&gt;六名七相八敬神&lt;/p&gt;
+&lt;p&gt;九交贵人十养生&lt;/p&gt;
+&lt;p&gt;十一择业与择偶&lt;/p&gt;
+&lt;p&gt;十二趋吉与避凶。&lt;/p&gt;</description></item><item><title>海拉尔旅游规划</title><link>https://nuoyang.tech/posts/2024/hailaer_travel/</link><pubDate>Fri, 23 Aug 2024 10:17:34 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/hailaer_travel/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="1行程规划"&gt;&lt;span&gt;1、行程规划&lt;/span&gt;
+ &lt;a href="#1%e8%a1%8c%e7%a8%8b%e8%a7%84%e5%88%92" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h2 class="heading-element" id="出发归途"&gt;&lt;span&gt;出发&amp;amp;归途&lt;/span&gt;
+ &lt;a href="#%e5%87%ba%e5%8f%91%e5%bd%92%e9%80%94" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;9.14-9.21 共8天，9.14 9.18-9.20请假4d&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;9.14&lt;/strong&gt; 出发&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;6:55 成都双流T2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;9.15&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;15:50 哈尔滨太平T2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;9.21&lt;/strong&gt; 返程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;9:50 呼伦贝尔海拉尔机场&lt;/li&gt;
+&lt;li&gt;14:10 鄂尔多斯伊金霍洛机场&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 class="heading-element" id="具体行程"&gt;&lt;span&gt;具体行程&lt;/span&gt;
+ &lt;a href="#%e5%85%b7%e4%bd%93%e8%a1%8c%e7%a8%8b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;天数&lt;/th&gt;
+ &lt;th&gt;日期&lt;/th&gt;
+ &lt;th&gt;出发&lt;/th&gt;
+ &lt;th&gt;目的地&lt;/th&gt;
+ &lt;th&gt;住宿&lt;/th&gt;
+ &lt;th&gt;游玩&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D1&lt;/td&gt;
+ &lt;td&gt;9.14&lt;/td&gt;
+ &lt;td&gt;成都(双流机场) 4:30&lt;/td&gt;
+ &lt;td&gt;哈尔滨(太平机场) 11:00&lt;/td&gt;
+ &lt;td&gt;哈尔滨(美澜酒店)&lt;/td&gt;
+ &lt;td&gt;中央大街 早市&lt;/td&gt;
+ &lt;td&gt;去程：飞机&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D2&lt;/td&gt;
+ &lt;td&gt;9.15&lt;/td&gt;
+ &lt;td&gt;哈尔滨(太平机场) 15:50&lt;/td&gt;
+ &lt;td&gt;海拉尔东山机场 17:15&lt;/td&gt;
+ &lt;td&gt;海拉尔&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;飞机&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D3&lt;/td&gt;
+ &lt;td&gt;9.16&lt;/td&gt;
+ &lt;td&gt;海拉尔&lt;/td&gt;
+ &lt;td&gt;莫日格勒河-额尔古纳&lt;/td&gt;
+ &lt;td&gt;额尔古纳&lt;/td&gt;
+ &lt;td&gt;早餐：孟根楚鲁茶食&lt;/td&gt;
+ &lt;td&gt;135km&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D4&lt;/td&gt;
+ &lt;td&gt;9.17&lt;/td&gt;
+ &lt;td&gt;额尔古纳&lt;/td&gt;
+ &lt;td&gt;恩和-室韦-恩和&lt;/td&gt;
+ &lt;td&gt;恩和&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;130km&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D5&lt;/td&gt;
+ &lt;td&gt;9.18&lt;/td&gt;
+ &lt;td&gt;恩和&lt;/td&gt;
+ &lt;td&gt;黑山头&lt;/td&gt;
+ &lt;td&gt;黑山头（蒙古包）&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;140km&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D6&lt;/td&gt;
+ &lt;td&gt;9.19&lt;/td&gt;
+ &lt;td&gt;黑山头&lt;/td&gt;
+ &lt;td&gt;满洲里&lt;/td&gt;
+ &lt;td&gt;满洲里&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;200km&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D7&lt;/td&gt;
+ &lt;td&gt;9.20&lt;/td&gt;
+ &lt;td&gt;满洲里&lt;/td&gt;
+ &lt;td&gt;海拉尔&lt;/td&gt;
+ &lt;td&gt;海拉尔&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;228km&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D8&lt;/td&gt;
+ &lt;td&gt;9.21&lt;/td&gt;
+ &lt;td&gt;海拉尔东山机场 9:50&lt;/td&gt;
+ &lt;td&gt;鄂尔多斯 14:10 - 成都&lt;/td&gt;
+ &lt;td&gt;-&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;返程：飞机&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 class="heading-element" id="住宿酒店"&gt;&lt;span&gt;住宿酒店&lt;/span&gt;
+ &lt;a href="#%e4%bd%8f%e5%ae%bf%e9%85%92%e5%ba%97" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;日期&lt;/th&gt;
+ &lt;th&gt;城市&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.14&lt;/td&gt;
+ &lt;td&gt;哈尔滨&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.15&lt;/td&gt;
+ &lt;td&gt;呼伦贝尔&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.16&lt;/td&gt;
+ &lt;td&gt;额尔古纳&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.17&lt;/td&gt;
+ &lt;td&gt;恩和&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.18&lt;/td&gt;
+ &lt;td&gt;黑山头&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.19&lt;/td&gt;
+ &lt;td&gt;满洲里&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9.20&lt;/td&gt;
+ &lt;td&gt;呼伦贝尔&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 class="heading-element" id="2出行装备list"&gt;&lt;span&gt;2、出行装备List&lt;/span&gt;
+ &lt;a href="#2%e5%87%ba%e8%a1%8c%e8%a3%85%e5%a4%87list" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;必备&lt;/p&gt;
+&lt;ul&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;身份证&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;驾驶证&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;现金&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;口罩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;衣服&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;电子产品&lt;/p&gt;
+&lt;ul&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;办公电脑&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;手机充电线&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;电脑充电线&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;充电宝&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;洗护&lt;/p&gt;
+&lt;ul&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;洗面奶&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;护肤品&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;牙刷牙膏&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;洗发水&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;沐浴露&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;香皂。洗衣液&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;洗脸巾&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;纸巾&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;口罩&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;保温杯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;防护&lt;/p&gt;
+&lt;ul&gt;
+&lt;li data-task=" " title="未完成"&gt;
+&lt;p&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;雨伞&lt;/p&gt;
+&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;
+&lt;p&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;防晒霜&lt;/p&gt;
+&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;
+&lt;p&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;花露水+驱蚊&lt;/p&gt;
+&lt;/li&gt;
+&lt;li data-task=" " title="未完成"&gt;
+&lt;p&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;帽子&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;药品&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其他&lt;/p&gt;
+&lt;ul&gt;
+&lt;li data-task=" " title="未完成"&gt;&lt;i class="checkbox-icon fa-fw fa-regular fa-square" aria-hidden="true"&gt;&lt;/i&gt;零食&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 class="heading-element" id="3天气情况"&gt;&lt;span&gt;3、天气情况&lt;/span&gt;
+ &lt;a href="#3%e5%a4%a9%e6%b0%94%e6%83%85%e5%86%b5" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;整体气温在19-4度左右，需要准备厚一点的衣服&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2024/hailaer_travel/index.assets/image-20240823154920105.png' alt="image-20240823154920105" height="990" width="2170"&gt;&lt;/p&gt;
+&lt;h2 class="heading-element" id="4租车"&gt;&lt;span&gt;4、租车&lt;/span&gt;
+ &lt;a href="#4%e7%a7%9f%e8%bd%a6" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;分类&lt;/th&gt;
+ &lt;th&gt;费用&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;租车&lt;/td&gt;
+ &lt;td&gt;￥2084&lt;/td&gt;
+ &lt;td&gt;SUV 大众探岳&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;燃油费&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;过路费&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 class="heading-element" id="5旅游费用"&gt;&lt;span&gt;5、旅游费用&lt;/span&gt;
+ &lt;a href="#5%e6%97%85%e6%b8%b8%e8%b4%b9%e7%94%a8" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;项目&lt;/th&gt;
+ &lt;th&gt;预算金额&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;机票&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;住宿费用&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;租车费用&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;经典门票&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;油费+过路费&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;伙食费&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>定风波</title><link>https://nuoyang.tech/posts/2024/dingfengbo/</link><pubDate>Thu, 23 May 2024 16:27:12 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2024/dingfengbo/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="定风波苏轼"&gt;&lt;span&gt;定风波——苏轼&lt;/span&gt;
+ &lt;a href="#%e5%ae%9a%e9%a3%8e%e6%b3%a2%e8%8b%8f%e8%bd%bc" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;莫听穿林打叶声&lt;/p&gt;
+&lt;p&gt;何妨吟啸且徐行&lt;/p&gt;
+&lt;p&gt;竹杖芒鞋轻胜马&lt;/p&gt;
+&lt;p&gt;谁怕，一蓑烟雨任平生&lt;/p&gt;
+&lt;p&gt;料峭春风吹酒醒&lt;/p&gt;
+&lt;p&gt;山头斜照却相迎&lt;/p&gt;
+&lt;p&gt;回首向来萧瑟处&lt;/p&gt;
+&lt;p&gt;归去，也无风雨也无晴&lt;/p&gt;</description></item><item><title>发财树养殖方法</title><link>https://nuoyang.tech/posts/2023/facaishu/</link><pubDate>Sun, 30 Jul 2023 14:28:03 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/facaishu/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/0c6cd1a1de739d4f42fe7f58b12559f.jpg' alt="0c6cd1a1de739d4f42fe7f58b12559f" height="2479" width="1920"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/7ec686c87af64975bc0e12c54b2c4d5.jpg' alt="7ec686c87af64975bc0e12c54b2c4d5" height="2466" width="1920"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/aae7c8d4b67b06e8792473036a1a612.jpg' alt="aae7c8d4b67b06e8792473036a1a612" height="939" width="750"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/1405cebf510aa563013122813227b77.jpg' alt="1405cebf510aa563013122813227b77" height="971" width="750"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/facaishu/index.assets/8de3ffb5d7004d2718d058a7030de36.jpg' alt="8de3ffb5d7004d2718d058a7030de36" height="2480" width="1920"&gt;&lt;/p&gt;</description></item><item><title>Bing AI聊天试用</title><link>https://nuoyang.tech/posts/2023/bing-ai/</link><pubDate>Wed, 15 Mar 2023 16:09:32 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/bing-ai/</guid><category domain="https://nuoyang.tech/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p&gt;最近chatGPT和openai的GPT-4大火，来试一下bing搜索引擎的ai功能&lt;/p&gt;
+&lt;h2 class="heading-element" id="如何使用bing-ai聊天"&gt;&lt;span&gt;如何使用Bing AI聊天&lt;/span&gt;
+ &lt;a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8bing-ai%e8%81%8a%e5%a4%a9" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;首先要访问 &lt;a href="https://bing.com/new"target="_blank" rel="external nofollow noopener noreferrer"&gt;https://bing.com/new&lt;/a&gt;，需要先登录微软账号，加入到waitlist就可以直接用了&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161304540.png' alt="image-20230315161304540" height="1191" width="1365"&gt;&lt;/p&gt;
+&lt;p&gt;界面看起来还是比价清爽的&lt;/p&gt;
+&lt;h2 class="heading-element" id="专业技术问题询问"&gt;&lt;span&gt;专业技术问题询问&lt;/span&gt;
+ &lt;a href="#%e4%b8%93%e4%b8%9a%e6%8a%80%e6%9c%af%e9%97%ae%e9%a2%98%e8%af%a2%e9%97%ae" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h2 class="heading-element" id="第一个话题baas"&gt;&lt;span&gt;第一个话题BaaS&lt;/span&gt;
+ &lt;a href="#%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%af%9d%e9%a2%98baas" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;最近在研究BaaS，所以问了问啥是BaaS，BaaS有哪些&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161404971.png' alt="image-20230315161404971" height="769" width="1164"&gt;&lt;/p&gt;
+&lt;p&gt;回答内容主要是一些提供服务的厂商&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161459786.png' alt="image-20230315161459786" height="939" width="1160"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315161514224.png' alt="image-20230315161514224" height="981" width="1131"&gt;&lt;/p&gt;
+&lt;p&gt;对于小白来说，跟着它做一些起点的调研还是够的，不过作为深度的技术人员，它回答的内容远远不够&lt;/p&gt;
+&lt;h2 class="heading-element" id="第二个话题-faas"&gt;&lt;span&gt;第二个话题 FaaS&lt;/span&gt;
+ &lt;a href="#%e7%ac%ac%e4%ba%8c%e4%b8%aa%e8%af%9d%e9%a2%98-faas" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;开始第2个话题 faas&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/bing-ai/index.assets/image-20230315164541426.png' alt="image-20230315164541426" height="863" width="1143"&gt;&lt;/p&gt;
+&lt;p&gt;作为基础的检索功能还是很快就提供了想要的内容，不过除了OpenFunction和OpenFaaS外，其他开源的项目并没有列举出来&lt;/p&gt;
+&lt;p&gt;所以，如果bing收了钱用来影响ai的回答结论，这个也细想想也挺可怕的&lt;/p&gt;</description></item><item><title>三亚旅游规划</title><link>https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/</link><pubDate>Thu, 02 Mar 2023 16:41:39 +0800</pubDate><author>lvatticus@gmail.com (大卓)</author><guid>https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/</guid><category domain="https://nuoyang.tech/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;h2 class="heading-element" id="三亚旅游攻略"&gt;&lt;span&gt;三亚旅游攻略&lt;/span&gt;
+ &lt;a href="#%e4%b8%89%e4%ba%9a%e6%97%85%e6%b8%b8%e6%94%bb%e7%95%a5" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h2 class="heading-element" id="行程"&gt;&lt;span&gt;行程&lt;/span&gt;
+ &lt;a href="#%e8%a1%8c%e7%a8%8b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;日期&lt;/th&gt;
+ &lt;th&gt;时间段&lt;/th&gt;
+ &lt;th&gt;地点&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;u&gt;&lt;strong&gt;03-03&lt;/strong&gt;&lt;/u&gt;&lt;/td&gt;
+ &lt;td&gt;中午&lt;/td&gt;
+ &lt;td&gt;🛬三亚凤凰机场&lt;/td&gt;
+ &lt;td&gt;抵达三亚&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;下午&lt;/td&gt;
+ &lt;td&gt;取租车🚗 入驻亚龙湾酒店&lt;/td&gt;
+ &lt;td&gt;酒店玩耍&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;晚上&lt;/td&gt;
+ &lt;td&gt;海鲜市场吃海鲜🦈🦐🦀&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;保持警惕 谨防被宰！&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;u&gt;&lt;strong&gt;03-04&lt;/strong&gt;&lt;/u&gt;&lt;/td&gt;
+ &lt;td&gt;上午&lt;/td&gt;
+ &lt;td&gt;🍜酒店早餐&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;中午&lt;/td&gt;
+ &lt;td&gt;【出发】去南海观音，就近吃饭&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;下午&lt;/td&gt;
+ &lt;td&gt;南海观音&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;晚上&lt;/td&gt;
+ &lt;td&gt;椰梦长廊🌅&lt;/td&gt;
+ &lt;td&gt;18点前赶到看日落&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;&lt;u&gt;03-05&lt;/u&gt;&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;上午&lt;/td&gt;
+ &lt;td&gt;🍜酒店早餐&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;中午&lt;/td&gt;
+ &lt;td&gt;【出发】去海棠湾酒店，路上就近吃饭&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;下午&lt;/td&gt;
+ &lt;td&gt;入住海棠湾 海棠湾酒店 沙滩玩耍🏖🏊&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;晚上&lt;/td&gt;
+ &lt;td&gt;就近吃饭🥘&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;u&gt;&lt;strong&gt;03-06&lt;/strong&gt;&lt;/u&gt;&lt;/td&gt;
+ &lt;td&gt;上午&lt;/td&gt;
+ &lt;td&gt;🍜酒店早餐，&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;中午&lt;/td&gt;
+ &lt;td&gt;蜈支洲岛🏝&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;下午&lt;/td&gt;
+ &lt;td&gt;蜈支洲岛🏝&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;晚上&lt;/td&gt;
+ &lt;td&gt;返回酒店&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;u&gt;&lt;strong&gt;03-07&lt;/strong&gt;&lt;/u&gt;&lt;/td&gt;
+ &lt;td&gt;上午&lt;/td&gt;
+ &lt;td&gt;🍜酒店早餐，收拾准备返程&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;中午&lt;/td&gt;
+ &lt;td&gt;开车去机场，路上看看玩什么，也可以在酒店玩&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;下午&lt;/td&gt;
+ &lt;td&gt;返还租车🚗 返程🛫&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 class="heading-element" id="租车"&gt;&lt;span&gt;租车&lt;/span&gt;
+ &lt;a href="#%e7%a7%9f%e8%bd%a6" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;租车平台对比&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;名称&lt;/th&gt;
+ &lt;th&gt;是否押金&lt;/th&gt;
+ &lt;th&gt;价格&lt;/th&gt;
+ &lt;th&gt;靠谱度&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;一嗨租车&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;⭐️⭐️⭐️⭐️⭐️&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;神州租车&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;⭐️⭐️⭐️⭐️⭐️&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;携程&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;⭐️&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;一嗨租车在三亚凤凰机场的停车场里取就行，很方便，走的时候直接在机场还车就可以&lt;/p&gt;
+&lt;h2 class="heading-element" id="住宿"&gt;&lt;span&gt;住宿&lt;/span&gt;
+ &lt;a href="#%e4%bd%8f%e5%ae%bf" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h3 class="heading-element" id="亚龙湾"&gt;&lt;span&gt;亚龙湾&lt;/span&gt;
+ &lt;a href="#%e4%ba%9a%e9%be%99%e6%b9%be" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;h4 class="heading-element" id="三亚亚龙湾星华套房假日酒店"&gt;&lt;span&gt;三亚亚龙湾星华套房假日酒店&lt;/span&gt;
+ &lt;a href="#%e4%b8%89%e4%ba%9a%e4%ba%9a%e9%be%99%e6%b9%be%e6%98%9f%e5%8d%8e%e5%a5%97%e6%88%bf%e5%81%87%e6%97%a5%e9%85%92%e5%ba%97" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h4&gt;&lt;p&gt;地点：三亚市吉阳区亚龙湾国家旅游度假区龙塘路14号&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230302233809738.png' alt="image-20230302233809738" height="1700" width="3034"&gt;&lt;/p&gt;
+&lt;h3 class="heading-element" id="海棠湾"&gt;&lt;span&gt;海棠湾&lt;/span&gt;
+ &lt;a href="#%e6%b5%b7%e6%a3%a0%e6%b9%be" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;h4 class="heading-element" id="三亚-hotel海棠湾阳光壹酒店"&gt;&lt;span&gt;三亚 Hotel海棠湾阳光壹酒店&lt;/span&gt;
+ &lt;a href="#%e4%b8%89%e4%ba%9a-hotel%e6%b5%b7%e6%a3%a0%e6%b9%be%e9%98%b3%e5%85%89%e5%a3%b9%e9%85%92%e5%ba%97" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h4&gt;&lt;p&gt;地点：三亚市海棠区海棠南路4号&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230302234140508.png' alt="image-20230302234140508" height="1506" width="3290"&gt;&lt;/p&gt;
+&lt;p&gt;出门过个马路就是海边，可以赶海捡贝壳🐚 这里可以看日出&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317131147803.png' alt="image-20230317131147803" height="960" width="1280"&gt;&lt;/p&gt;
+&lt;h2 class="heading-element" id="景点"&gt;&lt;span&gt;景点&lt;/span&gt;
+ &lt;a href="#%e6%99%af%e7%82%b9" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;h3 class="heading-element" id="椰梦长廊"&gt;&lt;span&gt;椰梦长廊&lt;/span&gt;
+ &lt;a href="#%e6%a4%b0%e6%a2%a6%e9%95%bf%e5%bb%8a" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;看日落&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230303001736112.png' alt="image-20230303001736112" height="790" width="1372"&gt;&lt;/p&gt;
+&lt;h3 class="heading-element" id="南海观音"&gt;&lt;span&gt;南海观音&lt;/span&gt;
+ &lt;a href="#%e5%8d%97%e6%b5%b7%e8%a7%82%e9%9f%b3" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;壮观的景象&lt;/p&gt;
+&lt;h3 class="heading-element" id="亚龙湾热带天堂森林公园"&gt;&lt;span&gt;亚龙湾热带天堂森林公园&lt;/span&gt;
+ &lt;a href="#%e4%ba%9a%e9%be%99%e6%b9%be%e7%83%ad%e5%b8%a6%e5%a4%a9%e5%a0%82%e6%a3%ae%e6%9e%97%e5%85%ac%e5%9b%ad" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;h3 class="heading-element" id="蜈支洲岛"&gt;&lt;span&gt;蜈支洲岛&lt;/span&gt;
+ &lt;a href="#%e8%9c%88%e6%94%af%e6%b4%b2%e5%b2%9b" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;登岛时间为08:00至16:00；离岛时间为08:30至18:30&lt;/p&gt;
+&lt;p&gt;蜈支洲岛码头轮渡：上岛时间8:00-16:00；下岛时间08:30-18:30；人较多，早上排队上岛时间通常需要1小时左右&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src="index.assets/image-20230302235444990.png" alt="image-20230302235444990" style="zoom:50%;" /&gt;
+&lt;h3 class="heading-element" id="小东海"&gt;&lt;span&gt;小东海&lt;/span&gt;
+ &lt;a href="#%e5%b0%8f%e4%b8%9c%e6%b5%b7" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317131356521.png' alt="image-20230317131356521" height="251" width="568"&gt;&lt;/p&gt;
+&lt;p&gt;这里早上可以赶海，潮水褪去后 石头都露出来，可以在里面捡螃蟹和海星&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src='https://nuoyang.tech/posts/2023/%E4%B8%89%E4%BA%9A%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92/index.assets/image-20230317132023346.png' alt="image-20230317132023346" height="357" width="1063"&gt;&lt;/p&gt;
+&lt;h3 class="heading-element" id="后海村"&gt;&lt;span&gt;后海村&lt;/span&gt;
+ &lt;a href="#%e5%90%8e%e6%b5%b7%e6%9d%91" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;很多冲浪在这里，但是自驾过来慎重，路很窄，很堵，要是想看日落要提前一些出发，基本7点不到就看不到日落了&lt;/p&gt;
+&lt;h3 class="heading-element" id="海昌不夜城"&gt;&lt;span&gt;海昌不夜城&lt;/span&gt;
+ &lt;a href="#%e6%b5%b7%e6%98%8c%e4%b8%8d%e5%a4%9c%e5%9f%8e" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;很多小孩玩的东西，离海棠湾和免税店二期很近，有很大的摩天轮&lt;/p&gt;
+&lt;h2 class="heading-element" id="吃饭"&gt;&lt;span&gt;吃饭&lt;/span&gt;
+ &lt;a href="#%e5%90%83%e9%a5%ad" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;一天两顿饭感觉就够了，一顿酒店早餐，一顿当地特色&lt;/p&gt;
+&lt;p&gt;每天一个椰子🥥 喝起来还是很开心的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 class="heading-element" id="六盘村"&gt;&lt;span&gt;六盘村&lt;/span&gt;
+ &lt;a href="#%e5%85%ad%e7%9b%98%e6%9d%91" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;一个小村改造的，很多东北人开店的地方，也有网红店，吃饭可以挑一挑再吃&lt;/p&gt;
+&lt;h3 class="heading-element" id="亿恒夜市"&gt;&lt;span&gt;亿恒夜市&lt;/span&gt;
+ &lt;a href="#%e4%ba%bf%e6%81%92%e5%a4%9c%e5%b8%82" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;千万不要去！！！太坑了&lt;/p&gt;
+&lt;h3 class="heading-element" id="第一海鲜市场"&gt;&lt;span&gt;第一海鲜市场&lt;/span&gt;
+ &lt;a href="#%e7%ac%ac%e4%b8%80%e6%b5%b7%e9%b2%9c%e5%b8%82%e5%9c%ba" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;没去过，被夜市坑了后就不想再去了&lt;/p&gt;
+&lt;h3 class="heading-element" id="椰子鸡"&gt;&lt;span&gt;椰子鸡&lt;/span&gt;
+ &lt;a href="#%e6%a4%b0%e5%ad%90%e9%b8%a1" class="heading-mark"&gt;
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;吃了两顿椰子鸡，一顿是在酒店里赠送的，分量很大，另外一份是在大众点评上搜的排名靠前的&lt;/p&gt;</description></item></channel></rss>
